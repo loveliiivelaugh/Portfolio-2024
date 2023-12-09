@@ -4,13 +4,11 @@ import {
   Popover, LinearProgress,
   Card, CardMedia, CardContent, Avatar
 } from '@mui/material'
+import {
+  Timeline, TimelineItem, TimelineSeparator, TimelineConnector, 
+  TimelineContent, TimelineDot
+} from '@mui/lab'
 
-import Timeline from '@mui/lab/Timeline';
-import TimelineItem from '@mui/lab/TimelineItem';
-import TimelineSeparator from '@mui/lab/TimelineSeparator';
-import TimelineConnector from '@mui/lab/TimelineConnector';
-import TimelineContent from '@mui/lab/TimelineContent';
-import TimelineDot from '@mui/lab/TimelineDot';
 import headshot from './assets/images/headshot-cropped.png'
 import './App.css';
 
