@@ -1,8 +1,8 @@
 
 import { 
   Box, Button, Grid, Typography,
-  Popover, LinearProgress,
-  Card, CardMedia, CardContent, Avatar
+  Popover, LinearProgress, Divider,
+  Card, CardMedia, CardContent, Avatar, List, ListItem, ListItemText
 } from '@mui/material'
 import {
   Timeline, TimelineItem, TimelineSeparator, TimelineConnector, 
@@ -10,16 +10,17 @@ import {
 } from '@mui/lab'
 
 import headshot from './assets/images/headshot-cropped.png'
-import './App.css';
+// import './App.css';
+import { cms } from './utilities/cms';
 
 
-const workHistory = [
+const workHistory = [ 
   { 
-    name: "Charter",
-    role: "JavaScript Developer II",
-    period: "June 2022 - Current",
-    responsibilities: "Build Software"
-  }, 
+    name: "MedPro",
+    role: "Salesforce Administrator",
+    period: "January 2019 - March 2020",
+    responsibilities: "Admin responsibilities"
+  },
   { 
     name: "3vue",
     role: "Front End React Developer",
@@ -27,10 +28,10 @@ const workHistory = [
     responsibilities: "Build and maintain dashboards for business intelligence solutions."
   }, 
   { 
-    name: "MedPro",
-    role: "Salesforce Administrator",
-    period: "January 2019 - March 2020",
-    responsibilities: "Admin responsibilities"
+    name: "Charter",
+    role: "JavaScript Developer II",
+    period: "June 2022 - Current",
+    responsibilities: "JavaScript developer working in Automation department. Projects focused on frontend development mostly with React and Angular. Also working on backend development with NodeJS and Python."
   },
 ]
 
@@ -57,118 +58,133 @@ function AlternateReverseTimeline() {
 function App() {
   return (
     <>
-    <Box sx={{
-      height:"auto", 
-      minHeight: "95vh",
-      backgroundColor: '#232323',
-      borderRadius: '32px',
-      margin: '16px',
-      cursor:"crosshair",
-      p:4,
-      justifyContent: 'center',
-      display:"flex"
-    }}>
-      <Grid container>
-        <Grid item md={12} p={4} sx={{ color: "#Fff" }}>
-        <Box sx={{ display: 'flex' }}>
+    <Box sx={{ minHeight: "100vh" }}>
+      <Box sx={{ height: '24vh', width: '100%', background: '#232323' }}>
+        {/* Hero Section */}
+        <Typography variant="h4" sx={{ color: "#Fff", px: 2, pt: 6 }}>
+          Automation Shop
+        </Typography>
+        <Typography variant="body1" sx={{ color: "#Fff", px: 2 }}>
+          Automation. AI Integration. Mobile Web App Development.
+        </Typography>
+      </Box>
+      <List size="small">
+        <Typography variant="h3" sx={{ color: "#333", px: 2 }}>
+          Services
+        </Typography>
+        <Grid container>
+          {[
+            [
+            "Web Development",
+            "Mobile Development",
+            "UI/UX Design",
+            "Data Science",
+            "Data Analytics",
+            "Data Management",
+            'Servers & Infrastructure',
+          ],
+          [
+            "Data Engineering",
+            "Data Visualization",
+            "Automation",
+            "AI & Machine Learning",
+            "Software Engineering",
+            "Software Consultation",
+            "Business Intelligence",
+            "Database Management",
+          ]
+        ].map((array, index) => (
+            <Grid item xs={12} sm={6} key={index}>
+              {array.slice(0, 4).map(item => (
+                <ListItem >
+                  <ListItemText primary={item} secondary={item} />
+                </ListItem>
+              ))}
+            </Grid>
+          ))
+        }
+        </Grid>
+      </List>
+      <Divider />
+
+        <Grid item xs={12} sm={12} md={12} p={2} sx={{ background: "#333", color: "#fff"}}>
+          <Typography variant="h3">Availability</Typography>
+          <Typography variant="body1">
+            Have an idea for an app? Need help with a website? 
+          </Typography>
+          <Typography variant="subtitle2">
+            I am available for hire interested in flexible remote contract work
+          </Typography>
+          {/* Schedule a demo */}
+          <Box sx={{ display: "flex", gap: 2, mt: 2 }}>
+            <Button variant="contained" color="primary">Schedule a Demo</Button>
+            <Button variant="outlined" color="primary">See Projects Board</Button>
+          </Box>
+        </Grid>
+
+      <Divider />
+
+      {/* Blog */}
+        <Grid item xs={12} sm={12} md={12} p={2} sx={{ color: "#333" }}>
+          {cms.app.blog.posts.map((post, i) => (
+            <Box key={i}>
+              <Typography variant="h5" py={2}>
+                {post.title}
+              </Typography>
+              <Divider />
+              <Typography variant="body1">
+                {post.body}
+              </Typography>
+              <Typography variant="subtitle2">
+                2/21/2024
+              </Typography>
+            </Box>
+          ))}
+        </Grid>
+
+      <Divider />
+
+      {/* About Me */}
+        <Grid item xs={12} sm={12} md={12} p={2} sx={{ color: "#333" }}>
+          <Typography variant="h5" sx={{ color: "#333" }} >
+            <pre>whoami</pre>
+          </Typography>
+          <Typography variant="body1">
+            {`
+              I am a dedicated software engineer specializing in automation, driven by a fervent desire to craft user-friendly and practical applications suitable for regular use. Presently, I serve as a full-time software engineer for a leading Fortune 500 company, embracing remote work from my base in Chicago, Illinois.
+              
+              My journey as a developer is marked by perpetual growth and exploration of emerging technologies and contemporary trends. I thrive on continuous learning, constantly seeking fresh opportunities to enhance my skills and expertise. Beyond my professional pursuits, I am also a committed father, balancing my roles with enthusiasm and dedication.
+            `}
+          </Typography>
+        </Grid>
+
+        <Grid item md={12} p={4} sx={{ color: "#Fff", background: '#232323' }}>
           <Avatar src={headshot} sx={{ height: '100px', width: '100px' }} />
           <Box>
-            <Typography variant="h2" px={3}>Michael Woodward</Typography>
-            <Typography variant="h4" px={3}>Front End React Developer</Typography>
-            <Typography variant="h6" px={3}>Chicago, Illinois, USA</Typography>
+            <Typography variant="h2">Michael Woodward</Typography>
+            <Typography variant="h4">Software Developer</Typography>
+            <Typography variant="subtitle1">JavaScript, React, Node, SQL</Typography>
+            <Typography variant="h6">Chicago, Illinois, USA</Typography>
           </Box>
-        </Box>
-          <Typography variant="body1" my={2}>
-            A digital alchemist weaving pixels and code into functional art. My journey through the realms of digital design has taken me from crafting intuitive UIs to envisioning entire user experiences that resonate and delight. Dive in, explore my portfolio, and let's craft the future of digital, one pixel at a time.
-          </Typography>
         </Grid>
-        <Grid item sm={12} sx={{ color: "#Fff" }}>
-          <Typography variant="h3">Projects</Typography>
-            <Card sx={{ margin: 1, border: 'solid 1px rgba(255,255,255,0.9)', backgroundColor: "rgba(255,255,255,0)" }}>
-              <CardContent sx={{color: "#fff"}}>
-              <Grid container columnSpacing={2} rowSpacing={1}>
-              {["Personal", "Web Shop", "Social", "Blockchain", "Data Analytics", "3D"].map(project => (
-                <Grid item sm={4}>
-                  <Card>
-                    <CardMedia>
-                      <img src="" alt="" />
-                    </CardMedia>
-                    <CardContent>
-                      <Typography variant="body1">{project}</Typography>
-                    </CardContent>
-                      <Button>Live</Button>
-                      <Button>Source</Button>
-                  </Card>
-                </Grid>
-              ))}
-              </Grid>
-              </CardContent>
-            </Card>
 
-          <Card sx={{ backgroundColor: 'rgba(255,255,255,0.9)'}}>
-            <CardContent>
-              <Typography variant="h3">Education</Typography>
-              <Typography variant="body1">Northwestern University</Typography>
-              <Typography variant="body1">Harold Washington City College Chicago</Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item sm={4} p={4} sx={{ color: "#Fff" }}>
-          <Card sx={{ backgroundColor: 'rgba(255,255,255,0.9)'}}>
-            <CardContent>
-              <Typography variant="h3">Skills</Typography>
-              <Box sx={{display: "flex"}}>
-              </Box>
-                <Typography variant="body1">JavaScript</Typography>
-                <LinearProgress variant="determinate" value={90} />
-              <Typography variant="body1">TypeScript</Typography>
-              <Typography variant="body1">React</Typography>
-              <Typography variant="body1">Angular</Typography>
-              <Typography variant="body1">Node</Typography>
-              <Typography variant="body1">Python</Typography>
-              <Typography variant="body1">Git</Typography>
-              <Typography variant="body1">Jira</Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item sm={8}>
-          <Card sx={{ margin: 2, border: 'solid 1px rgba(255,255,255,0.9)', backgroundColor: "rgba(255,255,255,0)" }}>
-            <CardContent sx={{color: "#fff"}}>
-              <Typography variant="h3">Work</Typography>
-              <AlternateReverseTimeline />
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item sm={12} sx={{ color: "#fff" }}>
-          <Card sx={{ margin: 2, border: 'solid 1px rgba(255,255,255,0.9)', backgroundColor: "rgba(255,255,255,0)" }}>
-            <CardContent sx={{color: "#fff"}}>
-              <Typography variant="h3">Studying</Typography>
-              <Typography variant="body1">Certified Cisco Network Administrator</Typography>
-              <Typography variant="body1">AWS Certified Solutions Architect Associate</Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item sm={12} sx={{ color: "#fff", m: 3 }}>
-          <Typography variant="h3">About</Typography>
+        <Grid item xs={12} sm={12} md={12} p={2} sx={{ background: "#333", color: "#fff"}}>
+          <Typography variant="h3">Contact Me</Typography>
           <Typography variant="body1">
-            I have a love for technology and a never ending curiousity that continues to drive me in my intellectual and professional pursuits. I also have a 10 year old son who loves to play basketball. So I spend a good amount of time supporting him in those efforts.
+            Have an idea for an app? Need help with a website? 
           </Typography>
+          <Typography variant="subtitle2">
+            I am available for hire interested in flexible remote contract work
+          </Typography>
+          {/* Schedule a demo */}
+          <Box sx={{ display: "flex", justifyContent: "center", gap: 2, mt: 2 }}>
+            <Button variant="contained" color="secondary">Email</Button>
+            <Button variant="outlined" color="primary">Text</Button>
+            <Button variant="outlined" color="primary">Chat AI</Button>
+          </Box>
         </Grid>
 
-      </Grid>
-    </Box>
-    <Popover
-        // id={id}
-        // open={open}
-        // anchorEl={anchorEl}
-        // onClose={handleClose}
-      anchorOrigin={{
-        vertical: 'bottom',
-        horizontal: 'left',
-      }}
-    >
-      <Typography sx={{ p: 2 }}>The content of the Popover.</Typography>
-    </Popover>
+      </Box>
     </>
   );
 }
