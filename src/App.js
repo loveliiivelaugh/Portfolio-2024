@@ -1,17 +1,19 @@
 
 import { 
   Box, Button, Grid, Typography,
-  Popover, LinearProgress, Divider,
-  Card, CardMedia, CardContent, Avatar, List, ListItem, ListItemText
+  Container, Divider,
+  Avatar, List, ListItem, ListItemText, Toolbar, IconButton
 } from '@mui/material'
 import {
   Timeline, TimelineItem, TimelineSeparator, TimelineConnector, 
   TimelineContent, TimelineDot
 } from '@mui/lab'
+import { FaLinkedin } from "react-icons/fa";
+import TextSnippetIcon from '@mui/icons-material/TextSnippet';
 
+import { cms } from './utilities/cms';
 import headshot from './assets/images/headshot-cropped.png'
 // import './App.css';
-import { cms } from './utilities/cms';
 
 
 const workHistory = [ 
@@ -62,7 +64,7 @@ function App() {
       <Box sx={{ height: '24vh', width: '100%', background: '#232323' }}>
         {/* Hero Section */}
         <Typography variant="h4" sx={{ color: "#Fff", px: 2, pt: 6 }}>
-          Automation Shop
+          Woodward Software
         </Typography>
         <Typography variant="body1" sx={{ color: "#Fff", px: 2 }}>
           Automation. AI Integration. Mobile Web App Development.
@@ -117,17 +119,44 @@ function App() {
           </Typography>
           {/* Schedule a demo */}
           <Box sx={{ display: "flex", gap: 2, mt: 2 }}>
-            <Button variant="contained" color="primary">Schedule a Demo</Button>
-            <Button variant="outlined" color="primary">See Projects Board</Button>
+            <Button 
+              variant="contained" 
+              color="primary" 
+              href="https://calendly.com/woodward-michael-a/15min"
+              target='_blank'
+              rel="noreferrer"
+            >
+              Schedule a Demo
+            </Button>
+            <Button 
+              variant="outlined" 
+              color="primary"
+              href="https://trello.com/b/LGHXvZNL/kanban-template"
+              target='_blank'
+              rel="noreferrer"
+            >
+              See Projects Board
+            </Button>
           </Box>
         </Grid>
 
       <Divider />
 
       {/* Blog */}
-        <Grid item xs={12} sm={12} md={12} p={2} sx={{ color: "#333" }}>
+        <Toolbar />
+        <Grid item xs={12} sx={{ color: "#333", textAlign: "center" }}>
           {cms.app.blog.posts.map((post, i) => (
-            <Box key={i}>
+            <Container maxWidth="sm" key={i}>
+              {post.image && 
+                <img src={post.image} alt="FamilyApps" style={{ 
+                  height: 780, 
+                  width: 340, 
+                  borderRadius: 14, 
+                  border: '8px solid #333', 
+                  marginTop: 24 
+                  }} 
+                  />
+              }
               <Typography variant="h5" py={2}>
                 {post.title}
               </Typography>
@@ -135,13 +164,16 @@ function App() {
               <Typography variant="body1">
                 {post.body}
               </Typography>
-              <Typography variant="subtitle2">
+              <Typography variant="subtitle2" gutterBottom>
                 2/21/2024
               </Typography>
-            </Box>
+              <Button variant="outlined" color="primary" size='small' mb={2}>
+                Read More
+              </Button>
+            </Container>
           ))}
         </Grid>
-
+      <Toolbar />
       <Divider />
 
       {/* About Me */}
@@ -151,7 +183,7 @@ function App() {
           </Typography>
           <Typography variant="body1">
             {`
-              I am a dedicated software engineer specializing in automation, driven by a fervent desire to craft user-friendly and practical applications suitable for regular use. Presently, I serve as a full-time software engineer for a leading Fortune 500 company, embracing remote work from my base in Chicago, Illinois.
+              I am a dedicated software engineer specializing in software automation, driven by a fervent desire to craft user-friendly and practical applications suitable for regular use. Presently, I serve as a full-time software engineer for a leading Fortune 500 company, embracing remote work from my base in Chicago, Illinois.
               
               My journey as a developer is marked by perpetual growth and exploration of emerging technologies and contemporary trends. I thrive on continuous learning, constantly seeking fresh opportunities to enhance my skills and expertise. Beyond my professional pursuits, I am also a committed father, balancing my roles with enthusiasm and dedication.
             `}
@@ -159,12 +191,28 @@ function App() {
         </Grid>
 
         <Grid item md={12} p={4} sx={{ color: "#Fff", background: '#232323' }}>
-          <Avatar src={headshot} sx={{ height: '100px', width: '100px' }} />
+          {/* <Box sx={{ width: "100px", mx: "auto", textAlign: "center" }}>
+          </Box> */}
+            <Avatar src={headshot} sx={{ height: '100px', width: '100px' }} />
           <Box>
             <Typography variant="h2">Michael Woodward</Typography>
             <Typography variant="h4">Software Developer</Typography>
             <Typography variant="subtitle1">JavaScript, React, Node, SQL</Typography>
             <Typography variant="h6">Chicago, Illinois, USA</Typography>
+            <Typography variant="body1">
+              michaelwoodward.business@proton.me
+            </Typography>
+            <Typography variant="body1">
+              (555) 555-5555
+            </Typography>
+            <Box>
+              <IconButton sx={{ color: "#fff"}}>
+                <FaLinkedin />
+              </IconButton>
+              <IconButton sx={{ color: "#fff"}}>
+                <TextSnippetIcon />
+              </IconButton>
+            </Box>
           </Box>
         </Grid>
 
