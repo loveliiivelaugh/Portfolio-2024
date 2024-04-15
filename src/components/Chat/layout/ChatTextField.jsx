@@ -16,8 +16,10 @@ import { queries } from "../api";
 const ChatTextField = forwardRef((props, ref) => {
 
     const chat = useChatStore();
-    const stabilityBalance = useQuery(queries.getStabilityBalance);
-    console.log({ stabilityBalance })
+    // const stabilityBalance = useQuery(queries.getStabilityBalance);
+    // console.log({ stabilityBalance })
+
+    const stabilityBalance = 0;
 
     const { inputMessage, setInputMessage, handleKeyPress, handleSendMessage } = props;
 

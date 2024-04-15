@@ -26,7 +26,7 @@ const Providers = ({ children }) => {
   )
 }
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Providers>
       <App />

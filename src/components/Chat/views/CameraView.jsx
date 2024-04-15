@@ -39,17 +39,15 @@ const WebcamContainer = styled(Box)(() => ({
     background: '#111',
 }));
 
-const videoConstraints = {
+const defaultVideoConstraints = {
     width: 1280,
     height: 720,
     facingMode: "environment",
 };
 
 const Camera = (props) => {
-    // const chat = useSelector(state => state.chat)
-    // const navigate = useNavigate();
-    // const actions = useActions();
     const chat = useChatStore();
+    const [videoConstraints, setVideoConstraints] = useState(defaultVideoConstraints);
     
     const webcamRef = useRef(null);
     const canvasRef = useRef(null);
@@ -80,7 +78,7 @@ const Camera = (props) => {
             // draw the video first
             ctx.drawImage(videoRef.current, 0, 0, 640, 480);
 
-            console.log(ssdModel, ctx)
+            // console.log(ssdModel, ctx)
             
             const imageSrc = webcamRef.current.getScreenshot();
             const image = new Image();
@@ -131,7 +129,17 @@ const Camera = (props) => {
         const ssd = await cocoSsd.load();
         const blazefaceModel = await blazeface.load();
         return { blazefaceModel, ssd };
-    }
+    };
+
+    const handleDoubleClick = (event) => {
+        console.log("Camera handleDoubleClick: ", event)
+        setVideoConstraints(prev => ({ 
+            ...prev, 
+            facingMode: prev.facingMode === "user" 
+                ? "environment" 
+                : "user"
+        }))
+    };
 
     useEffect(() => {
         // // If the camera is reopened from the image view, ...
@@ -148,6 +156,10 @@ const Camera = (props) => {
             })
             .catch(error => console.error("Error loading SSD model: ", error))
 
+        return () => {
+            clearInterval(detectInterval);
+        }
+
     }, [])
 
     const webcamProps = {
@@ -160,12 +172,14 @@ const Camera = (props) => {
     };
 
     return (
-        <WebcamContainer>
+        <WebcamContainer onDoubleClick={(event) => {
+            console.log("WebcamContainer onDoubleClick: ", event)
+        }}>
             <Webcam {...webcamProps}>
                 {() => (
                     <>
                         <motion.div>
-                            <Box sx={{ height: '100vh', width: '100vw', position: 'absolute', bottom: 0, right: 0, background: 'rgba(0,0,0,0.2)' }}>
+                            <Box onDoubleClick={handleDoubleClick} sx={{ height: '100vh', width: '100vw', position: 'absolute', bottom: 0, right: 0, background: 'rgba(0,0,0,0.2)' }}>
                                 <canvas ref={canvasRef} style={{ height: '100%', width: '100%', position: 'absolute', bottom: 0, right: 0, zIndex: 1 }} />
                                 <video ref={videoRef} style={{ height: '100%', width: '100%', position: 'absolute', bottom: 0, right: 0, zIndex: 10 }} />
                                 <Stack sx={{ color: "#fff",mt:10, p: 2, background: 'rgba(255,255,255,0.4)', backdropFilter: 'blur(8px)', borderRadius: '10px', maxWidth: 250, mx: 2 }}>

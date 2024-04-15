@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 
 import ChatTextField from './layout/ChatTextField';
 import ChatDrawer from './layout/ChatDrawer';
+import ToolsWindowDrawer from './layout/ToolsWindowDrawer';
 import { ChatView, CameraView, ImageView, VoiceView } from './views';
 
 import { queries } from './api';
@@ -129,18 +130,18 @@ const Chat = forwardRef((props, ref) => {
         // scrollChatToBottom();
     };
 
-    const handleKeyPress = (e) => {
-        console.log("key pressed: ", e.key, textFieldRef);
+    const handleKeyPress = (event) => {
+        console.log("key pressed: ", event, textFieldRef);
 
-        if (e.key === 'Enter' && chatStore.imageSrc) handleSendPicture();
-        else if (e.key === 'Enter') handleSendMessage();
-        else if (e.key === 'Escape') {
+        if ((event.shiftKey && event.key === 'Enter')) 
+            chatStore.handleInput(chatStore.inputMessage + '\n');
+        else if (event.key === 'Enter' && chatStore.imageSrc) handleSendPicture();
+        else if (event.key === 'Enter') handleSendMessage();
+        else if (event.key === 'Escape') {
             chatStore.handleImageSrc(null);
             // Reset view
             chatStore.handleView("chat");
         }
-        else if ((e.key === 'Enter + Shift')) 
-            chatStore.setInputMessage(prev => prev + '\n');
     };
 
     const imageViewProps = {
@@ -190,6 +191,7 @@ const Chat = forwardRef((props, ref) => {
         >
             {views[chatStore.view] || views['chat']}
             <ChatDrawer />
+            <ToolsWindowDrawer />
             {["chat", "image"].includes(chatStore.view) && 
                 <ChatTextField {...chatTextFieldProps} />
             }

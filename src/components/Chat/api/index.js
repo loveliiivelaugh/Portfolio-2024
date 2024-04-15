@@ -49,7 +49,7 @@ export const queries = {
 
   readFromServer2: (params) => ({
     queryKey: ['readFromServer'],
-    queryFn: async () => (await axios(`${hostname}/api/${params.endpoint}`)).data
+    queryFn: async () => (await client.get(`/api/${params.endpoint}`)).data
   }),
 
   postToServer: () => ({
@@ -63,11 +63,18 @@ export const queries = {
 
   getStabilityBalance: {
     queryKey: ['stabilityBalance'],
-    queryFn: () => axios(`${hostname}/api/llms/stability-balance`)
+    queryFn: () => client.get(`/api/llms/stability-balance`)
   },
 
   getIngestedFilesQuery: {
     queryKey: ['privateGPTingestedFiles'],
-    queryFn: () => axios(`${hostname}/api/llms/list-ingested-files`)
+    queryFn: async () => {
+      const data = await axios.get(`${hostname}/api/llms/list-ingested-files`)
+
+      console.log("getIngestedFilesQuery: ", data);
+
+      return data;
+    }
+
   },
 };
