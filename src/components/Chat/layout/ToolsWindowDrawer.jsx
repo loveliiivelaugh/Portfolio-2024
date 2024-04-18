@@ -5,15 +5,15 @@ import EReader from '../../EReader/EReader';
 import { useChatStore } from '../store';
 
 // import json from '../api/braveSearchMock.json';
-import json from '../api/brave-search-mock-2.json';
-import SearchResultList from './SearchResultsMock';
+// import json from '../api/brave-search-mock-2.json';
+// import SearchResultList from './SearchResultsMock';
 
 
 const ToolsWindowDrawer = () => {
     const chat = useChatStore();
     const [activeTab, setActiveTab] = React.useState("0");
 
-    console.log({ json })
+    // console.log({ json })
 
     return (
         <Drawer open={chat.toolsWindowDrawer} anchor="right" onClose={() => chat.setToolsWindowDrawer(false)}>
@@ -31,7 +31,7 @@ const ToolsWindowDrawer = () => {
                         "1": (
                             <Grid item xs={12} p={2}>
                                 {/* <iframe src="/" width="640" height="480"></iframe> */}
-                                <SearchResultList results={json.web.results} />
+                                {/* <SearchResultList results={json.web.results} /> */}
                             </Grid>
                         )
                     }[activeTab]}
