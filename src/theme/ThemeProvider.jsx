@@ -28,7 +28,7 @@ const useTheme = ({ mode }) => useMemo(() => createTheme({
 
 export const ThemeProvider = ({ children }) => {
   // const system = useSelector((state) => state.system)
-  const theme = useTheme({ mode: 'light' })
+  const theme = useTheme({ mode: 'dark' })
 
   return (
     <MuiThemeProvider theme={theme}>

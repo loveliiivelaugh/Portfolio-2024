@@ -7,6 +7,7 @@ import CameraIcon from "@mui/icons-material/Camera";
 import SendIcon from '@mui/icons-material/Send';
 import RecordVoiceOverIcon from '@mui/icons-material/RecordVoiceOver';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import { useQuery } from '@tanstack/react-query'
 
 import { useChatStore } from "../store";
@@ -112,6 +113,9 @@ const ChatTextField = forwardRef((props, ref) => {
                 </Typography>
                 <IconButton onClick={() => chat.handleDrawer(true)} sx={{ color: "text.primary" }}> 
                     <ArrowDropDownIcon />
+                </IconButton>
+                <IconButton onClick={() => chat.setToolsWindowDrawer(true)} sx={{ color: "text.primary" }}> 
+                    <ArrowRightIcon />
                 </IconButton>
             </Toolbar>
         </Box>

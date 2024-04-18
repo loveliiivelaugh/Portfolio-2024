@@ -49,7 +49,10 @@ export const queries = {
 
   readFromServer2: (params) => ({
     queryKey: ['readFromServer'],
-    queryFn: async () => (await client.get(`/api/${params.endpoint}`)).data
+    queryFn: async () => {
+      console.log("readFromServer2: ", params)
+      return (await client.get(`/api/${params.endpoint}`)).data
+    }
   }),
 
   postToServer: () => ({
@@ -75,6 +78,22 @@ export const queries = {
 
       return data;
     }
-
   },
+
+  getWebPageContent: {
+    queryKey: ['webPageContent'],
+    queryFn: async (params) => {
+      const data = await axios.get(`${hostname}/api/llms/puppeteer?url=${params.url}`);
+      return data;
+    },
+  },
+
+  getBraveSearchQuery: {
+    queryKey: ['braveSearch'],
+    queryFn: async (params) => {
+      const data = await client.get(`/api/llms/brave-search?query=${params.query}`);
+      return data;
+    },
+    enabled: false,
+  }
 };

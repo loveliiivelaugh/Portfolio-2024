@@ -21,9 +21,11 @@ export const useChatStore = create((set) => ({
       endpoint: 'create_row', // ['create_row', 'update_row', 'delete_row']
       table: 'chats' // ['blogs', 'inventory', 'models', 'chats']
     },
-    toolsWindowDrawer: false, // true || false
+    toolsWindowDrawer: true, // true || false
+    isInternetQuery: false,
   
     // handlers
+    setIsInternetQuery: (isInternetQuery) => set(() => ({ isInternetQuery })),
     setToolsWindowDrawer: (toolsWindowDrawer) => set(() => ({ toolsWindowDrawer })),
     setMutationOptions : (mutationOptions) => set(() => ({ mutationOptions })), // { method, endpoint, table }
     handleInput: (inputMessage) => set(() => ({ inputMessage })), // String

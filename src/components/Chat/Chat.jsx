@@ -18,6 +18,7 @@ const Chat = forwardRef((props, ref) => {
     const chatStore = useChatStore();
     const query = useQuery(queries.readFromDb('chats', chatStore.setMessages));
     const serverMutation = useMutation(queries.postToServer())
+    const braveSearchQuery = useQuery(queries.getBraveSearchQuery)
 
     const textFieldRef = useRef();
 
@@ -34,9 +35,30 @@ const Chat = forwardRef((props, ref) => {
 
         console.log('handleSendMessage.input: ', inputMessage)
         if (inputMessage.trim() !== '') {
-            if (['/create', '/chat', '/imagine'].includes(inputMessage)) {
+            if (['/create', '/chat', '/imagine', '/internet'].includes(inputMessage)) {
                 chatStore.handleMode(inputMessage.split('/')[1] || 'chat');
                 chatStore.clearInput();
+            }
+            else if (chatStore.mode === "internet") {
+                // make request to brave search api
+                const response = await braveSearchQuery.refetch({ query: inputMessage });
+                console.log("BraveSearchQuery response: ", response)
+
+                // const summaries = Promise.all(response.data.map(async (item) => {
+                //     const summary = await puppeteerQuery.refetch();
+                // }))
+
+                // Open Tools Window Drawer
+                chatStore.setToolsWindowDrawer(true);
+
+                // Build response message in UI of Drawer
+
+                // Use AI to determine which links to use
+
+                // Make text query with the information from the search results
+
+                // Reset isInternetQuery
+                chatStore.setIsInternetQuery(false);
             }
             else {
                 const message = {
@@ -113,7 +135,8 @@ const Chat = forwardRef((props, ref) => {
                         sender: 'user',
                         text: inputMessage,
                         model: 'llava:7b-v1.6',
-                        imageSrc: imageSrc
+                        imageSrc: imageSrc,
+                        visionMode: chatStore.visionMode
                     })
                 }
             }, { onError: console.error, onSuccess: handleSuccess });

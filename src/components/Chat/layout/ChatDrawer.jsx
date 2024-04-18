@@ -177,24 +177,33 @@ const ChatDrawer = forwardRef((props, ref) => {
     }
 
     const handleAddAttachment = async () => {
-        // actions.handleDrawerView("add-attachment");
-        // actions.handleDrawer(true);
 
         const attachmentInput = document.createElement('input');
+
         attachmentInput.setAttribute('type', 'file');
         attachmentInput.click();
 
         attachmentInput.onchange = async () => {
+
             const file = attachmentInput.files[0];
+
             const formData = new FormData();
-            formData.append('file', file);
-            console.log("formData: ", formData.get('file'), file);
+
+            formData.append('pdf', file);
+
             // Ingest is not working all the way yet. 
             // Upload to server is working but ingest to PrivateGPT is not
-            const response = await ingestDocument(formData);
+            const uri = `${hostname}/api/llms/ingest-files`;
+
+            const response = await fetch(uri, {
+                method: "post",
+                body: formData
+            });
+
             console.log("response: ", response);
-        }
-    }
+        };
+    };
+    
 
     return (
         <Drawer open={chat.drawerOpen} onClose={() => chat.handleDrawer(false)} anchor='bottom'>

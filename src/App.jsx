@@ -17,6 +17,7 @@ import { cms } from './utilities/cms';
 // import Map from './components/Map/Map';
 import Chat from './components/Chat/Chat.jsx';
 import EReader from './components/EReader/EReader.jsx';
+import Camera from './components/Chat/views/CameraView.jsx';
 
 
 const AppLauncherPage = () => {
@@ -30,9 +31,10 @@ const AppLauncherPage = () => {
     handleLink(app);
   }
 
-    return <Chat /> 
-    || <EReader /> 
-    || (
+  // 
+  //   || <EReader /> 
+  //   || <Camera /> 
+    return <Chat /> || (
     <Grid container>
       
         <Grid id="dashboard-title" item sm={12}>
