@@ -329,6 +329,19 @@ export const cms = {
             ]
         },
         {
+            "name": "camera",
+            "icon": "😃",
+            "link": "/camera",
+            "url": null,
+            "category": [
+                "Essentials"
+            ],
+            "tags": [
+                "essentials",
+                "ai"
+            ]
+        },
+        {
             "name": "ChatBones",
             "icon": "💬",
             "link": "/chat-bones",

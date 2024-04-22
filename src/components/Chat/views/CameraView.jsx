@@ -178,7 +178,7 @@ const Camera = (props) => {
             <Webcam {...webcamProps}>
                 {() => (
                     <>
-                        <motion.div>
+                        {/* <motion.div>
                             <Box onDoubleClick={handleDoubleClick} sx={{ height: '100vh', width: '100vw', position: 'absolute', bottom: 0, right: 0, background: 'rgba(0,0,0,0.2)' }}>
                                 <canvas ref={canvasRef} style={{ height: '100%', width: '100%', position: 'absolute', bottom: 0, right: 0, zIndex: 1 }} />
                                 <video ref={videoRef} style={{ height: '100%', width: '100%', position: 'absolute', bottom: 0, right: 0, zIndex: 10 }} />
@@ -198,7 +198,7 @@ const Camera = (props) => {
                                     ))}
                                 </Stack>
                             </Box>
-                        </motion.div>
+                        </motion.div> */}
                         {!props?.hideBottomControls && (
                             <BottomNav
                                 items={{

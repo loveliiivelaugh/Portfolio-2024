@@ -11,7 +11,7 @@ export const useChatStore = create((set) => ({
     activeChat: null,
     activeChatId: null,
     visionMode: 'default',
-    defaultModel: 'llama2:latest',
+    defaultModel: 'llama3:latest',
     selectedOptionsTab: 0,
     drawerView: "read", // options: ['read', 'add']
     chatStatus: null,
@@ -21,7 +21,7 @@ export const useChatStore = create((set) => ({
       endpoint: 'create_row', // ['create_row', 'update_row', 'delete_row']
       table: 'chats' // ['blogs', 'inventory', 'models', 'chats']
     },
-    toolsWindowDrawer: true, // true || false
+    toolsWindowDrawer: false,
     isInternetQuery: false,
   
     // handlers

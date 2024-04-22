@@ -36,15 +36,15 @@ const hostname = import.meta.env.VITE_HOSTNAME;
 
 const ChatDrawer = forwardRef((props, ref) => {
     const chat = useChatStore();
-    const mutation = useMutation(queries.modifyDb2());
-    const availableModels = useQuery(queries.readFromDb('models'))
-    const ingestedFiles = useQuery(queries.getIngestedFilesQuery);
+    const mutation = useMutation(queries(chat).modifyDb2());
+    const availableModels = useQuery(queries(chat).readFromDb('models'))
+    const ingestedFiles = useQuery(queries(chat).getIngestedFilesQuery);
     // const cb = (data) => {
     //     console.log("getChatsQuery: in callback: ", data)
     //     // handleChatSelection(data.data[0]);
     //     return data;
     // }
-    const getChatsQuery = useQuery(queries.readFromDb('chats'));
+    const getChatsQuery = useQuery(queries(chat).readFromDb('chats'));
     const { 
         data, 
         isLoading: chatSessionsIsLoading, 
@@ -61,7 +61,6 @@ const ChatDrawer = forwardRef((props, ref) => {
     if (chatSessionsIsLoading || chatSessionsFetching) {
       return <CircularProgress />
     }
-
 
     const handleNewSession = async (e) => {
         e?.preventDefault();

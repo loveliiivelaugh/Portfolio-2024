@@ -17,22 +17,23 @@ const client = axios.create({
   // validateStatus: (status) => status < 500,
 })
 
-export const queries = {
+export const queries = (chatStore) => ({
 
   readFromDb: (table) => ({
     queryKey: [`readFromDb-${table || "schema"}`],
     queryFn: () => client.get(`/api/system/read_db?table=${table}`),
     select: (data) => {
-      // console.log("in select data: ", data)
+      console.log("in readFromDb select data: ", data)
       return data
     },
   }),
 
   readOneFromDb: () => ({
     queryKey: ['readOneFromDb'],
-    queryFn: () => client.get(`/api/system/read_one_row?table=chats&id=`),
+    queryFn: (params) => client.get(`/api/system/read_one_row?table=chats&id=`),
     select: (data) => {
-    //   console.log("in select data: ", data)
+      console.log("in select data: ", data)
+
       return data
     },
   }),
@@ -73,9 +74,6 @@ export const queries = {
     queryKey: ['privateGPTingestedFiles'],
     queryFn: async () => {
       const data = await axios.get(`${hostname}/api/llms/list-ingested-files`)
-
-      console.log("getIngestedFilesQuery: ", data);
-
       return data;
     }
   },
@@ -96,4 +94,4 @@ export const queries = {
     },
     enabled: false,
   }
-};
+});

@@ -16,9 +16,13 @@ const hostname = import.meta.env.VITE_HOSTNAME;
 
 const Chat = forwardRef((props, ref) => {
     const chatStore = useChatStore();
-    const query = useQuery(queries.readFromDb('chats', chatStore.setMessages));
-    const serverMutation = useMutation(queries.postToServer())
-    const braveSearchQuery = useQuery(queries.getBraveSearchQuery)
+    const query = useQuery(queries(chatStore).readFromDb('chats'));
+    const serverMutation = useMutation(queries(chatStore).postToServer())
+    const braveSearchQuery = useQuery(queries(chatStore).getBraveSearchQuery)
+    // get one session from chat history to prepopulate the chat 
+    const sessionQuery = useQuery(queries(chatStore).readOneFromDb());
+    console.log("sessionQuery: ", sessionQuery)
+
 
     const textFieldRef = useRef();
 
@@ -167,6 +171,13 @@ const Chat = forwardRef((props, ref) => {
         }
     };
 
+    let isGettingThingsReady = (
+        query.isLoading 
+        || query.isFetching
+        || sessionQuery.isLoading
+        || sessionQuery.isFetching
+    );
+
     const imageViewProps = {
         inputMessage: chatStore.inputMessage,
         setInputMessage: chatStore.handleInput,
@@ -175,9 +186,9 @@ const Chat = forwardRef((props, ref) => {
 
     const chatViewProps = {
         ...imageViewProps,
-        chatSessionsFetching: (query.isLoading || query.isFetching),
-        isLoading: (query.isLoading || query.isFetching),
-        handleSendMessage,
+        chatSessionsFetching: isGettingThingsReady,
+        isLoading: isGettingThingsReady,
+        handleSendMessage
     };
 
     const chatTextFieldProps = {
@@ -212,7 +223,10 @@ const Chat = forwardRef((props, ref) => {
             transition={{ duration: 0.5 }}
             style={{ width: "100vw" }}
         >
-            {views[chatStore.view] || views['chat']}
+            {isGettingThingsReady 
+                ? views["launching"]
+                : views[chatStore.view] || views['chat']
+            }
             <ChatDrawer />
             <ToolsWindowDrawer />
             {["chat", "image"].includes(chatStore.view) && 

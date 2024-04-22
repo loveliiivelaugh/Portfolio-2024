@@ -1,0 +1,982 @@
+{
+	"query": {
+		"original": "brave+search",
+		"show_strict_warning": false,
+		"is_navigational": true,
+		"local_decision": "drop",
+		"local_locations_idx": 0,
+		"is_news_breaking": false,
+		"spellcheck_off": true,
+		"country": "us",
+		"bad_results": false,
+		"should_fallback": false,
+		"postal_code": "",
+		"city": "",
+		"header_country": "",
+		"more_results_available": true,
+		"state": ""
+	},
+	"mixed": {
+		"type": "mixed",
+		"main": [
+			{
+				"type": "web",
+				"index": 0,
+				"all": false
+			},
+			{
+				"type": "web",
+				"index": 1,
+				"all": false
+			},
+			{
+				"type": "videos",
+				"all": true
+			},
+			{
+				"type": "web",
+				"index": 2,
+				"all": false
+			},
+			{
+				"type": "web",
+				"index": 3,
+				"all": false
+			},
+			{
+				"type": "web",
+				"index": 4,
+				"all": false
+			},
+			{
+				"type": "web",
+				"index": 5,
+				"all": false
+			},
+			{
+				"type": "web",
+				"index": 6,
+				"all": false
+			},
+			{
+				"type": "web",
+				"index": 7,
+				"all": false
+			},
+			{
+				"type": "web",
+				"index": 8,
+				"all": false
+			},
+			{
+				"type": "web",
+				"index": 9,
+				"all": false
+			},
+			{
+				"type": "web",
+				"index": 10,
+				"all": false
+			},
+			{
+				"type": "web",
+				"index": 11,
+				"all": false
+			},
+			{
+				"type": "web",
+				"index": 12,
+				"all": false
+			},
+			{
+				"type": "web",
+				"index": 13,
+				"all": false
+			},
+			{
+				"type": "web",
+				"index": 14,
+				"all": false
+			},
+			{
+				"type": "web",
+				"index": 15,
+				"all": false
+			},
+			{
+				"type": "web",
+				"index": 16,
+				"all": false
+			},
+			{
+				"type": "web",
+				"index": 17,
+				"all": false
+			},
+			{
+				"type": "web",
+				"index": 18,
+				"all": false
+			}
+		],
+		"top": [],
+		"side": []
+	},
+	"type": "search",
+	"videos": {
+		"type": "videos",
+		"results": [
+			{
+				"type": "video_result",
+				"url": "https://www.youtube.com/watch?v=Uu1Gc3GM7CM",
+				"title": "Brave's Independent Search Engine Is Finally Good - YouTube",
+				"description": "Brave's search engine has been quite a while now but it's only recently started getting good and very recently a major feature was added to round out the set...",
+				"age": "August 13, 2023",
+				"page_age": "2023-08-13T21:00:20",
+				"video": {},
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "youtube.com",
+					"hostname": "www.youtube.com",
+					"favicon": "https://imgs.search.brave.com/Ux4Hee4evZhvjuTKwtapBycOGjGDci2Gvn2pbSzvbC0/rs:fit:32:32:1/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvOTkyZTZiMWU3/YzU3Nzc5YjExYzUy/N2VhZTIxOWNlYjM5/ZGVjN2MyZDY4Nzdh/ZDYzMTYxNmI5N2Rk/Y2Q3N2FkNy93d3cu/eW91dHViZS5jb20v",
+					"path": "› watch"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/qVPzaJX9jSX2MvcLpvP22ZSDBaUydRCc2owJjU4mWO4/rs:fit:200:200:1/g:ce/aHR0cHM6Ly9pLnl0/aW1nLmNvbS92aS9V/dTFHYzNHTTdDTS9t/YXhyZXNkZWZhdWx0/LmpwZw"
+				}
+			},
+			{
+				"type": "video_result",
+				"url": "https://www.youtube.com/watch?v=kDD1YlY8G6w",
+				"title": "Brave Search now offers fully independent Image and Video search ...",
+				"description": "Every image and video result in Brave Search is now served by Brave. Users no longer need to choose between Bing and Google for image and video search.Keep a...",
+				"age": "August 4, 2023",
+				"page_age": "2023-08-04T10:48:43",
+				"video": {},
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "youtube.com",
+					"hostname": "www.youtube.com",
+					"favicon": "https://imgs.search.brave.com/Ux4Hee4evZhvjuTKwtapBycOGjGDci2Gvn2pbSzvbC0/rs:fit:32:32:1/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvOTkyZTZiMWU3/YzU3Nzc5YjExYzUy/N2VhZTIxOWNlYjM5/ZGVjN2MyZDY4Nzdh/ZDYzMTYxNmI5N2Rk/Y2Q3N2FkNy93d3cu/eW91dHViZS5jb20v",
+					"path": "› watch"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/KAClxhbtGU80gQtmpfMdX1bmMHGsUfxzermJirJYhMs/rs:fit:200:200:1/g:ce/aHR0cHM6Ly9pLnl0/aW1nLmNvbS92aS9r/REQxWWxZOEc2dy9t/YXhyZXNkZWZhdWx0/LmpwZw"
+				}
+			},
+			{
+				"type": "video_result",
+				"url": "https://www.youtube.com/watch?v=ux4VacF3hxc",
+				"title": "Brave Browser And Search Engine Keep Getting Better - YouTube",
+				"description": "The Brave Browser and the Brave Search Engine have become really good in the last couple of releases. The browser now comes with features such as vertical t...",
+				"age": "June 4, 2023",
+				"page_age": "2023-06-04T13:00:41",
+				"video": {},
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "youtube.com",
+					"hostname": "www.youtube.com",
+					"favicon": "https://imgs.search.brave.com/Ux4Hee4evZhvjuTKwtapBycOGjGDci2Gvn2pbSzvbC0/rs:fit:32:32:1/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvOTkyZTZiMWU3/YzU3Nzc5YjExYzUy/N2VhZTIxOWNlYjM5/ZGVjN2MyZDY4Nzdh/ZDYzMTYxNmI5N2Rk/Y2Q3N2FkNy93d3cu/eW91dHViZS5jb20v",
+					"path": "› watch"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/nb0jPC-4U9NavPdaoQsxtt2AM28JGNR566SJ-mDqr70/rs:fit:200:200:1/g:ce/aHR0cHM6Ly9pLnl0/aW1nLmNvbS92aS91/eDRWYWNGM2h4Yy9t/YXhyZXNkZWZhdWx0/LmpwZw"
+				}
+			},
+			{
+				"type": "video_result",
+				"url": "https://www.youtube.com/watch?v=mXkbs97oZrE",
+				"title": "How To Search The Bookmarks On The Brave Web Browser| PC | *2023* ...",
+				"description": "How To Search The Bookmarks On The Brave Web Browser| PC | *2023*This is a video tutorial on how to search through your bookmarks on the Brave web browser I ...",
+				"age": "November 19, 2022",
+				"page_age": "2022-11-19T12:58:25",
+				"video": {},
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "youtube.com",
+					"hostname": "www.youtube.com",
+					"favicon": "https://imgs.search.brave.com/Ux4Hee4evZhvjuTKwtapBycOGjGDci2Gvn2pbSzvbC0/rs:fit:32:32:1/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvOTkyZTZiMWU3/YzU3Nzc5YjExYzUy/N2VhZTIxOWNlYjM5/ZGVjN2MyZDY4Nzdh/ZDYzMTYxNmI5N2Rk/Y2Q3N2FkNy93d3cu/eW91dHViZS5jb20v",
+					"path": "› watch"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/Wmi78HNqi3GZIeOgvoTR3egwaahqFikpq3QwAeGgBZs/rs:fit:200:200:1/g:ce/aHR0cHM6Ly9pLnl0/aW1nLmNvbS92aS9t/WGticzk3b1pyRS9t/YXhyZXNkZWZhdWx0/LmpwZz9zcXA9LW9h/eW13RW1DSUFLRU5B/RjhxdUtxUU1hOEFF/Qi1BSC1DWUFDMEFX/S0Fnd0lBQkFCR0VZ/Z0V5aF9NQTg9JmFt/cDtycz1BT240Q0xC/ejBGdjAtMzh4V2lY/LU1FSWlWZHZnRVN4/RWRR"
+				}
+			},
+			{
+				"type": "video_result",
+				"url": "https://www.youtube.com/watch?v=gwho1EuwkRQ",
+				"title": "How To Change The Default Search Engine In The Brave ...",
+				"description": "How To Change The Default Search Engine In The Brave Web Browser | PC | *2023This is a video tutorial on how to change the default search engine in the Brave...",
+				"age": "September 20, 2022",
+				"page_age": "2022-09-20T16:00:27",
+				"video": {},
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "youtube.com",
+					"hostname": "www.youtube.com",
+					"favicon": "https://imgs.search.brave.com/Ux4Hee4evZhvjuTKwtapBycOGjGDci2Gvn2pbSzvbC0/rs:fit:32:32:1/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvOTkyZTZiMWU3/YzU3Nzc5YjExYzUy/N2VhZTIxOWNlYjM5/ZGVjN2MyZDY4Nzdh/ZDYzMTYxNmI5N2Rk/Y2Q3N2FkNy93d3cu/eW91dHViZS5jb20v",
+					"path": "› watch"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/6g23ttPyzgvCVreUZ2pcnuTnGAhNHt8yQLyVNL3mlsc/rs:fit:200:200:1/g:ce/aHR0cHM6Ly9pLnl0/aW1nLmNvbS92aS9n/d2hvMUV1d2tSUS9t/YXhyZXNkZWZhdWx0/LmpwZz9zcXA9LW9h/eW13RW1DSUFLRU5B/RjhxdUtxUU1hOEFF/Qi1BSC1DWUFDMEFX/S0Fnd0lBQkFCR0Vn/Z0V5aF9NQTg9JmFt/cDtycz1BT240Q0xB/dzdIUkZsVTd1OUZT/YUR2WERZSE1TNnNj/U0p3"
+				}
+			}
+		],
+		"mutated_by_goggles": false
+	},
+	"web": {
+		"type": "search",
+		"results": [
+			{
+				"title": "Private Search Engine - Brave Search",
+				"url": "https://search.brave.com/",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "Brave Search doesn’t track you or your queries. It is a private, independent, and transparent search engine. The real alternative to Google. On mobile, desktop, and anywhere the web takes you.",
+				"page_age": "2023-04-27T00:00:00",
+				"profile": {
+					"name": "Brave",
+					"url": "https://search.brave.com/",
+					"long_name": "search.brave.com",
+					"img": "https://imgs.search.brave.com/CizR3Xug3Zg_rjFagtLMIYHDtsZK3GT5M6f3jfeEcP8/rs:fit:32:32:1/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvN2FlOGU5YzUx/MDBkZTE1OTZiMDJj/Y2UzYzJjZDgyN2Vm/MjdhOTgyNDQyNGZj/ZWQ4OTViYmJmZDU5/NTYxN2M0ZS9zZWFy/Y2guYnJhdmUuY29t/Lw"
+				},
+				"language": "en",
+				"family_friendly": true,
+				"type": "search_result",
+				"subtype": "generic",
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "search.brave.com",
+					"hostname": "search.brave.com",
+					"favicon": "https://imgs.search.brave.com/CizR3Xug3Zg_rjFagtLMIYHDtsZK3GT5M6f3jfeEcP8/rs:fit:32:32:1/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvN2FlOGU5YzUx/MDBkZTE1OTZiMDJj/Y2UzYzJjZDgyN2Vm/MjdhOTgyNDQyNGZj/ZWQ4OTViYmJmZDU5/NTYxN2M0ZS9zZWFy/Y2guYnJhdmUuY29t/Lw",
+					"path": ""
+				},
+				"thumbnail": {
+					"src": "https://cdn.search.brave.com/serp/v2/_app/immutable/assets/ogImg.lKvDKXc0.png",
+					"original": "https://cdn.search.brave.com/serp/v2/_app/immutable/assets/ogImg.lKvDKXc0.png",
+					"logo": false
+				},
+				"age": "April 27, 2023"
+			},
+			{
+				"title": "Brave Search | Brave",
+				"url": "https://brave.com/category/brave-search/",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "The Brave browser is a fast, private and secure web browser for PC, Mac and mobile. Download now to enjoy a faster ad-free browsing experience that saves data and battery life by blocking tracking software.",
+				"page_age": "2021-10-19T00:00:00",
+				"profile": {
+					"name": "Brave",
+					"url": "https://brave.com/category/brave-search/",
+					"long_name": "brave.com",
+					"img": "https://imgs.search.brave.com/o3m2J_FYX2ktcf5dzJMu5buCh2ws7E0QbaTpFsc-TY8/rs:fit:32:32:1/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvZTg1MzQ2NjVk/ZGY5NDczMmYzN2I4/MjYwN2Y4MDdlMDlj/ZjJlZTM3ZjMxOWVl/MTQ0MDFlZDk0MjZh/MWQ3OGU3MC9icmF2/ZS5jb20v"
+				},
+				"language": "en",
+				"family_friendly": true,
+				"type": "search_result",
+				"subtype": "generic",
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "brave.com",
+					"hostname": "brave.com",
+					"favicon": "https://imgs.search.brave.com/o3m2J_FYX2ktcf5dzJMu5buCh2ws7E0QbaTpFsc-TY8/rs:fit:32:32:1/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvZTg1MzQ2NjVk/ZGY5NDczMmYzN2I4/MjYwN2Y4MDdlMDlj/ZjJlZTM3ZjMxOWVl/MTQ0MDFlZDk0MjZh/MWQ3OGU3MC9icmF2/ZS5jb20v",
+					"path": "› category  › brave-search"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/EQPbB1s69e7WhfAqrnIRoLIYuF-OTKod-rk-P6pM948/rs:fit:200:200:1/g:ce/aHR0cHM6Ly9icmF2/ZS5jb20vc3RhdGlj/LWFzc2V0cy9pbWFn/ZXMvYnJhdmUtb2cu/cG5n",
+					"original": "https://brave.com/static-assets/images/brave-og.png",
+					"logo": false
+				},
+				"age": "October 19, 2021"
+			},
+			{
+				"title": "Secure, Fast, & Private Web Browser with Adblocker | Brave",
+				"url": "https://brave.com/",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "The Brave Browser is available in nearly 160 languages in all, including four different dialects of Chinese. Brave Search is currently available in English, French, German, Japanese, and Spanish, with support for many more languages coming soon.",
+				"page_age": "2023-09-08T04:15:04",
+				"profile": {
+					"name": "Brave",
+					"url": "https://brave.com/",
+					"long_name": "brave.com",
+					"img": "https://imgs.search.brave.com/o3m2J_FYX2ktcf5dzJMu5buCh2ws7E0QbaTpFsc-TY8/rs:fit:32:32:1/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvZTg1MzQ2NjVk/ZGY5NDczMmYzN2I4/MjYwN2Y4MDdlMDlj/ZjJlZTM3ZjMxOWVl/MTQ0MDFlZDk0MjZh/MWQ3OGU3MC9icmF2/ZS5jb20v"
+				},
+				"language": "en",
+				"family_friendly": true,
+				"type": "search_result",
+				"subtype": "generic",
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "brave.com",
+					"hostname": "brave.com",
+					"favicon": "https://imgs.search.brave.com/o3m2J_FYX2ktcf5dzJMu5buCh2ws7E0QbaTpFsc-TY8/rs:fit:32:32:1/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvZTg1MzQ2NjVk/ZGY5NDczMmYzN2I4/MjYwN2Y4MDdlMDlj/ZjJlZTM3ZjMxOWVl/MTQ0MDFlZDk0MjZh/MWQ3OGU3MC9icmF2/ZS5jb20v",
+					"path": ""
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/cFXTvE6Vpjci3G-2770jXjKULyk7VlcQYm_-wl-JF1Q/rs:fit:200:200:1/g:ce/aHR0cHM6Ly9icmF2/ZS5jb20vc3RhdGlj/LWFzc2V0cy9pbWFn/ZXMvYnJhdmUtbG9n/by1kYXJrLnN2Zw.svg",
+					"original": "https://brave.com/static-assets/images/brave-logo-dark.svg",
+					"logo": true
+				},
+				"age": "September 8, 2023"
+			},
+			{
+				"title": "Brave Search - Wikipedia",
+				"url": "https://en.wikipedia.org/wiki/Brave_Search",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "Brave Search is a search engine developed by Brave Software, Inc., which is set as the default search engine for Brave web browser users in certain countries. Brave Search is a search engine developed by Brave Software, Inc. and released in Beta in March 2021, following the acquisition of Tailcat, ...",
+				"page_age": "2023-11-29T17:30:57",
+				"profile": {
+					"name": "Wikipedia",
+					"url": "https://en.wikipedia.org/wiki/Brave_Search",
+					"long_name": "en.wikipedia.org",
+					"img": "https://imgs.search.brave.com/0kxnVOiqv-faZvOJc7zpym4Zin1CTs1f1svfNZSzmfU/rs:fit:32:32:1/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNjQwNGZhZWY0/ZTQ1YWUzYzQ3MDUw/MmMzMGY3NTQ0ZjNj/NDUwMDk5ZTI3MWRk/NWYyNTM4N2UwOTE0/NTI3ZDQzNy9lbi53/aWtpcGVkaWEub3Jn/Lw"
+				},
+				"language": "en",
+				"family_friendly": true,
+				"type": "search_result",
+				"subtype": "generic",
+				"deep_results": {
+					"buttons": [
+						{
+							"type": "button_result",
+							"title": "History",
+							"url": "https://en.wikipedia.org/wiki/Brave_Search#History"
+						},
+						{
+							"type": "button_result",
+							"title": "Features",
+							"url": "https://en.wikipedia.org/wiki/Brave_Search#Features"
+						},
+						{
+							"type": "button_result",
+							"title": "Data collection",
+							"url": "https://en.wikipedia.org/wiki/Brave_Search#Data_collection"
+						},
+						{
+							"type": "button_result",
+							"title": "Criticism",
+							"url": "https://en.wikipedia.org/wiki/Brave_Search#Criticism"
+						}
+					]
+				},
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "en.wikipedia.org",
+					"hostname": "en.wikipedia.org",
+					"favicon": "https://imgs.search.brave.com/0kxnVOiqv-faZvOJc7zpym4Zin1CTs1f1svfNZSzmfU/rs:fit:32:32:1/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNjQwNGZhZWY0/ZTQ1YWUzYzQ3MDUw/MmMzMGY3NTQ0ZjNj/NDUwMDk5ZTI3MWRk/NWYyNTM4N2UwOTE0/NTI3ZDQzNy9lbi53/aWtpcGVkaWEub3Jn/Lw",
+					"path": "› wiki  › Brave_Search"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/tO22KjKNGwqttqIC0OBLYVa--merly01QziQZzt1VR0/rs:fit:200:200:1/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy82/LzY4L0JyYXZlX1Nl/YXJjaC5wbmc",
+					"original": "https://upload.wikimedia.org/wikipedia/commons/6/68/Brave_Search.png",
+					"logo": false
+				},
+				"age": "November 29, 2023"
+			},
+			{
+				"title": "Private Search Engine | Brave",
+				"url": "https://brave.com/learn/category/private-search-engine/",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "The Brave browser is a fast, private and secure web browser for PC, Mac and mobile. Download now to enjoy a faster ad-free browsing experience that saves data and battery life by blocking tracking software.",
+				"profile": {
+					"name": "Brave",
+					"url": "https://brave.com/learn/category/private-search-engine/",
+					"long_name": "brave.com",
+					"img": "https://imgs.search.brave.com/o3m2J_FYX2ktcf5dzJMu5buCh2ws7E0QbaTpFsc-TY8/rs:fit:32:32:1/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvZTg1MzQ2NjVk/ZGY5NDczMmYzN2I4/MjYwN2Y4MDdlMDlj/ZjJlZTM3ZjMxOWVl/MTQ0MDFlZDk0MjZh/MWQ3OGU3MC9icmF2/ZS5jb20v"
+				},
+				"language": "en",
+				"family_friendly": true,
+				"type": "search_result",
+				"subtype": "generic",
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "brave.com",
+					"hostname": "brave.com",
+					"favicon": "https://imgs.search.brave.com/o3m2J_FYX2ktcf5dzJMu5buCh2ws7E0QbaTpFsc-TY8/rs:fit:32:32:1/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvZTg1MzQ2NjVk/ZGY5NDczMmYzN2I4/MjYwN2Y4MDdlMDlj/ZjJlZTM3ZjMxOWVl/MTQ0MDFlZDk0MjZh/MWQ3OGU3MC9icmF2/ZS5jb20v",
+					"path": "› learn  › category  › private-search-engine"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/EQPbB1s69e7WhfAqrnIRoLIYuF-OTKod-rk-P6pM948/rs:fit:200:200:1/g:ce/aHR0cHM6Ly9icmF2/ZS5jb20vc3RhdGlj/LWFzc2V0cy9pbWFn/ZXMvYnJhdmUtb2cu/cG5n",
+					"original": "https://brave.com/static-assets/images/brave-og.png",
+					"logo": false
+				}
+			},
+			{
+				"title": "Brave Private Web Browser, VPN - Apps on Google Play",
+				"url": "https://play.google.com/store/apps/details?id=com.brave.browser&hl=en_US&gl=US",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "Browse 3X faster on Brave Browser! Get a lightning fast, safe and private web browser with Adblock. Loved by 50 million users, Brave has Firewall + VPN, Brave Search, and night mode. NEW App Features ✓ Firewall. Protects everything you do online, even outside the Brave Browser.",
+				"page_age": "2023-09-06T00:00:00",
+				"profile": {
+					"name": "Google Play",
+					"url": "https://play.google.com/store/apps/details?id=com.brave.browser&hl=en_US&gl=US",
+					"long_name": "play.google.com",
+					"img": "https://imgs.search.brave.com/XVPaEkdEfr7OKP4u2Z1BQJe3aezjRplHvvY_xQqANyE/rs:fit:32:32:1/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvYjgwZWUzMzVj/YTc2M2VmMDJlYjE2/YmIyYzA3Y2IwZDkx/ZGViYmUxOGU1Njk4/NGI0NDNhOTQ1N2Mw/MDYyNjk4Ny9wbGF5/Lmdvb2dsZS5jb20v"
+				},
+				"language": "en",
+				"family_friendly": true,
+				"type": "search_result",
+				"subtype": "creative_work",
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "play.google.com",
+					"hostname": "play.google.com",
+					"favicon": "https://imgs.search.brave.com/XVPaEkdEfr7OKP4u2Z1BQJe3aezjRplHvvY_xQqANyE/rs:fit:32:32:1/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvYjgwZWUzMzVj/YTc2M2VmMDJlYjE2/YmIyYzA3Y2IwZDkx/ZGViYmUxOGU1Njk4/NGI0NDNhOTQ1N2Mw/MDYyNjk4Ny9wbGF5/Lmdvb2dsZS5jb20v",
+					"path": "› store  › apps  › details"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/IV5EP7uUjdmFbiO5hK1OvmInF7_qjK_Thjf-N_mqExg/rs:fit:200:200:1/g:ce/aHR0cHM6Ly9wbGF5/LWxoLmdvb2dsZXVz/ZXJjb250ZW50LmNv/bS9JMWZvaTJJcnJ2/N3RXOWVlOWtnUDB3/Zm5NemFWYjZ5MTdt/dXZwS3NGY1VyS1lz/RGxtQ3lXdVRSaDVt/OTNLSloyNGRZ",
+					"original": "https://play-lh.googleusercontent.com/I1foi2Irrv7tW9ee9kgP0wfnMzaVb6y17muvpKsFcUrKYsDlmCyWuTRh5m93KJZ24dY",
+					"logo": false
+				},
+				"age": "September 6, 2023",
+				"creative_work": {
+					"name": "Brave Private Web Browser, VPN",
+					"rating": {
+						"ratingValue": 4.7,
+						"bestRating": 5.0,
+						"reviewCount": 1723297,
+						"is_tripadvisor": false
+					},
+					"thumbnail": {
+						"src": "https://imgs.search.brave.com/IV5EP7uUjdmFbiO5hK1OvmInF7_qjK_Thjf-N_mqExg/rs:fit:200:200:1/g:ce/aHR0cHM6Ly9wbGF5/LWxoLmdvb2dsZXVz/ZXJjb250ZW50LmNv/bS9JMWZvaTJJcnJ2/N3RXOWVlOWtnUDB3/Zm5NemFWYjZ5MTdt/dXZwS3NGY1VyS1lz/RGxtQ3lXdVRSaDVt/OTNLSloyNGRZ",
+						"original": "https://play-lh.googleusercontent.com/I1foi2Irrv7tW9ee9kgP0wfnMzaVb6y17muvpKsFcUrKYsDlmCyWuTRh5m93KJZ24dY"
+					}
+				}
+			},
+			{
+				"title": "Brave Search now features its AI-powered CodeLLM for programmi...",
+				"url": "https://brave.com/codellm/",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "CodeLLM is aimed at programming queries, combining the depth and quality of search results with the summarization and explainability power of large language models.",
+				"page_age": "2024-01-10T00:00:00",
+				"profile": {
+					"name": "Brave",
+					"url": "https://brave.com/codellm/",
+					"long_name": "brave.com",
+					"img": "https://imgs.search.brave.com/o3m2J_FYX2ktcf5dzJMu5buCh2ws7E0QbaTpFsc-TY8/rs:fit:32:32:1/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvZTg1MzQ2NjVk/ZGY5NDczMmYzN2I4/MjYwN2Y4MDdlMDlj/ZjJlZTM3ZjMxOWVl/MTQ0MDFlZDk0MjZh/MWQ3OGU3MC9icmF2/ZS5jb20v"
+				},
+				"language": "en",
+				"family_friendly": true,
+				"type": "search_result",
+				"subtype": "article",
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "brave.com",
+					"hostname": "brave.com",
+					"favicon": "https://imgs.search.brave.com/o3m2J_FYX2ktcf5dzJMu5buCh2ws7E0QbaTpFsc-TY8/rs:fit:32:32:1/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvZTg1MzQ2NjVk/ZGY5NDczMmYzN2I4/MjYwN2Y4MDdlMDlj/ZjJlZTM3ZjMxOWVl/MTQ0MDFlZDk0MjZh/MWQ3OGU3MC9icmF2/ZS5jb20v",
+					"path": "› codellm"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/uM0gzWRzK2JGqlq3JE9hJazKyuyr0JR2LDLY1Sc0pmk/rs:fit:200:200:1/g:ce/aHR0cHM6Ly9icmF2/ZS5jb20vY29kZWxs/bS9pbWFnZXMvZmVh/dHVyZWQuanBn",
+					"original": "https://brave.com/codellm/images/featured.jpg",
+					"logo": false
+				},
+				"age": "January 10, 2024",
+				"article": {
+					"author": [
+						{
+							"type": "person",
+							"name": "Brave Software",
+							"url": "https://brave.com/about/"
+						}
+					],
+					"date": "Jan 10, 2024",
+					"publisher": {
+						"type": "organization",
+						"name": "Brave Software",
+						"thumbnail": {
+							"src": "https://imgs.search.brave.com/gIe9VMQTqL_cjs5YmyUIe3To-_rRKcuUG6QbbcgRNGU/rs:fit:200:200:1/g:ce/aHR0cHM6Ly9icmF2/ZS5jb20vc3RhdGlj/LWFzc2V0cy9pbWFn/ZXMvYnJhdmUtbG9n/by1kYXJrLnBuZw",
+							"original": "https://brave.com/static-assets/images/brave-logo-dark.png"
+						}
+					}
+				}
+			},
+			{
+				"title": "‎Brave Private Web Browser, VPN on the App Store",
+				"url": "https://apps.apple.com/us/app/brave-private-web-browser-vpn/id1052879175",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "Brave is a lightning fast, safe and private web browser with Adblock. Loved by 50 million users, Brave has Firewall + VPN, Brave Wallet, Brave Search, Brave Playlist, and night mode. NEW Features: • Firewall + VPN • Brave Wallet. A secure multi-chain crypto walle…",
+				"page_age": "2021-08-16T19:00:03",
+				"profile": {
+					"name": "App Store",
+					"url": "https://apps.apple.com/us/app/brave-private-web-browser-vpn/id1052879175",
+					"long_name": "apps.apple.com",
+					"img": "https://imgs.search.brave.com/iktEJu7kZeT3CfbaUks7hwi0rIyHMTzAy8VlwSSq5ng/rs:fit:32:32:1/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvMDYzNzRkMjA3/NzAwOWZhNjI1MmM5/NzRiMzIwZGQ4YzZl/ZDgwYmM0Zjk3MDE2/ZDM1Y2FlMDBiNjVi/OWEzZDIzNy9hcHBz/LmFwcGxlLmNvbS8"
+				},
+				"language": "en",
+				"family_friendly": true,
+				"type": "search_result",
+				"subtype": "creative_work",
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "apps.apple.com",
+					"hostname": "apps.apple.com",
+					"favicon": "https://imgs.search.brave.com/iktEJu7kZeT3CfbaUks7hwi0rIyHMTzAy8VlwSSq5ng/rs:fit:32:32:1/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvMDYzNzRkMjA3/NzAwOWZhNjI1MmM5/NzRiMzIwZGQ4YzZl/ZDgwYmM0Zjk3MDE2/ZDM1Y2FlMDBiNjVi/OWEzZDIzNy9hcHBz/LmFwcGxlLmNvbS8",
+					"path": "› us  › app  › brave-private-web-browser-vpn  › id1052879175"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/uzBUIlTGQifaO40Hb6EgBt7jaVnABtsMmjCECWJlJ_M/rs:fit:200:200:1/g:ce/aHR0cHM6Ly9pczEt/c3NsLm16c3RhdGlj/LmNvbS9pbWFnZS90/aHVtYi9QdXJwbGUx/MTYvdjQvNDgvZWEv/MGUvNDhlYTBlNDIt/NTk0Zi00YTIzLTk2/NGYtY2U5YWU4ZWQ2/ZTQ2L0FwcEljb24t/MC0wLTF4X1UwMDdl/bWFya2V0aW5nLTAt/Ny0wLTg1LTIyMC5w/bmcvMTIwMHg2MzB3/YS5wbmc",
+					"original": "https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/48/ea/0e/48ea0e42-594f-4a23-964f-ce9ae8ed6e46/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/1200x630wa.png",
+					"logo": false
+				},
+				"age": "August 16, 2021",
+				"creative_work": {
+					"name": "Brave Private Web Browser, VPN",
+					"rating": {
+						"ratingValue": 4.8,
+						"bestRating": 5.0,
+						"reviewCount": 351892,
+						"is_tripadvisor": false
+					},
+					"thumbnail": {
+						"src": "https://imgs.search.brave.com/uzBUIlTGQifaO40Hb6EgBt7jaVnABtsMmjCECWJlJ_M/rs:fit:200:200:1/g:ce/aHR0cHM6Ly9pczEt/c3NsLm16c3RhdGlj/LmNvbS9pbWFnZS90/aHVtYi9QdXJwbGUx/MTYvdjQvNDgvZWEv/MGUvNDhlYTBlNDIt/NTk0Zi00YTIzLTk2/NGYtY2U5YWU4ZWQ2/ZTQ2L0FwcEljb24t/MC0wLTF4X1UwMDdl/bWFya2V0aW5nLTAt/Ny0wLTg1LTIyMC5w/bmcvMTIwMHg2MzB3/YS5wbmc",
+						"original": "https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/48/ea/0e/48ea0e42-594f-4a23-964f-ce9ae8ed6e46/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/1200x630wa.png"
+					}
+				}
+			},
+			{
+				"title": "Brave's search engine is now totally independent from Google and ...",
+				"url": "https://www.pcworld.com/article/2019048/braves-search-engine-is-now-totally-independent.html",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "Brave has migrated its video and image search away from Bing and Google, making Brave Search entirely private, the company says.",
+				"page_age": "2023-08-04T18:40:04",
+				"profile": {
+					"name": "PCWorld",
+					"url": "https://www.pcworld.com/article/2019048/braves-search-engine-is-now-totally-independent.html",
+					"long_name": "pcworld.com",
+					"img": "https://imgs.search.brave.com/dF1vqKNPGSG42flZ6g78o9T-GnEpjQIZOFyJT1kIUiE/rs:fit:32:32:1/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvYzI3MDE0NTc1/ZDg3YzhhODE4NGNl/YTFhOGUzM2YxOTAz/N2RmNjNlMGNkZGQz/ZGEzZGNjODJiN2Uw/NTE4Njg1My93d3cu/cGN3b3JsZC5jb20v"
+				},
+				"language": "en",
+				"family_friendly": true,
+				"type": "search_result",
+				"subtype": "generic",
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "pcworld.com",
+					"hostname": "www.pcworld.com",
+					"favicon": "https://imgs.search.brave.com/dF1vqKNPGSG42flZ6g78o9T-GnEpjQIZOFyJT1kIUiE/rs:fit:32:32:1/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvYzI3MDE0NTc1/ZDg3YzhhODE4NGNl/YTFhOGUzM2YxOTAz/N2RmNjNlMGNkZGQz/ZGEzZGNjODJiN2Uw/NTE4Njg1My93d3cu/cGN3b3JsZC5jb20v",
+					"path": "› article  › 2019048  › braves-search-engine-is-now-totally-independent.html"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/xS1808SKHa5uf9fL-39nV9AdZ9zfKeIRtMT8MWJpr94/rs:fit:200:200:1/g:ce/aHR0cHM6Ly93d3cu/cGN3b3JsZC5jb20v/d3AtY29udGVudC91/cGxvYWRzLzIwMjMv/MDgvQnJhdmUtdmlk/ZW8tc2VhcmNoLmpw/Zz9xdWFsaXR5PTUw/JnN0cmlwPWFsbA",
+					"original": "https://www.pcworld.com/wp-content/uploads/2023/08/Brave-video-search.jpg?quality=50&strip=all",
+					"logo": false
+				},
+				"age": "August 4, 2023"
+			},
+			{
+				"title": "Brave Search - Chrome 線上應用程式商店",
+				"url": "https://chrome.google.com/webstore/detail/brave-search/jojedekgcncccnjhilimdojbfnfamkda?hl=zh-TW&gl=001",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "A simple chrome extension that makes it faster to search text using the Brave search engine. I built this extension because it&#x27;s time consuming to open a new tab, go to search.brave.com and then type or paste the text I&#x27;m searching. That&#x27;s why I built this extension, to save time.",
+				"page_age": "2022-03-20T00:00:00",
+				"profile": {
+					"name": "Google Chrome",
+					"url": "https://chrome.google.com/webstore/detail/brave-search/jojedekgcncccnjhilimdojbfnfamkda?hl=zh-TW&gl=001",
+					"long_name": "chrome.google.com",
+					"img": "https://imgs.search.brave.com/_Wc8FZ2WVBUZ5tvZuKTKZCgvh96zaHrDNVugO0FnuSg/rs:fit:32:32:1/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvZWY0MzcyOWE1/ZWNlMDc2Y2U0NDk3/MjVjZjk0MjI3MTdl/ZDM4NmQzMzQwYTM0/OTcyMmQzZmIwMGMz/YWEzYTZiMS9jaHJv/bWUuZ29vZ2xlLmNv/bS8"
+				},
+				"language": "zh",
+				"family_friendly": true,
+				"type": "search_result",
+				"subtype": "creative_work",
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "chrome.google.com",
+					"hostname": "chrome.google.com",
+					"favicon": "https://imgs.search.brave.com/_Wc8FZ2WVBUZ5tvZuKTKZCgvh96zaHrDNVugO0FnuSg/rs:fit:32:32:1/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvZWY0MzcyOWE1/ZWNlMDc2Y2U0NDk3/MjVjZjk0MjI3MTdl/ZDM4NmQzMzQwYTM0/OTcyMmQzZmIwMGMz/YWEzYTZiMS9jaHJv/bWUuZ29vZ2xlLmNv/bS8",
+					"path": "› webstore  › detail  › brave-search  › jojedekgcncccnjhilimdojbfnfamkda"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/rLxr2CLMbv5ly4WW4QTgwzJ9qzomQSu0GGxtrwUH4d4/rs:fit:200:200:1/g:ce/aHR0cHM6Ly9saDMu/Z29vZ2xldXNlcmNv/bnRlbnQuY29tL011/SU1xYkJ6UWVJSGQ4/Tmd2RXRFY3ZhcGJO/ekswMlVrZ2I1RUV3/M01KazVzQ1JIU1Vh/bkdtVVhzT25ab2h1/SmVpZW5xMGptYkNC/VERRNnQ4MTRjVW4t/cmw9dzEyOC1oMTI4/LWUzNjUtcmotc2Mw/eDAwZmZmZmZm",
+					"original": "https://lh3.googleusercontent.com/MuIMqbBzQeIHd8NgvEtEcvapbNzK02Ukgb5EEw3MJk5sCRHSUanGmUXsOnZohuJeienq0jmbCBTDQ6t814cUn-rl=w128-h128-e365-rj-sc0x00ffffff",
+					"logo": false
+				},
+				"age": "March 20, 2022",
+				"creative_work": {
+					"name": "Brave Search",
+					"rating": {
+						"ratingValue": 4.0,
+						"bestRating": 5.0,
+						"reviewCount": 1,
+						"is_tripadvisor": false
+					},
+					"thumbnail": {
+						"src": "https://imgs.search.brave.com/rLxr2CLMbv5ly4WW4QTgwzJ9qzomQSu0GGxtrwUH4d4/rs:fit:200:200:1/g:ce/aHR0cHM6Ly9saDMu/Z29vZ2xldXNlcmNv/bnRlbnQuY29tL011/SU1xYkJ6UWVJSGQ4/Tmd2RXRFY3ZhcGJO/ekswMlVrZ2I1RUV3/M01KazVzQ1JIU1Vh/bkdtVVhzT25ab2h1/SmVpZW5xMGptYkNC/VERRNnQ4MTRjVW4t/cmw9dzEyOC1oMTI4/LWUzNjUtcmotc2Mw/eDAwZmZmZmZm",
+						"original": "https://lh3.googleusercontent.com/MuIMqbBzQeIHd8NgvEtEcvapbNzK02Ukgb5EEw3MJk5sCRHSUanGmUXsOnZohuJeienq0jmbCBTDQ6t814cUn-rl=w128-h128-e365-rj-sc0x00ffffff"
+					}
+				}
+			},
+			{
+				"title": "Brave Search launches independent image/video search | Brave",
+				"url": "https://brave.com/image-video-search/",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "Brave Search&#x27;s new independent image and video search feature protects your privacy and freedom to access information online.",
+				"page_age": "2023-08-04T03:35:04",
+				"profile": {
+					"name": "Brave",
+					"url": "https://brave.com/image-video-search/",
+					"long_name": "brave.com",
+					"img": "https://imgs.search.brave.com/o3m2J_FYX2ktcf5dzJMu5buCh2ws7E0QbaTpFsc-TY8/rs:fit:32:32:1/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvZTg1MzQ2NjVk/ZGY5NDczMmYzN2I4/MjYwN2Y4MDdlMDlj/ZjJlZTM3ZjMxOWVl/MTQ0MDFlZDk0MjZh/MWQ3OGU3MC9icmF2/ZS5jb20v"
+				},
+				"language": "en",
+				"family_friendly": true,
+				"type": "search_result",
+				"subtype": "article",
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "brave.com",
+					"hostname": "brave.com",
+					"favicon": "https://imgs.search.brave.com/o3m2J_FYX2ktcf5dzJMu5buCh2ws7E0QbaTpFsc-TY8/rs:fit:32:32:1/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvZTg1MzQ2NjVk/ZGY5NDczMmYzN2I4/MjYwN2Y4MDdlMDlj/ZjJlZTM3ZjMxOWVl/MTQ0MDFlZDk0MjZh/MWQ3OGU3MC9icmF2/ZS5jb20v",
+					"path": "› image-video-search"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/LyF_4O84ZPUrta-5QYR_5Gz6Xl25tOAVWB2K7q8VigI/rs:fit:200:200:1/g:ce/aHR0cHM6Ly9icmF2/ZS5jb20vaW1hZ2Ut/dmlkZW8tc2VhcmNo/L2ltYWdlcy9mZWF0/dXJlZC5qcGc",
+					"original": "https://brave.com/image-video-search/images/featured.jpg",
+					"logo": false
+				},
+				"age": "August 4, 2023",
+				"article": {
+					"author": [
+						{
+							"type": "person",
+							"name": "Brave Software",
+							"url": "https://brave.com/about/"
+						}
+					],
+					"date": "Aug 03, 2023",
+					"publisher": {
+						"type": "organization",
+						"name": "Brave Software",
+						"thumbnail": {
+							"src": "https://imgs.search.brave.com/gIe9VMQTqL_cjs5YmyUIe3To-_rRKcuUG6QbbcgRNGU/rs:fit:200:200:1/g:ce/aHR0cHM6Ly9icmF2/ZS5jb20vc3RhdGlj/LWFzc2V0cy9pbWFn/ZXMvYnJhdmUtbG9n/by1kYXJrLnBuZw",
+							"original": "https://brave.com/static-assets/images/brave-logo-dark.png"
+						}
+					}
+				}
+			},
+			{
+				"title": "Brave Search launches its own privacy-preserving image and video ...",
+				"url": "https://www.theverge.com/2023/8/3/23818388/brave-search-image-video-results-privacy-index",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "Brave Search is releasing an independent image and video search tool that relies on the company’s own index instead of third-party APIs from Bing or Google.",
+				"page_age": "2023-08-07T12:25:04",
+				"profile": {
+					"name": "The Verge",
+					"url": "https://www.theverge.com/2023/8/3/23818388/brave-search-image-video-results-privacy-index",
+					"long_name": "theverge.com",
+					"img": "https://imgs.search.brave.com/UwuJTMB_X3E4_0GRHG02qAzlkVyogpnYmjW8hYd3C9k/rs:fit:32:32:1/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvYzY2NThiMjBm/NmRhODhlYjJkYjlk/NGVkY2NhN2Q3ODYx/NmUxN2U5N2U0NTZi/N2U0Y2FjN2QwOTlh/ZDg5MTU1NC93d3cu/dGhldmVyZ2UuY29t/Lw"
+				},
+				"language": "en",
+				"family_friendly": true,
+				"type": "search_result",
+				"subtype": "article",
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "theverge.com",
+					"hostname": "www.theverge.com",
+					"favicon": "https://imgs.search.brave.com/UwuJTMB_X3E4_0GRHG02qAzlkVyogpnYmjW8hYd3C9k/rs:fit:32:32:1/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvYzY2NThiMjBm/NmRhODhlYjJkYjlk/NGVkY2NhN2Q3ODYx/NmUxN2U5N2U0NTZi/N2U0Y2FjN2QwOTlh/ZDg5MTU1NC93d3cu/dGhldmVyZ2UuY29t/Lw",
+					"path": "› 2023  › 8  › 3  › 23818388  › brave-search-image-video-results-privacy-index"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/hmsGIuj3NAkqp9PhW7nJFO3IBvAcaRcI-w0aMvK3t74/rs:fit:200:200:1/g:ce/aHR0cHM6Ly9jZG4u/dm94LWNkbi5jb20v/dGh1bWJvci9PQXlV/NU1IVm85LXF2Q2JG/d2t6b2d5bU1ocmc9/LzB4MDoyMDQweDEz/NjAvMTQwMHg3ODgv/ZmlsdGVyczpmb2Nh/bCgxMDIweDY4MDox/MDIxeDY4MSkvY2Ru/LnZveC1jZG4uY29t/L3VwbG9hZHMvY2hv/cnVzX2Fzc2V0L2Zp/bGUvMjM5ODU0OTkv/YWNhc3Ryb19TVEsw/MzZfMDIuanBn",
+					"original": "https://cdn.vox-cdn.com/thumbor/OAyU5MHVo9-qvCbFwkzogymMhrg=/0x0:2040x1360/1400x788/filters:focal(1020x680:1021x681)/cdn.vox-cdn.com/uploads/chorus_asset/file/23985499/acastro_STK036_02.jpg",
+					"logo": false
+				},
+				"age": "August 7, 2023",
+				"article": {
+					"author": [
+						{
+							"type": "person",
+							"name": "Jess Weatherbed",
+							"url": "https://www.theverge.com/authors/jess-weatherbed"
+						}
+					],
+					"date": "Aug 03, 2023",
+					"publisher": {
+						"type": "organization",
+						"name": "The Verge",
+						"thumbnail": {
+							"src": "https://imgs.search.brave.com/8ZzRuuAKfVDEl8ZkSDZdMEs7_b8loCYGFlH68lsp5V4/rs:fit:200:200:1/g:ce/aHR0cHM6Ly9jZG4u/dm94LWNkbi5jb20v/dXBsb2Fkcy9jaG9y/dXNfYXNzZXQvZmls/ZS8yNDAxNTI5NC92/ZXJnZV9kdWV0X2dv/b2dsZV9uZXdzLnBu/Zw",
+							"original": "https://cdn.vox-cdn.com/uploads/chorus_asset/file/24015294/verge_duet_google_news.png"
+						}
+					}
+				}
+			},
+			{
+				"title": "Brave Browser Download | Brave",
+				"url": "https://brave.com/download/",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "The latest version of the Brave browser with ad and tracker blocking capabilities is available to download here. Stand by for an entirely new way of thinking about how the web can work.",
+				"page_age": "2023-08-06T00:00:00",
+				"profile": {
+					"name": "Brave",
+					"url": "https://brave.com/download/",
+					"long_name": "brave.com",
+					"img": "https://imgs.search.brave.com/o3m2J_FYX2ktcf5dzJMu5buCh2ws7E0QbaTpFsc-TY8/rs:fit:32:32:1/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvZTg1MzQ2NjVk/ZGY5NDczMmYzN2I4/MjYwN2Y4MDdlMDlj/ZjJlZTM3ZjMxOWVl/MTQ0MDFlZDk0MjZh/MWQ3OGU3MC9icmF2/ZS5jb20v"
+				},
+				"language": "en",
+				"family_friendly": true,
+				"type": "search_result",
+				"subtype": "generic",
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "brave.com",
+					"hostname": "brave.com",
+					"favicon": "https://imgs.search.brave.com/o3m2J_FYX2ktcf5dzJMu5buCh2ws7E0QbaTpFsc-TY8/rs:fit:32:32:1/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvZTg1MzQ2NjVk/ZGY5NDczMmYzN2I4/MjYwN2Y4MDdlMDlj/ZjJlZTM3ZjMxOWVl/MTQ0MDFlZDk0MjZh/MWQ3OGU3MC9icmF2/ZS5jb20v",
+					"path": "› download"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/EQPbB1s69e7WhfAqrnIRoLIYuF-OTKod-rk-P6pM948/rs:fit:200:200:1/g:ce/aHR0cHM6Ly9icmF2/ZS5jb20vc3RhdGlj/LWFzc2V0cy9pbWFn/ZXMvYnJhdmUtb2cu/cG5n",
+					"original": "https://brave.com/static-assets/images/brave-og.png",
+					"logo": false
+				},
+				"age": "August 6, 2023"
+			},
+			{
+				"title": "Brave Search removes last remnant of Bing from search results page, ...",
+				"url": "https://brave.com/search-independence/",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "Every Web search result seen in Brave Search is now served by our own index. We&#x27;ve removed all search API calls to Bing.",
+				"page_age": "2023-04-28T03:45:02",
+				"profile": {
+					"name": "Brave",
+					"url": "https://brave.com/search-independence/",
+					"long_name": "brave.com",
+					"img": "https://imgs.search.brave.com/o3m2J_FYX2ktcf5dzJMu5buCh2ws7E0QbaTpFsc-TY8/rs:fit:32:32:1/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvZTg1MzQ2NjVk/ZGY5NDczMmYzN2I4/MjYwN2Y4MDdlMDlj/ZjJlZTM3ZjMxOWVl/MTQ0MDFlZDk0MjZh/MWQ3OGU3MC9icmF2/ZS5jb20v"
+				},
+				"language": "en",
+				"family_friendly": true,
+				"type": "search_result",
+				"subtype": "article",
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "brave.com",
+					"hostname": "brave.com",
+					"favicon": "https://imgs.search.brave.com/o3m2J_FYX2ktcf5dzJMu5buCh2ws7E0QbaTpFsc-TY8/rs:fit:32:32:1/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvZTg1MzQ2NjVk/ZGY5NDczMmYzN2I4/MjYwN2Y4MDdlMDlj/ZjJlZTM3ZjMxOWVl/MTQ0MDFlZDk0MjZh/MWQ3OGU3MC9icmF2/ZS5jb20v",
+					"path": "› search-independence"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/KcOwzRI2503fr31A_amlnuzj2-dVwXRNCu3DK22wMcQ/rs:fit:200:200:1/g:ce/aHR0cHM6Ly9icmF2/ZS5jb20vc2VhcmNo/LWluZGVwZW5kZW5j/ZS9pbWFnZXMvZmVh/dHVyZWQuanBn",
+					"original": "https://brave.com/search-independence/images/featured.jpg",
+					"logo": false
+				},
+				"age": "April 28, 2023",
+				"article": {
+					"author": [
+						{
+							"type": "person",
+							"name": "Brave Software",
+							"url": "https://brave.com/about/"
+						}
+					],
+					"date": "Apr 27, 2023",
+					"publisher": {
+						"type": "organization",
+						"name": "Brave Software",
+						"thumbnail": {
+							"src": "https://imgs.search.brave.com/gIe9VMQTqL_cjs5YmyUIe3To-_rRKcuUG6QbbcgRNGU/rs:fit:200:200:1/g:ce/aHR0cHM6Ly9icmF2/ZS5jb20vc3RhdGlj/LWFzc2V0cy9pbWFn/ZXMvYnJhdmUtbG9n/by1kYXJrLnBuZw",
+							"original": "https://brave.com/static-assets/images/brave-logo-dark.png"
+						}
+					}
+				}
+			},
+			{
+				"title": "What are the best private search engines? | Brave",
+				"url": "https://brave.com/learn/no-tracking-search-engine/",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "In this article, we&#x27;ll dig deeper on how search engines like Google track you online, and offer some private alternatives.",
+				"page_age": "2023-08-17T00:00:00",
+				"profile": {
+					"name": "Brave",
+					"url": "https://brave.com/learn/no-tracking-search-engine/",
+					"long_name": "brave.com",
+					"img": "https://imgs.search.brave.com/o3m2J_FYX2ktcf5dzJMu5buCh2ws7E0QbaTpFsc-TY8/rs:fit:32:32:1/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvZTg1MzQ2NjVk/ZGY5NDczMmYzN2I4/MjYwN2Y4MDdlMDlj/ZjJlZTM3ZjMxOWVl/MTQ0MDFlZDk0MjZh/MWQ3OGU3MC9icmF2/ZS5jb20v"
+				},
+				"language": "en",
+				"family_friendly": true,
+				"type": "search_result",
+				"subtype": "generic",
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "brave.com",
+					"hostname": "brave.com",
+					"favicon": "https://imgs.search.brave.com/o3m2J_FYX2ktcf5dzJMu5buCh2ws7E0QbaTpFsc-TY8/rs:fit:32:32:1/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvZTg1MzQ2NjVk/ZGY5NDczMmYzN2I4/MjYwN2Y4MDdlMDlj/ZjJlZTM3ZjMxOWVl/MTQ0MDFlZDk0MjZh/MWQ3OGU3MC9icmF2/ZS5jb20v",
+					"path": "› learn  › no-tracking-search-engine"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/EQPbB1s69e7WhfAqrnIRoLIYuF-OTKod-rk-P6pM948/rs:fit:200:200:1/g:ce/aHR0cHM6Ly9icmF2/ZS5jb20vc3RhdGlj/LWFzc2V0cy9pbWFn/ZXMvYnJhdmUtb2cu/cG5n",
+					"original": "https://brave.com/static-assets/images/brave-og.png",
+					"logo": false
+				},
+				"age": "August 17, 2023"
+			},
+			{
+				"title": "Brave (web browser) - Wikipedia",
+				"url": "https://en.wikipedia.org/wiki/Brave_(web_browser)",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "In March 2021, Brave built its search engine out of Tailcat, which it acquired earlier that year from Cliqz, a subsidiary of Hubert Burda Media based in Germany. Tailcat was designed to deliver search results without logging user activity or creating profiles.",
+				"page_age": "2024-02-05T13:42:43",
+				"profile": {
+					"name": "Wikipedia",
+					"url": "https://en.wikipedia.org/wiki/Brave_(web_browser)",
+					"long_name": "en.wikipedia.org",
+					"img": "https://imgs.search.brave.com/0kxnVOiqv-faZvOJc7zpym4Zin1CTs1f1svfNZSzmfU/rs:fit:32:32:1/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNjQwNGZhZWY0/ZTQ1YWUzYzQ3MDUw/MmMzMGY3NTQ0ZjNj/NDUwMDk5ZTI3MWRk/NWYyNTM4N2UwOTE0/NTI3ZDQzNy9lbi53/aWtpcGVkaWEub3Jn/Lw"
+				},
+				"language": "en",
+				"family_friendly": true,
+				"type": "search_result",
+				"subtype": "generic",
+				"deep_results": {
+					"buttons": [
+						{
+							"type": "button_result",
+							"title": "History",
+							"url": "https://en.wikipedia.org/wiki/Brave_(web_browser)#History"
+						},
+						{
+							"type": "button_result",
+							"title": "Business model",
+							"url": "https://en.wikipedia.org/wiki/Brave_(web_browser)#Business_model"
+						},
+						{
+							"type": "button_result",
+							"title": "Features",
+							"url": "https://en.wikipedia.org/wiki/Brave_(web_browser)#Features"
+						},
+						{
+							"type": "button_result",
+							"title": "Basic Attention Token",
+							"url": "https://en.wikipedia.org/wiki/Brave_(web_browser)#Basic_Attention_Token"
+						},
+						{
+							"type": "button_result",
+							"title": "Reception",
+							"url": "https://en.wikipedia.org/wiki/Brave_(web_browser)#Reception"
+						}
+					]
+				},
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "en.wikipedia.org",
+					"hostname": "en.wikipedia.org",
+					"favicon": "https://imgs.search.brave.com/0kxnVOiqv-faZvOJc7zpym4Zin1CTs1f1svfNZSzmfU/rs:fit:32:32:1/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNjQwNGZhZWY0/ZTQ1YWUzYzQ3MDUw/MmMzMGY3NTQ0ZjNj/NDUwMDk5ZTI3MWRk/NWYyNTM4N2UwOTE0/NTI3ZDQzNy9lbi53/aWtpcGVkaWEub3Jn/Lw",
+					"path": "› wiki  › Brave_(web_browser)"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/m5w0laZk5YREaIID-4wYhWBzVbHVl6ICsr4xJbbxflY/rs:fit:200:200:1/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy80/LzRhL1dpa2lwZWRp/YV9pbl9CcmF2ZSUy/Q19vbl9EZXNrdG9w/X2FuZF9Nb2JpbGUu/cG5n",
+					"original": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Wikipedia_in_Brave%2C_on_Desktop_and_Mobile.png",
+					"logo": false
+				},
+				"age": "1 week ago"
+			},
+			{
+				"title": "Brave Search | 🦜️🔗 Langchain",
+				"url": "https://python.langchain.com/docs/integrations/tools/brave_search",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "This notebook goes over how to use the Brave Search tool.",
+				"profile": {
+					"name": "Langchain",
+					"url": "https://python.langchain.com/docs/integrations/tools/brave_search",
+					"long_name": "python.langchain.com",
+					"img": "https://imgs.search.brave.com/t4I-YJnYP_BAeQkbenryb0UcWrcSsdoBMjuRcSCeaWE/rs:fit:32:32:1/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvMTZjYjU5OGVl/MmJhOGQxM2IwZDY2/MzkzNzIzMDY1ZmEw/MzQ3NTZhMDhhODY4/MTM3MjRmMWU1YTU0/OWUwN2I4OS9weXRo/b24ubGFuZ2NoYWlu/LmNvbS8"
+				},
+				"language": "en",
+				"family_friendly": true,
+				"type": "search_result",
+				"subtype": "generic",
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "python.langchain.com",
+					"hostname": "python.langchain.com",
+					"favicon": "https://imgs.search.brave.com/t4I-YJnYP_BAeQkbenryb0UcWrcSsdoBMjuRcSCeaWE/rs:fit:32:32:1/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvMTZjYjU5OGVl/MmJhOGQxM2IwZDY2/MzkzNzIzMDY1ZmEw/MzQ3NTZhMDhhODY4/MTM3MjRmMWU1YTU0/OWUwN2I4OS9weXRo/b24ubGFuZ2NoYWlu/LmNvbS8",
+					"path": "  › components  › tools  › brave search"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/Pr_5JdTvMozdJmIIuDLngj6w2BlfdIdtI_F7yi81ugc/rs:fit:200:200:1/g:ce/aHR0cHM6Ly9weXRo/b24ubGFuZ2NoYWlu/LmNvbS9pbWcvcGFy/cm90LWNoYWlubGlu/ay1pY29uLnBuZw",
+					"original": "https://python.langchain.com/img/parrot-chainlink-icon.png",
+					"logo": false
+				}
+			},
+			{
+				"title": "Brave Search FAQ – Brave Help Center",
+				"url": "https://support.brave.com/hc/en-us/articles/4403568397837-Brave-Search-FAQ",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "What is &quot;Brave Search&quot;? Brave Search and the Brave browser constitute the industry’s first independent, privacy-preserving alternative to Google Chrome and Google Search, which rely on tracking us...",
+				"page_age": "2023-04-29T08:40:03",
+				"profile": {
+					"name": "Brave",
+					"url": "https://support.brave.com/hc/en-us/articles/4403568397837-Brave-Search-FAQ",
+					"long_name": "support.brave.com",
+					"img": "https://imgs.search.brave.com/XrSmApNqNvvF7CHjcId-uK0-StP4X11tzIyL0ZQ0pIU/rs:fit:32:32:1/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvOWZiMmMxOWQ5/MDEyZGNlYjVhYjlh/ZWViNzY5OWZlZjVk/MGNhMDVkOTg2MjRm/NDc4NGMyN2MzNjhi/ZWVhZDhkNi9zdXBw/b3J0LmJyYXZlLmNv/bS8"
+				},
+				"language": "en",
+				"family_friendly": true,
+				"type": "search_result",
+				"subtype": "generic",
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "support.brave.com",
+					"hostname": "support.brave.com",
+					"favicon": "https://imgs.search.brave.com/XrSmApNqNvvF7CHjcId-uK0-StP4X11tzIyL0ZQ0pIU/rs:fit:32:32:1/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvOWZiMmMxOWQ5/MDEyZGNlYjVhYjlh/ZWViNzY5OWZlZjVk/MGNhMDVkOTg2MjRm/NDc4NGMyN2MzNjhi/ZWVhZDhkNi9zdXBw/b3J0LmJyYXZlLmNv/bS8",
+					"path": "› hc  › en-us  › articles  › 4403568397837-Brave-Search-FAQ"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/idIuNo1kvY0W8se9_CcgG-2tU5ycXn86aUKGMPemIIA/rs:fit:200:200:1/g:ce/aHR0cHM6Ly90aGVt/ZS56ZGFzc2V0cy5j/b20vdGhlbWVfYXNz/ZXRzLzIzNDUwODQv/YTRiZDVjOWFmM2E1/OWJhYzljYTczMjNl/MTM4NmFiOWIxODYy/ZWZiMS5wbmc",
+					"original": "https://theme.zdassets.com/theme_assets/2345084/a4bd5c9af3a59bac9ca7323e1386ab9b1862efb1.png",
+					"logo": false
+				},
+				"age": "April 29, 2023"
+			},
+			{
+				"title": "How Search Engines Use Search Algorithms | Brave",
+				"url": "https://brave.com/learn/how-search-engines-work/",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "This article gives a primer on search algorithms, the basic building block of search engines, and the thing that powers the query results you see on search engines like Google, Bing, DuckDuckGo, and Brave Search.",
+				"page_age": "2023-07-17T00:00:00",
+				"profile": {
+					"name": "Brave",
+					"url": "https://brave.com/learn/how-search-engines-work/",
+					"long_name": "brave.com",
+					"img": "https://imgs.search.brave.com/o3m2J_FYX2ktcf5dzJMu5buCh2ws7E0QbaTpFsc-TY8/rs:fit:32:32:1/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvZTg1MzQ2NjVk/ZGY5NDczMmYzN2I4/MjYwN2Y4MDdlMDlj/ZjJlZTM3ZjMxOWVl/MTQ0MDFlZDk0MjZh/MWQ3OGU3MC9icmF2/ZS5jb20v"
+				},
+				"language": "en",
+				"family_friendly": true,
+				"type": "search_result",
+				"subtype": "generic",
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "brave.com",
+					"hostname": "brave.com",
+					"favicon": "https://imgs.search.brave.com/o3m2J_FYX2ktcf5dzJMu5buCh2ws7E0QbaTpFsc-TY8/rs:fit:32:32:1/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvZTg1MzQ2NjVk/ZGY5NDczMmYzN2I4/MjYwN2Y4MDdlMDlj/ZjJlZTM3ZjMxOWVl/MTQ0MDFlZDk0MjZh/MWQ3OGU3MC9icmF2/ZS5jb20v",
+					"path": "› learn  › how-search-engines-work"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/EQPbB1s69e7WhfAqrnIRoLIYuF-OTKod-rk-P6pM948/rs:fit:200:200:1/g:ce/aHR0cHM6Ly9icmF2/ZS5jb20vc3RhdGlj/LWFzc2V0cy9pbWFn/ZXMvYnJhdmUtb2cu/cG5n",
+					"original": "https://brave.com/static-assets/images/brave-og.png",
+					"logo": false
+				},
+				"age": "July 17, 2023"
+			}
+		],
+		"family_friendly": true
+	}
+}
