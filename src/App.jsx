@@ -27,6 +27,28 @@ import Admin from './components/Admin/Admin.jsx';
 import Fitness from './components/Fitness/Fitness.jsx';
 
 
+
+export const DateTimeLabel = () => {
+  const timeString = moment().format('MMMM Do YYYY, h:mm:ss a');
+  const [timeLabel, setTimeLabel] = React.useState(timeString);
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setTimeLabel(moment().format('MMMM Do YYYY, h:mm:ss a'));
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <Typography variant="body1" component="p" p={1}>
+      {moment().format('dddd MMMM Do YYYY, h:mm:ss a')}
+      <IconButton color="inherit">
+        <CalendarMonth />
+      </IconButton>
+    </Typography>
+  )
+}
+
 export const useAppStore = create((set) => ({
   appView: "home",
   setAppView: (appView) => set(() => ({ appView }))
@@ -125,12 +147,7 @@ const AppLauncherPage = () => {
         
         <Grid container mt={6} p={2}>
           <Grid id="dashboard-title" item sm={12} textAlign="right">
-            <Typography variant="body1" component="p" p={1}>
-              {moment().format('MMMM Do YYYY, h:mm:ss a')}
-              <IconButton color="inherit">
-                <CalendarMonth />
-              </IconButton>
-            </Typography>
+            <DateTimeLabel />
           </Grid>
 
           <Grid item sm={12} md={6}>

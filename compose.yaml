@@ -1,0 +1,43 @@
+services:
+  openfitness:
+    build:
+      context: openfitness
+    ...
+    ports:
+      - 3000:3000
+    ...
+  aichat:
+    build:
+      context: aichat
+    ...
+    ports:
+      - 3001:3001
+    ...
+  server:
+    container_name: server
+    restart: always
+    build:
+      context: server
+      args:
+        NODE_PORT: 5000
+    ports:
+      - 5000:5000
+    ...
+    depends_on:
+      - postgres
+  postgres:
+    container_name: postgres
+    restart: always
+    ...
+  ollama:
+    container_name: ollama
+    restart: always
+    ports:
+      - 11341:11341
+    ...
+  privateGPT:
+    container_name: privateGPT
+    restart: always
+    ports:
+      - 
+    ...

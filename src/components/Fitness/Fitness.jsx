@@ -4,7 +4,9 @@ import {
     InputAdornment, IconButton,
     Box, Drawer, Grid, List, ListItemText, 
     Stack, TextField, Typography,
-    Chip, 
+    Chip,
+    Container,
+    Tabs, 
 } from '@mui/material'
 import { BottomNavigation, BottomNavigationAction } from "@mui/material";
 import QrCodeScannerIcon from '@mui/icons-material/QrCodeScanner';
@@ -23,9 +25,11 @@ import foodsQueryMockJson from './api/nutritionix_mock.json';
 import exercisesMockJson from './api/exercisesMock.json';
 
 // Services
-import { useAppStore } from '../../App';
+import { DateTimeLabel, useAppStore } from '../../App';
 import { useFitnessStore } from './store';
 import { fitnessQueries } from './api';
+import Chat from '../Chat/Chat';
+import MyCalendar from './layout/Calendar';
 
 
 const topics = [
@@ -69,44 +73,58 @@ const Fitness = () => {
     React.useEffect(() => {
 
         if (fitnessTablesQuery.isSuccess) {
-            // Need access to the tables data throughout the app and dont want to requery everytime
+            // Need access to the tables data throughout the fitness app 
+            // ... and dont want to requery everytime
             fitnessStore.setFitnessTables(fitnessTablesQuery.data);
+
+            const macrosLineFormatter = (data) => {
+                console.log("macrosLineFormatter: ", data);
+            }
+
+            macrosLineFormatter(fitnessTablesQuery.data.food);
         }
     }, [fitnessTablesQuery.isSuccess, fitnessTablesQuery.data]);
 
     
     return fitnessTablesQuery.isLoading ? <div>Loading...</div> : (
         <Grid container my={8} p={2} spacing={2}>
-            <Grid item sm={12}>
+            <Grid item sm={12} sx={{ display: "flex", justifyContent: "space-between", alignItems: "center"}}>
                 <Typography variant="h4">Fitness Dashboard</Typography>
+                <DateTimeLabel />
             </Grid>
 
             <Grid item sm={12}>
-                <ChartsContainer charts={fitnessTablesQuery.data.charts.profile} disableChartButtons />
+                <ChartsContainer charts={fitnessTablesQuery.data.charts.profile} disableChartButtons disableFilterButtons />
             </Grid>
 
             {/* Macro KPI's */}
-            <Grid item sm={4}>
-                <Typography variant="h4">Macro KPI's</Typography>
+            <Grid item xs={12} sm={4}>
+                <Typography variant="h4">Macronutrient's</Typography>
                 <Stack m={1} p={1}>
                     {fitnessTablesQuery.data.macros
                         .map((kpi, index) => (
-                            <ListItemText key={index} primary={kpi.label} secondary={kpi.value} />
+                            <ListItemText key={index} primary={kpi.label} secondary={!kpi.value ? `No data logged yet for ${kpi.label}` : kpi.value} />
                         ))
                     }
                 </Stack>
             </Grid>
-            <Grid item sm={8}>
-                <ChartsContainer charts={fitnessTablesQuery.data.charts.food} />
+            <Grid item xs={12} sm={8}>
+                <ChartsContainer charts={fitnessTablesQuery.data.charts.food} defaultChart='bar' />
             </Grid>
-            <Grid item sm={6}>
-                <ChartsContainer charts={fitnessTablesQuery.data.charts.sleep} />
+            <Grid item xs={12} sm={6}>
+                <ChartsContainer charts={fitnessTablesQuery.data.charts.sleep} defaultChart='line'/>
             </Grid>
-            <Grid item sm={6}>
-                <ChartsContainer charts={fitnessTablesQuery.data.charts.steps} />
+            <Grid item xs={12} sm={6}>
+                <ChartsContainer charts={fitnessTablesQuery.data.charts.steps} defaultChart='line'/>
             </Grid>
             <Grid item sm={12}>
-                <ChartsContainer charts={fitnessTablesQuery.data.charts.exercise} />
+                <ChartsContainer charts={fitnessTablesQuery.data.charts.exercise} defaultChart='bar'/>
+            </Grid>
+            <Grid item sm={12}>
+                <ChartsContainer charts={fitnessTablesQuery.data.charts.weight} defaultChart='bar'/>
+            </Grid>
+            <Grid item sm={12} md={12} lg={12}>
+                <MyCalendar />
             </Grid>
 
             <Drawer open={fitnessStore.isDrawerOpen} onClose={() => {
@@ -205,12 +223,14 @@ const Fitness = () => {
                 </Box>
             </Drawer>
 
-            <Box sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }}>
+            <Box sx={{ position: "fixed", bottom: 0, left: 0, right: 0, maxWidth: "100vw", overflow: "auto" }}>
                 <BottomNavigation
+                    component={Tabs}
                     showLabels
-                    // value={props.tab}
-                    // onChange={handleNavChange}
-                    sx={{ zIndex: 100 }}
+                    variant="scrollable"
+                    scrollButtons="auto"
+                    value={0}
+                    sx={{ zIndex: 1000, pt: 2 }}
                 >
                     {topics.map((item, index) => (
                         <BottomNavigationAction
