@@ -1,13 +1,5 @@
-import axios from 'axios'
 
-
-const hostname = import.meta.env.VITE_HOSTNAME;
-
-
-const client = axios.create({
-  baseURL: hostname,
-  timeout: 5000
-});
+const { client } = window;
 
 export const fitnessQueries = ({
     readDatabaseQuery: () => ({

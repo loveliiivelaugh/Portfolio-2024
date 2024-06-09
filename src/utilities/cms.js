@@ -107,206 +107,12 @@ export const cms = {
             },
         ],
     },
-
-    // Sample list of apps
     apps: [
-        // {
-        //     "name": "Blog",
-        //     "icon": "📧",
-        //     "link": "/blog",
-        //     "category": [
-        //         "Essentials"
-        //     ],
-        //     "tags": [
-        //         "essentials",
-        //         "blog"
-        //     ]
-        // },
-        // {
-        //     "name": "Calendar",
-        //     "icon": "📅",
-        //     "link": "/calendar",
-        //     "category": [
-        //         "Essentials"
-        //     ],
-        //     "tags": [
-        //         "essentials",
-        //         "calendar"
-        //     ]
-        // },
-        // {
-        //     "name": "Contacts",
-        //     "icon": "📇",
-        //     "link": "/contacts",
-        //     "category": [
-        //         "Essentials"
-        //     ],
-        //     "tags": [
-        //         "essentials",
-        //         "contacts"
-        //     ]
-        // },
-        // {
-        //     "name": "Notes",
-        //     "icon": "📝",
-        //     "link": "/notes",
-        //     "category": [
-        //         "Essentials"
-        //     ],
-        //     "tags": [
-        //         "essentials",
-        //         "notes"
-        //     ]
-        // },
-        // {
-        //     "name": "Tasks",
-        //     "icon": "✅",
-        //     "link": "/tasks",
-        //     "category": [
-        //         "Essentials"
-        //     ],
-        //     "tags": [
-        //         "essentials",
-        //         "tasks"
-        //     ]
-        // },
-        // {
-        //     "name": "Docs",
-        //     "icon": "📄",
-        //     "link": "/docs",
-        //     "category": [
-        //         "Essentials"
-        //     ],
-        //     "tags": [
-        //         "essentials",
-        //         "docs"
-        //     ]
-        // },
-        // {
-        //     "name": "Reminders",
-        //     "icon": "📅",
-        //     "link": "/reminders",
-        //     "category": [
-        //         "Essentials"
-        //     ],
-        //     "tags": [
-        //         "essentials",
-        //         "reminders"
-        //     ]
-        // },
-        // {
-        //     "name": "Photos",
-        //     "icon": "📷",
-        //     "link": "/photos",
-        //     "category": [
-        //         "Essentials"
-        //     ],
-        //     "tags": [
-        //         "essentials",
-        //         "photos"
-        //     ]
-        // },
-        // {
-        //     "name": "Maps",
-        //     "icon": "🗺️",
-        //     "link": "/maps",
-        //     "category": [
-        //         "Essentials"
-        //     ],
-        //     "tags": [
-        //         "essentials",
-        //         "maps"
-        //     ]
-        // },
-        // {
-        //     "name": "Settings",
-        //     "icon": "⚙️",
-        //     "link": "/settings",
-        //     "category": [
-        //         "Essentials"
-        //     ],
-        //     "tags": [
-        //         "essentials",
-        //         "settings"
-        //     ]
-        // },
-        // {
-        //     "name": "Help",
-        //     "icon": "❓",
-        //     "link": "/help",
-        //     "category": [
-        //         "Essentials"
-        //     ],
-        //     "tags": [
-        //         "essentials",
-        //         "help"
-        //     ]
-        // },
-        // {
-        //     "name": "Camera",
-        //     "icon": "📷",
-        //     "link": "/camera",
-        //     "category": [
-        //         "Essentials"
-        //     ],
-        //     "tags": [
-        //         "essentials",
-        //         "camera"
-        //     ]
-        // },
-        // {
-        //     "name": "Browser",
-        //     "icon": "🌐",
-        //     "link": "/browser",
-        //     "category": [
-        //         "Essentials"
-        //     ],
-        //     "tags": [
-        //         "essentials",
-        //         "browser"
-        //     ]
-        // },
-        // {
-        //     "name": "Weather",
-        //     "icon": "☁️",
-        //     "link": "/weather",
-        //     "category": [
-        //         "Essentials"
-        //     ],
-        //     "tags": [
-        //         "essentials",
-        //         "weather"
-        //     ]
-        // },
-        // {
-        //     "name": "History",
-        //     "icon": "📅",
-        //     "link": "/history",
-        //     "category": [
-        //         "Essentials"
-        //     ],
-        //     "tags": [
-        //         "essentials",
-        //         "history"
-        //     ]
-        // },
-        // {
-        //     "name": "Translate",
-        //     "icon": "🌐",
-        //     "link": "/translate",
-        //     "category": [
-        //         "Essentials"
-        //     ],
-        //     "tags": [
-        //         "essentials",
-        //         "translate"
-        //     ]
-        // },
         {
             "name": "Fitness",
-            "icon": "🏋️",
-            "link": "#open_fitness",
-            "url": "https://openfitness.netlify.app/",
+            "icon": "🏋️‍♀️",
+            "link": "/",
+            "url": "http://localhost:3001" || "https://openfitness.netlify.app/",
             "category": [
                 "Essentials"
             ],
@@ -319,7 +125,7 @@ export const cms = {
             "name": "AI",
             "icon": "🤖",
             "link": "/",
-            "url": null,
+            "url": "http://localhost:3002",
             "category": [
                 "Essentials"
             ],
@@ -332,7 +138,7 @@ export const cms = {
             "name": "camera",
             "icon": "😃",
             "link": "/camera",
-            "url": null,
+            "url": "http://localhost:5175",
             "category": [
                 "Essentials"
             ],

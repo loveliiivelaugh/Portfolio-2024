@@ -1,43 +1,83 @@
+version: '3'
+
 services:
   openfitness:
     build:
       context: openfitness
-    ...
+    image: openfitness
+    container_name: openfitness
+
     ports:
-      - 3000:3000
-    ...
+      - "3000:3000"
+    depends_on:
+      - server
+
   aichat:
     build:
       context: aichat
-    ...
     ports:
-      - 3001:3001
-    ...
+      - "3000:3001"
+    depends_on:
+      - server
+
   server:
     container_name: server
-    restart: always
     build:
       context: server
       args:
         NODE_PORT: 5000
-    ports:
-      - 5000:5000
-    ...
+        OLLAMA_API_BASE_URL: '/ollama/api'
     depends_on:
+      - ollama
+      - privategpt
       - postgres
+    ports:
+      - "3000:5000"
+    environment:
+      - "OLLAMA_API_BASE_URL=http://ollama:11434/api"
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    restart: unless-stopped
+
+  # ollama:
+  #   volumes:
+  #     - ollama:/root/.ollama
+  #   container_name: ollama
+  #   pull_policy: always
+  #   tty: true
+  #   restart: unless-stopped
+  #   image: ollama/ollama:latest
+  #   depends_on:
+  #     - postgres
+
+  # privategpt:
+  #   container_name: privategpt
+  #   restart: always
+  #   image: 3x3cut0r/privategpt:latest
+  #   environment:
+  #     LLAMACPP_LLM_HF_REPO_ID: "TheBloke/dolphin-2.6-mistral-7B-GGUF"
+  #     LLAMACPP_LLM_HF_MODEL_FILE: "dolphin-2.6-mistral-7b.Q4_K_M.gguf"
+  #     LLAMACPP_EMBEDDING_HF_MODEL_NAME: "BAAI/bge-large-en-v1.5"
+  #     EMBEDDING_INGEST_MODE: "parallel"
+  #     EMBEDDING_COUNT_WORKERS: "4"
+  #   volumes:
+  #     - "/path/to/your/model/dolphin-2.6-mistral-7b.Q4_K_M.gguf:/home/worker/app/models/dolphin-2.6-mistral-7b.Q4_K_M.gguf"
+  #   ports:
+  #     - "3000:8081"
+  #   depends_on:
+  #     - postgres
+
   postgres:
+    image: postgres
     container_name: postgres
-    restart: always
-    ...
-  ollama:
-    container_name: ollama
-    restart: always
     ports:
-      - 11341:11341
-    ...
-  privateGPT:
-    container_name: privateGPT
-    restart: always
-    ports:
-      - 
-    ...
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+    restart: unless-stopped
+    # Add your PostgreSQL configuration here
+
+volumes:
+  ollama: {}

@@ -1,27 +1,11 @@
-import axios from 'axios'
 
-const hostname = import.meta.env.VITE_HOSTNAME;
+const { client } = window;
 
-
-const client = axios.create({
-  baseURL: hostname,
-  timeout: 5000,
-  // headers: {
-  //   'X-Custom-Header': 'foobar',
-  //   'Content-Type': 'application/json',
-  //   'Accept': 'application/json',
-  //   'Authorization': `Bearer ${key}`,
-  //   'Accept-Language': 'en-US',
-  // },
-  // withCredentials: true,
-  // validateStatus: (status) => status < 500,
-})
-
-export const queries = (chatStore) => ({
+export const queries = () => ({
 
   readFromDb: (table) => ({
     queryKey: [`readFromDb-${table || "schema"}`],
-    queryFn: () => client.get(`/api/system/read_db?table=${table}`),
+    queryFn: () => client.get(`/database/read_db?table=${table}`),
     select: (data) => {
       console.log("in readFromDb select data: ", data)
       return data
@@ -30,7 +14,7 @@ export const queries = (chatStore) => ({
 
   readOneFromDb: () => ({
     queryKey: ['readOneFromDb'],
-    queryFn: (params) => client.get(`/api/system/read_one_row?table=chats&id=`),
+    queryFn: (params) => client.get(`/database/read_one_row?table=chats&id=`),
     select: (data) => {
       console.log("in select data: ", data)
 
@@ -40,12 +24,12 @@ export const queries = (chatStore) => ({
 
   modifyDb2: () => ({
     queryKey: ['mutateServer'],
-    mutationFn: (params) => client[params.method || "post"](`/api/system/${params.endpoint || 'create_row'}?table=${params.table}`, params.payload),
+    mutationFn: (params) => client[params.method || "post"](`/database/${params.endpoint || 'create_row'}?table=${params.table}`, params.payload),
   }),
 
   readFromServer: () => ({
     queryKey: ['readFromServer'],
-    mutationFn: (params) => axios(params.endpoint)
+    mutationFn: (params) => client(params.endpoint)
   }),
 
   readFromServer2: (params) => ({
@@ -58,7 +42,7 @@ export const queries = (chatStore) => ({
 
   postToServer: () => ({
     queryKey: ['postToServer'],
-    mutationFn: async (params) => (await axios.post(params.url, params.payload)).data,
+    mutationFn: async (params) => (await client.post(params.url, params.payload)).data,
     select: (response) => {
         console.log("post to server select fn: ", response)
         return response
@@ -73,7 +57,7 @@ export const queries = (chatStore) => ({
   getIngestedFilesQuery: {
     queryKey: ['privateGPTingestedFiles'],
     queryFn: async () => {
-      const data = await axios.get(`${hostname}/api/llms/list-ingested-files`)
+      const data = await client.get(`${hostname}/api/llms/list-ingested-files`)
       return data;
     }
   },
@@ -81,7 +65,7 @@ export const queries = (chatStore) => ({
   getWebPageContent: {
     queryKey: ['webPageContent'],
     queryFn: async (params) => {
-      const data = await axios.get(`${hostname}/api/llms/puppeteer?url=${params.url}`);
+      const data = await client.get(`${hostname}/api/llms/puppeteer?url=${params.url}`);
       return data;
     },
   },

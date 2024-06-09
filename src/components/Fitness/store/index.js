@@ -24,3 +24,5 @@ export const useFitnessStore = create((set) => ({
     setActiveDrawer: (activeDrawer) => set(() => ({ activeDrawer })),
     setSelectedSearchItem: (selectedSearchItem) => set(() => ({ selectedSearchItem })),
 }));
+
+// docker run -p 3000:3000 --mount type=volume,src=53f3389d9c51747d807dbd4a6e5f4f8c982eacab83770667d7dfbbcd5dbf9d74,target=/etc/openfitness -v "$(pwd):/app" -v /app/node_modules openfitness

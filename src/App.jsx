@@ -3,9 +3,10 @@ import {
   InputAdornment, TextField, Box, Grid, Paper,
   IconButton, Typography, Autocomplete,
   Stack, Chip, Divider, Drawer,
-  List, ListItem, ListItemIcon, ListItemButton, Tooltip,
+  List, ListItem, ListItemIcon, ListItemButton, ListItemText, Tooltip,
   AppBar,
-  Toolbar
+  Toolbar,
+  Avatar
 } from '@mui/material';
 import AppsIcon from '@mui/icons-material/Apps';
 import SearchIcon from '@mui/icons-material/Search';
@@ -22,10 +23,11 @@ import Chat from './components/Chat/Chat.jsx';
 import EReader from './components/EReader/EReader.jsx';
 import Camera from './components/Chat/views/CameraView.jsx';
 import { create } from 'zustand';
-import { CalendarMonth } from '@mui/icons-material';
+import { ArrowLeft, CalendarMonth } from '@mui/icons-material';
+
+import GithubAdmin from './components/GithubAdmin/GithubAdmin.jsx';
 import Admin from './components/Admin/Admin.jsx';
 import Fitness from './components/Fitness/Fitness.jsx';
-
 
 
 export const DateTimeLabel = () => {
@@ -49,10 +51,30 @@ export const DateTimeLabel = () => {
   )
 }
 
+const localPort = (port) => `http://localhost:${(port || "0000")}`;
+
 export const useAppStore = create((set) => ({
   appView: "home",
-  setAppView: (appView) => set(() => ({ appView }))
+  setAppView: (appView) => set(() => ({ appView })),
+
+  drawerOpen: false,
+  setDrawerOpen: (drawerOpen) => set(() => ({ drawerOpen })),
 }))
+
+const dockerApps = [
+  { name: "Github", icon: "❤️" }, 
+  { name: "OpenWebUI", icon: "😎", "url": localPort("3000") },
+  { name: "Notion", icon: "📝" },
+  { name: "Wordpress Site", icon: "📄", "url": localPort("8000") },
+  { name: "Wordpress Admin", icon: "📄", "url": "http://localhost:8000/wp-admin" },
+  { name: "PHP Admin", icon: "📄", "url": localPort("8080") },
+  { name: "PGAdmin", icon: "📄", "url": localPort("5050") },
+  { name: "Keycloak", icon: "📄", "url": localPort("8180") },
+  { name: "Perplexity", icon: "📄", "url": localPort() },
+  { name: "Private GPT", icon: "📄", "url": localPort() },
+  { name: "Docs", icon: "📄" },
+  { name: "Changelog", icon: "📄" },
+];
 
 const AppLauncherPage = () => {
     const appStore = useAppStore();
@@ -61,8 +83,23 @@ const AppLauncherPage = () => {
     const handleClick = async (event) => {
       console.log("clickHandler: ", event)
       
-      appStore.setAppView(event.name);
+      // appStore.setAppView(event.name);
+
+      if (event.url) {
+        window.location.href = event.url;
+      }
+      else appStore.setAppView(event.name);
     }
+
+    // Experimenting with RSCs
+    // React.useEffect(() => {
+    //   (async () => {
+    //     const response = await client.get('/rsc');
+    //     // const stream = await response.json();
+    //     const Element = React.createElement(response.data)
+    //     console.log("RSC experimenting: ", response, Element)
+    //   })()
+    // }, [])
 
     return (
       <motion.div
@@ -72,11 +109,11 @@ const AppLauncherPage = () => {
         transition={{ duration: 0.5 }}
         style={{ maxWidth: "100vw" }}
       >
-        <AppBar>
+        <AppBar sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
           <Toolbar>
-            {/* <IconButton aria-label="Apps" color='inherit' onClick={() => appStore.setAppView("home")}>
-              <AppsIcon />
-            </IconButton> */}
+            <IconButton aria-label="Apps" color='inherit' onClick={() => appStore.setDrawerOpen(!appStore.drawerOpen)}>
+              <ArrowLeft />
+            </IconButton>
             <Autocomplete
               disablePortal
               id="app"
@@ -139,13 +176,47 @@ const AppLauncherPage = () => {
                 </Box>
               )}
           />
+
+          <Avatar sx={{ ml: 2, bgcolor: "secondary.main" }}>
+            M
+          </Avatar>
           </Toolbar>
         </AppBar>
+
+        <Drawer
+          // variant="temporary"
+          anchor="left"
+          open={appStore.drawerOpen}
+          hideBackdrop
+          sx={{
+            width: 240,
+            flexShrink: 0,
+            zIndex: 1,
+            [`& .MuiDrawer-paper`]: { width: 240, boxSizing: 'border-box' },
+          }}
+        >
+          <Toolbar />
+          <Box sx={{ overflow: 'auto' }}>
+            {/* <AppList appsList={cms.appsList} /> */}
+            <List>
+              {[...appsList, ...dockerApps].map((app, index) => (
+                <ListItem key={index} disablePadding>
+                  <ListItemButton>
+                    <ListItemIcon>
+                      {app.icon}
+                    </ListItemIcon>
+                    <ListItemText primary={app.name} secondary={"In development"} />
+                  </ListItemButton>
+                </ListItem>
+              ))}
+            </List>
+          </Box>
+        </Drawer>
         {({
 
       home: (
         
-        <Grid container mt={6} p={2}>
+        <Grid container mt={6} p={2} sx={{ minHeight: "100vh", width: "100vw", paddingLeft: appStore.drawerOpen ? "256px" : 0 }}>
           <Grid id="dashboard-title" item sm={12} textAlign="right">
             <DateTimeLabel />
           </Grid>
@@ -186,13 +257,15 @@ const AppLauncherPage = () => {
           </Typography>
 
           <Grid container spacing={3} mt={1}>
-            {appsList.map((app, index) => (
+            {[...appsList, ...dockerApps].map((app, index) => (
               <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
                 <Paper elevation={3} style={{ textAlign: 'center', padding: '20px', cursor: 'pointer' }}>
                   <IconButton aria-label={app.name} onClick={() => handleClick(app)} sx={{ fontSize: '3rem' }}>
                     {app.icon}
                   </IconButton>
-                  <Typography variant="subtitle1">{app.name}</Typography>
+                  {/* <Typography variant="subtitle1">{app.name}</Typography>
+                  <Typography variant="subtitle2">{"In development"}</Typography> */}
+                  <ListItemText primary={app.name} secondary={"live"} />
                 </Paper>
               </Grid>
             ))}
@@ -223,10 +296,13 @@ const AppLauncherPage = () => {
     "Admin Dashboard": <Admin />,
     Storage: <></>,
     Fitness: <Fitness />,
+    Github: <GithubAdmin />,
   }[appStore.appView])}
   </motion.div>
     )
 };
+
+
 
 const App = () => {
   return (
