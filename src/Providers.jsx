@@ -36,30 +36,33 @@ const InitConfigProvider = ({ children }) => {
         queryKey: ["themeConfig"],
         queryFn: async () => (await client.get(paths.themeConfig)).data,
     }));
-    // // Get content from CMS
-    // const contentQuery = useQuery(({
-    //     queryKey: ["content"],
-    //     queryFn: async () => (await client.get(paths.content)).data,
-    // }));
+    // Get content from CMS
+    const contentQuery = useQuery(({
+        queryKey: ["content"],
+        queryFn: async () => (await client.get(paths.content)).data,
+        select: (data) => {
+            window.appContent = data ? data : {};
+            return data;
+        }
+    }));
+
+    console.log({contentQuery})
+
+    // Set global access to server client
+    window.client = client;
 
     // Initialize Keycloak
     const [keycloakInstance, setKeycloakInstance] = useState(null);
 
-    useEffect(() => {
-        (async () => {
-            // Set global access to server client
-            window.client = client;
+    // // Initialize Keycloak
+    // const instance = new Keycloak(JSON.parse(import.meta.env.VITE_KEYCLOAK_CONFIG));
+    // setKeycloakInstance(instance);
 
-            // // Initialize Keycloak
-            // const instance = new Keycloak(JSON.parse(import.meta.env.VITE_KEYCLOAK_CONFIG));
-            // setKeycloakInstance(instance);
-
-        })();
-    }, []);
-
-    return themeConfigQuery?.data 
-        ? children(themeConfigQuery.data, keycloakInstance)
-        : "Something went wrong...";
+    return ({
+        loading: "Loading App Theme Configuration...",
+        success: children(themeConfigQuery.data, keycloakInstance),
+        error: "Something went wrong..."
+    }[themeConfigQuery.status]);
 };
 
 
