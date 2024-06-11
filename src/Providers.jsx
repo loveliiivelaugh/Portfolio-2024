@@ -23,7 +23,7 @@ const client = axios.create({
     },
     auth: {
         username: import.meta.env.VITE_BASIC_AUTH_USERNAME,
-        password: import.meta.env.VITE_BASIC_PASSWORD,
+        password: import.meta.env.VITE_BASIC_AUTH_PASSWORD,
     }
 });
 
