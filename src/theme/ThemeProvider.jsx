@@ -6,8 +6,8 @@ import LightModeIcon from '@mui/icons-material/LightMode';
 import NightsStayIcon from '@mui/icons-material/NightsStay';
 import { motion } from "framer-motion"
 
-// Utitlities
-import { themeConfig } from './themeConfig';
+// // Utitlities
+// import { themeConfig } from './themeConfig';
 
 
 export const useColorMode = () => {
@@ -21,14 +21,13 @@ export const useColorMode = () => {
 }
 
 
-const useTheme = ({ mode }) => useMemo(() => createTheme({
+const useTheme = ({ mode, themeConfig }) => useMemo(() => createTheme({
   ...themeConfig,
   ...themeConfig[mode],
 }), [mode])
 
-export const ThemeProvider = ({ children }) => {
-  // const system = useSelector((state) => state.system)
-  const theme = useTheme({ mode: 'dark' })
+export const ThemeProvider = ({ children, themeConfig }) => {
+  const theme = useTheme({ mode: 'dark', themeConfig })
 
   return (
     <MuiThemeProvider theme={theme}>
