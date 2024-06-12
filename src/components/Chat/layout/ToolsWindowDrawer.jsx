@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Drawer, Grid, Tab, Tabs, Typography } from '@mui/material';
 
-import EReader from '../../EReader/EReader';
+// import EReader from '../../EReader/EReader';
 import { useChatStore } from '../store';
 
 // import json from '../api/braveSearchMock.json';
@@ -25,7 +25,7 @@ const ToolsWindowDrawer = () => {
                     {{
                         "0": (
                             <Grid item xs={12} p={2}>
-                                <EReader />
+                                {/* <EReader /> */}
                             </Grid>
                         ),
                         "1": (

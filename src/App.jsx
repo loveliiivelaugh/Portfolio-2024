@@ -13,11 +13,10 @@ import SearchIcon from '@mui/icons-material/Search';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import { ArrowLeft, CalendarMonth } from '@mui/icons-material';
 import { motion } from 'framer-motion';
-import { create } from 'zustand';
 import moment from 'moment';
 
 import Chat from './components/Chat/Chat.jsx';
-import EReader from './components/EReader/EReader.jsx';
+// import EReader from './components/EReader/EReader.jsx';
 import Camera from './components/Chat/views/CameraView.jsx';
 import GithubAdmin from './components/GithubAdmin/GithubAdmin.jsx';
 import Admin from './components/Admin/Admin.jsx';
@@ -269,7 +268,7 @@ const AppLauncherPage = () => {
 
       </Grid>
     ),
-    eReader: <EReader />,
+    // eReader: <EReader />,
     camera: <Camera />,
     AI: <Chat />,
     "Admin Dashboard": <Admin />,

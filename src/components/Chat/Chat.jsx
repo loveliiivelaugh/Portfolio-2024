@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 import ChatTextField from './layout/ChatTextField';
 import ChatDrawer from './layout/ChatDrawer';
-import ToolsWindowDrawer from './layout/ToolsWindowDrawer';
+// import ToolsWindowDrawer from './layout/ToolsWindowDrawer';
 import { ChatView, CameraView, ImageView, VoiceView } from './views';
 
 import { queries } from './api';
@@ -228,7 +228,7 @@ const Chat = forwardRef((props, ref) => {
                 : views[chatStore.view] || views['chat']
             }
             <ChatDrawer />
-            <ToolsWindowDrawer />
+            {/* <ToolsWindowDrawer /> */}
             {["chat", "image"].includes(chatStore.view) && 
                 <ChatTextField {...chatTextFieldProps} />
             }
