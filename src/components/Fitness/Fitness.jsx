@@ -25,7 +25,8 @@ import foodsQueryMockJson from './api/nutritionix_mock.json';
 import exercisesMockJson from './api/exercisesMock.json';
 
 // Services
-import { DateTimeLabel, useAppStore } from '../../App';
+import { DateTimeLabel } from '../../App';
+import { useAppStore } from '../../store';
 import { useFitnessStore } from './store';
 import { fitnessQueries } from './api';
 import Chat from '../Chat/Chat';

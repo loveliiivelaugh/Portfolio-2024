@@ -22,7 +22,7 @@ import HelpCenterIcon from '@mui/icons-material/HelpCenter';
 import { useMutation, useQuery } from '@tanstack/react-query';
 
 // Services
-import { cms } from '../../../utilities/cms';
+// import { cms } from '../../../utilities/cms';
 import { useChatStore } from "../store";
 import { queries } from "../api";
 
@@ -305,7 +305,7 @@ const ChatDrawer = forwardRef((props, ref) => {
                                     <ListItemButton onClick={() => chat.setDefaultModel(model?.name)}>
                                         <ListItemText 
                                             primary={model?.name} 
-                                            secondary={cms.ai_chat.available_models
+                                            secondary={window.appContent.ai_chat.available_models
                                                 .find(({ name }) => (name === model?.name))
                                                 ?.description 
                                                 || 'No description'

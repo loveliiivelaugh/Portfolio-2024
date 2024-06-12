@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { 
   InputAdornment, TextField, Box, Grid, Paper,
   IconButton, Typography, Autocomplete,
@@ -11,23 +11,19 @@ import {
 import AppsIcon from '@mui/icons-material/Apps';
 import SearchIcon from '@mui/icons-material/Search';
 import FilterListIcon from '@mui/icons-material/FilterList';
-import moment from 'moment';
+import { ArrowLeft, CalendarMonth } from '@mui/icons-material';
 import { motion } from 'framer-motion';
-// import { useNavigate } from 'react-router-dom';
+import { create } from 'zustand';
+import moment from 'moment';
 
-import { cms } from './utilities/cms';
-// import Calendar from './components/Calendar';
-// import Weather from './components/Weather/Weather';
-// import Map from './components/Map/Map';
 import Chat from './components/Chat/Chat.jsx';
 import EReader from './components/EReader/EReader.jsx';
 import Camera from './components/Chat/views/CameraView.jsx';
-import { create } from 'zustand';
-import { ArrowLeft, CalendarMonth } from '@mui/icons-material';
-
 import GithubAdmin from './components/GithubAdmin/GithubAdmin.jsx';
 import Admin from './components/Admin/Admin.jsx';
 import Fitness from './components/Fitness/Fitness.jsx';
+
+import { useAppStore } from './store';
 
 
 export const DateTimeLabel = () => {
@@ -49,57 +45,22 @@ export const DateTimeLabel = () => {
       </IconButton>
     </Typography>
   )
-}
+};
 
-const localPort = (port) => `http://localhost:${(port || "0000")}`;
-
-export const useAppStore = create((set) => ({
-  appView: "home",
-  setAppView: (appView) => set(() => ({ appView })),
-
-  drawerOpen: false,
-  setDrawerOpen: (drawerOpen) => set(() => ({ drawerOpen })),
-}))
-
-const dockerApps = [
-  { name: "Github", icon: "❤️" }, 
-  { name: "OpenWebUI", icon: "😎", "url": localPort("3000") },
-  { name: "Notion", icon: "📝" },
-  { name: "Wordpress Site", icon: "📄", "url": localPort("8000") },
-  { name: "Wordpress Admin", icon: "📄", "url": "http://localhost:8000/wp-admin" },
-  { name: "PHP Admin", icon: "📄", "url": localPort("8080") },
-  { name: "PGAdmin", icon: "📄", "url": localPort("5050") },
-  { name: "Keycloak", icon: "📄", "url": localPort("8180") },
-  { name: "Perplexity", icon: "📄", "url": localPort() },
-  { name: "Private GPT", icon: "📄", "url": localPort() },
-  { name: "Docs", icon: "📄" },
-  { name: "Changelog", icon: "📄" },
-];
 
 const AppLauncherPage = () => {
     const appStore = useAppStore();
-    const [appsList, setAppsList] = React.useState(cms.apps);
+    const [appsList] = useState(window.appContent.apps);
+    const [dockerApps] = useState(window.appContent.dockerApps);
 
     const handleClick = async (event) => {
-      console.log("clickHandler: ", event)
-      
-      // appStore.setAppView(event.name);
-
       if (event.url) {
-        window.location.href = event.url;
+        window.location.href = (import.meta.env.MODE === "development")
+          ? event.dev_url
+          : event.url;
       }
       else appStore.setAppView(event.name);
-    }
-
-    // Experimenting with RSCs
-    // React.useEffect(() => {
-    //   (async () => {
-    //     const response = await client.get('/rsc');
-    //     // const stream = await response.json();
-    //     const Element = React.createElement(response.data)
-    //     console.log("RSC experimenting: ", response, Element)
-    //   })()
-    // }, [])
+    };
 
     return (
       <motion.div
@@ -117,7 +78,7 @@ const AppLauncherPage = () => {
             <Autocomplete
               disablePortal
               id="app"
-              options={cms.apps}
+              options={window.appContent.apps}
               fullWidth
               onLoadedData={() => {}}
               loading={false}
@@ -205,7 +166,7 @@ const AppLauncherPage = () => {
                     <ListItemIcon>
                       {app.icon}
                     </ListItemIcon>
-                    <ListItemText primary={app.name} secondary={"In development"} />
+                    <ListItemText primary={app.name} secondary={!app?.disabled ? "live" : "disabled"} />
                   </ListItemButton>
                 </ListItem>
               ))}
@@ -252,21 +213,39 @@ const AppLauncherPage = () => {
               </Grid>
             ))}
           </Grid>
-          <Typography variant="subtitle1">
-            {cms.home.launcherText}
+          <Typography variant="subtitle1" p={1} px={2}>
+            {window.appContent.home.launcherText}
           </Typography>
 
+          {/* App Grid Container */}
           <Grid container spacing={3} mt={1}>
             {[...appsList, ...dockerApps].map((app, index) => (
-              <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
-                <Paper elevation={3} style={{ textAlign: 'center', padding: '20px', cursor: 'pointer' }}>
-                  <IconButton aria-label={app.name} onClick={() => handleClick(app)} sx={{ fontSize: '3rem' }}>
+              <Grid 
+                key={index} 
+                item 
+                xs={12} 
+                sm={6} 
+                md={4} 
+                lg={3}
+                sx={{ textAlign: 'center', padding: '20px' }}
+              >
+                  <IconButton 
+                    aria-label={app.name} 
+                    disabled={app.disabled}
+                    onClick={() => handleClick(app)} 
+                    sx={{ fontSize: '3rem' }}
+                  >
                     {app.icon}
                   </IconButton>
-                  {/* <Typography variant="subtitle1">{app.name}</Typography>
-                  <Typography variant="subtitle2">{"In development"}</Typography> */}
-                  <ListItemText primary={app.name} secondary={"live"} />
-                </Paper>
+                  <ListItemText 
+                    primary={app.name} 
+                    secondary={!app?.disabled ? "live" : "disabled"}
+                  />
+                  {app?.url && (
+                    <Typography variant="subtitle1">
+                      {app?.url.split("https://")}
+                    </Typography>
+                  )}
               </Grid>
             ))}
           </Grid>
@@ -277,7 +256,7 @@ const AppLauncherPage = () => {
               Woodward Software Toolbox
             </Typography>
             <Typography variant="subtitle1">
-              {cms.home.footerText}
+              {window.appContent.home.footerText}
             </Typography>
             <Typography variant="subtitle1">
               Privacy / Terms of Use / Cookies

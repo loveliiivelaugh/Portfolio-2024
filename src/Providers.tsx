@@ -1,22 +1,26 @@
-import { Suspense, useEffect, useState } from 'react';
+import { Suspense, useState } from 'react';
 import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query';
-import Keycloak from 'keycloak-js';
+// import Keycloak from 'keycloak-js';
 import axios from 'axios';
 
 // import { SmoothScroll } from './theme/SmoothScroll.jsx';
-import { KeycloakProvider } from './Keycloak/KeycloakProvider';
+// import { KeycloakProvider } from './Keycloak/KeycloakProvider';
 import { PageTransitionWrapper, ThemeProvider } from './theme/ThemeProvider';
+// import { useAppStore } from './App.jsx';
 
 
 const paths = {
     "hostname": import.meta.env.VITE_HOSTNAME,
+    "local": "http://localhost:5001",
     "themeConfig": "/api/theme/themeConfig",
-    "content": "/api/cms/content",
+    "content": "/api/cms/content"
 };
 
 // Initialize Server Client with Basic Auth
 const client = axios.create({
-    baseURL: paths.hostname,
+    baseURL: (import.meta.env.MODE === "development") 
+        ? paths.local 
+        : paths.hostname,
     timeout: 5000,
     headers: {
         "Content-Type": "application/json",
@@ -41,15 +45,17 @@ const InitConfigProvider = ({ children }) => {
         queryKey: ["content"],
         queryFn: async () => (await client.get(paths.content)).data,
         select: (data) => {
-            window.appContent = data ? data : {};
+            (window as any).appContent = data ? data : {};
+            
             return data;
         }
     }));
 
-    console.log({contentQuery})
+    // console.log(import.meta)
+    // console.log({contentQuery})
 
     // Set global access to server client
-    window.client = client;
+    (window as any).client = client; 
 
     // Initialize Keycloak
     const [keycloakInstance, setKeycloakInstance] = useState(null);
@@ -59,6 +65,7 @@ const InitConfigProvider = ({ children }) => {
     // setKeycloakInstance(instance);
 
     return ({
+        pending: "Uninitialized...",
         loading: "Loading App Theme Configuration...",
         success: children(themeConfigQuery.data, keycloakInstance),
         error: "Something went wrong..."
