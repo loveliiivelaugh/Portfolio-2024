@@ -50,8 +50,8 @@ export const DateTimeLabel = () => {
 
 const AppLauncherPage = () => {
     const appStore = useAppStore();
-    const [appsList] = useState(window.appContent?.apps);
-    const [dockerApps] = useState(window.appContent?.dockerApps);
+    const [appsList] = useState(window.appContent?.apps || []);
+    const [dockerApps] = useState(window.appContent?.dockerApps || []);
 
     const isDevEnvironment = (import.meta.env.MODE === "development");
 

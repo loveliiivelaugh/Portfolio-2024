@@ -52,7 +52,7 @@ const InitConfigProvider = ({ children }) => {
     }));
 
     // console.log(import.meta)
-    // console.log({contentQuery})
+    console.log({contentQuery}) as any
 
     // Set global access to server client
     (window as any).client = client; 
