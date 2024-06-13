@@ -16,11 +16,12 @@ import { motion } from 'framer-motion';
 import moment from 'moment';
 
 import Chat from './components/Chat/Chat.jsx';
-// import EReader from './components/EReader/EReader.jsx';
+import DocsPage from './components/Docs/DocsPage'
 import Camera from './components/Chat/views/CameraView.jsx';
 import GithubAdmin from './components/GithubAdmin/GithubAdmin.jsx';
 import Admin from './components/Admin/Admin.jsx';
 import Fitness from './components/Fitness/Fitness.jsx';
+import Changelog from './components/Changelog/Changelog'
 
 import { useAppStore } from './store';
 
@@ -49,16 +50,18 @@ export const DateTimeLabel = () => {
 
 const AppLauncherPage = () => {
     const appStore = useAppStore();
-    const [appsList] = useState(window.appContent.apps);
-    const [dockerApps] = useState(window.appContent.dockerApps);
+    const [appsList] = useState(window.appContent?.apps);
+    const [dockerApps] = useState(window.appContent?.dockerApps);
 
-    const handleClick = async (event) => {
-      if (event.url) {
-        window.location.href = (import.meta.env.MODE === "development")
-          ? event.dev_url
-          : event.url;
+    const isDevEnvironment = (import.meta.env.MODE === "development");
+
+    const handleClick = async (app) => {
+      if (app.url) {
+        window.location.href = isDevEnvironment
+          ? app.dev_url
+          : app.url;
       }
-      else appStore.setAppView(event.name);
+      else appStore.setAppView(app.name);
     };
 
     return (
@@ -242,7 +245,17 @@ const AppLauncherPage = () => {
                   />
                   {app?.url && (
                     <Typography variant="subtitle1">
-                      {app?.url.split("https://")}
+                      {app.url.split("https://")}
+                    </Typography>
+                  )}
+                  {(isDevEnvironment && app?.dev_url) && (
+                    <Typography variant="subtitle1">
+                      {app.dev_url.split("http://")}
+                    </Typography>
+                  )}
+                  {app?.repo && (
+                    <Typography variant="subtitle2">
+                      {app.repo}
                     </Typography>
                   )}
               </Grid>
@@ -275,6 +288,8 @@ const AppLauncherPage = () => {
     Storage: <></>,
     Fitness: <Fitness />,
     Github: <GithubAdmin />,
+    Docs: <DocsPage />,
+    Changelog: <Changelog />
   }[appStore.appView])}
   </motion.div>
     )
