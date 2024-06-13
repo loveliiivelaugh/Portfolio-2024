@@ -1,25 +1,35 @@
 {
   "compilerOptions": {
     "target": "ES2020",
-    // "useDefineForClassFields": true,
-    // "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "es2022",
-    // "skipLibCheck": true,
-    
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+
+    /* MUI Config */
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+
     /* Bundler mode */
-    "moduleResolution": "Node",
-    // "allowImportingTsExtensions": true,
-    // "resolveJsonModule": true,
-    // "isolatedModules": true,
-    // "noEmit": true,
-    "jsx": "preserve",
-    // "jsx": "react-jsx",
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
 
     /* Linting */
-    // "strict": true,
-    // "noUnusedLocals": true,
-    // "noUnusedParameters": true,
-    // "noFallthroughCasesInSwitch": true
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+
+    /* Docker Config */
+    "esModuleInterop": true,
+
+    // Allow JS
+    "allowJs": true
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

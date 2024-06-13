@@ -1,4 +1,4 @@
-import { Suspense, useState } from 'react';
+import { Suspense } from 'react';
 import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query';
 // import Keycloak from 'keycloak-js';
 import axios from 'axios';
@@ -34,7 +34,7 @@ const client = axios.create({
 const queryClient = new QueryClient();
 
 // On Apps First Load
-const InitConfigProvider = ({ children }) => {
+const InitConfigProvider = ({ children }: any) => {
     // Get Theme Config
     const themeConfigQuery = useQuery(({
         queryKey: ["themeConfig"],
@@ -58,8 +58,8 @@ const InitConfigProvider = ({ children }) => {
     (window as any).client = client; 
 
     // Initialize Keycloak
-    const [keycloakInstance, setKeycloakInstance] = useState(null);
-
+    // const [keycloakInstance, setKeycloakInstance] = useState(null);
+    
     // // Initialize Keycloak
     // const instance = new Keycloak(JSON.parse(import.meta.env.VITE_KEYCLOAK_CONFIG));
     // setKeycloakInstance(instance);
@@ -67,18 +67,18 @@ const InitConfigProvider = ({ children }) => {
     return ({
         pending: "Uninitialized...",
         loading: "Loading App Theme Configuration...",
-        success: children(themeConfigQuery.data, keycloakInstance),
+        success: children(themeConfigQuery.data),
         error: "Something went wrong..."
     }[themeConfigQuery.status]);
 };
 
 
-export const Providers = ({ children }) => {
+export const Providers = ({ children }: any) => {
     return (
         <QueryClientProvider client={queryClient}>
             <Suspense fallback="Loading App Theme Configuration...">
                 <InitConfigProvider>
-                    {(themeConfig, keycloakInstance) => (
+                    {(themeConfig: any) => (
                         <ThemeProvider themeConfig={themeConfig}>
                             <PageTransitionWrapper>
                                 {/* <SmoothScroll></SmoothScroll> */}

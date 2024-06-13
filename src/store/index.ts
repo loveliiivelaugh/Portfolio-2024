@@ -5,10 +5,10 @@ interface AppStore {
     drawerOpen: boolean,
     client: null | any,
     appContent: any,
-    setAppView: (appView) => void,
-    setDrawerOpen: (drawerOpen) => void,
-    setClient: (client) => void,
-    setAppContent: (appContent) => void
+    setAppView: (appView: string) => void,
+    setDrawerOpen: (drawerOpen: boolean) => void,
+    setClient: (client: any) => void,
+    setAppContent: (appContent: any) => void
 };
 
 const useAppStore = create<AppStore>((set) => ({
