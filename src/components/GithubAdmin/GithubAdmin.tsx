@@ -1,10 +1,21 @@
-import React from 'react'
-import { useQuery } from '@tanstack/react-query'
+
 import { Divider, Grid, List, ListItem, ListItemIcon, ListItemText, Typography } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { useQuery } from '@tanstack/react-query'
 
 
-const { client } = window; // Authenticated Client on window
+interface CodeRepoType {
+    id: string, 
+    name: string, 
+    description: string, 
+    updated_at: string 
+    html_url: string
+    stargazers_count: number
+    forks_count: number
+    open_issues_count: number
+}
+
+const { client } = window as any; // Authenticated Client on window
 const githubQueryPath = '/api/github';
 const testQueryPath = '/api/openfitness/fitness_tables';
 
@@ -28,7 +39,7 @@ const GithubAdmin = () => {
 
     console.log("GithubAdmin.githubQuery: ", githubQuery);
 
-    const handleDelete = async (repo) => {
+    const handleDelete = async (repo: CodeRepoType) => {
         const confirmed = await confirm(`Are you sure you want to delete ${repo.name}`)
         
         if (!confirmed) return;
@@ -61,7 +72,7 @@ const GithubAdmin = () => {
                     <Divider />
                     <ListItemText primary="Repositories"/>
                     <Divider />
-                    {githubQuery?.data?.data?.repos?.data.map(repo => (
+                    {githubQuery?.data?.data?.repos?.data.map((repo : CodeRepoType) => (
                         <ListItem key={repo.id} divider sx={{ maxWidth: "80vw", '&:hover': { background: "rgba(0,0,0,0.1)" }}}>
                             <ListItemText
                                 primary={`${repo.name} - ${repo.id} - ${new Date(repo?.updated_at).toLocaleDateString()}`}

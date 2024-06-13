@@ -1,14 +1,15 @@
-import React from 'react'
-import { useQuery } from '@tanstack/react-query'
-import { Box, Grid, Typography } from '@mui/material';
+// Packages
 import { DataGrid } from '@mui/x-data-grid';
+import { Box, Grid, Typography } from '@mui/material';
+import { useQuery } from '@tanstack/react-query'
 
-const { client } = window;
+
+const { client } = window as any;
 
 const Admin = () => {
     const databaseQueries = useQuery(({
         queryKey: ["readAllDatabaseTables"],
-        queryFn: async () => (await client.get(hostname + `/database/read_schema`)).data
+        queryFn: async () => (await client.get(`/database/read_schema`)).data
     }));
 
     return databaseQueries.isLoading ? <div>Loading...</div> : (
@@ -17,7 +18,7 @@ const Admin = () => {
                 <Typography variant="h4">Database Admin</Typography>
             </Grid>
             <Grid item sm={12}>
-                {databaseQueries.data.map(table => <ReusableTable key={table.table} {...table} />)}
+                {databaseQueries.data.map((table: any) => <ReusableTable key={table.table} {...table} />)}
             </Grid>
         </Grid>
     )
@@ -25,13 +26,13 @@ const Admin = () => {
 
 export default Admin
 
-const ReusableTable = ({ table, columns }) => {
+const ReusableTable = ({ table, columns }: { table: string, columns: string[] }) => {
 
     if (["tables", "inventory"].includes(table)) return;
 
     const tableData = useQuery({
         queryKey: [table],
-        queryFn: async () => (await client.get(hostname + `/database/read_db?table=${table}`)).data,
+        queryFn: async () => (await client.get(`/database/read_db?table=${table}`)).data,
     });
 
     console.log("tableData: ", tableData)
@@ -50,8 +51,8 @@ const ReusableTable = ({ table, columns }) => {
                                 width: 150,
                                 editable: true
                             }))}
-                            pageSize={5}
-                            rowsPerPageOptions={[5]}
+                            // pageSize={5}
+                            // rowsPerPageOptions={[5]}
                         />
                 </Box>
             ) 

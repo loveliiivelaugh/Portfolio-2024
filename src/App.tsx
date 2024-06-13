@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { 
-  InputAdornment, TextField, Box, Grid, Paper,
+  InputAdornment, TextField, Box, Grid, 
   IconButton, Typography, Autocomplete,
-  Stack, Chip, Divider, Drawer,
-  List, ListItem, ListItemIcon, ListItemButton, ListItemText, Tooltip,
+  Stack, Chip, Drawer,
+  List, ListItem, ListItemIcon, ListItemButton, ListItemText, 
   AppBar,
   Toolbar,
   Avatar
@@ -15,15 +15,12 @@ import { ArrowLeft, CalendarMonth } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 import moment from 'moment';
 
-import Chat from './components/Chat/Chat.jsx';
-import DocsPage from './components/Docs/DocsPage'
-import Camera from './components/Chat/views/CameraView.jsx';
-import GithubAdmin from './components/GithubAdmin/GithubAdmin.jsx';
-import Admin from './components/Admin/Admin.jsx';
-import Fitness from './components/Fitness/Fitness.jsx';
-import Changelog from './components/Changelog/Changelog'
+import DocsPage from './components/Docs/DocsPage.js'
+import GithubAdmin from './components/GithubAdmin/GithubAdmin.js';
+import Admin from './components/Admin/Admin.js';
+import Changelog from './components/Changelog/Changelog.js'
 
-import { useAppStore } from './store';
+import { useAppStore } from './store/index.js';
 
 
 export const DateTimeLabel = () => {
@@ -39,7 +36,8 @@ export const DateTimeLabel = () => {
 
   return (
     <Typography variant="body1" component="p" p={1}>
-      {moment().format('dddd MMMM Do YYYY, h:mm:ss a')}
+      {/* {moment().format('dddd MMMM Do YYYY, h:mm:ss a')} */}
+      {timeLabel}
       <IconButton color="inherit">
         <CalendarMonth />
       </IconButton>
@@ -47,17 +45,31 @@ export const DateTimeLabel = () => {
   )
 };
 
+interface AppType {
+  "name": string,
+  "icon"?: string,
+  "link"?: string,
+  "url"?: string,
+  "dev_url"?: string,
+  "repo"?: string,
+  "disabled"?: boolean,
+  "category"?: string[],
+  "tags"?: string[]
+}
+
 
 const AppLauncherPage = () => {
     const appStore = useAppStore();
-    const [appsList] = useState(window.appContent?.apps || []);
-    const [dockerApps] = useState(window.appContent?.dockerApps || []);
+    // These are buggy :/
+    let cms = (window as any)?.appContent;
+    const [appsList] = useState(cms ? cms?.apps : []);
+    const [dockerApps] = useState(cms ? cms?.dockerApps : []);
 
     const isDevEnvironment = (import.meta.env.MODE === "development");
 
-    const handleClick = async (app) => {
+    const handleClick = async (app: AppType) => {
       if (app.url) {
-        window.location.href = isDevEnvironment
+        (window as any).location.href = isDevEnvironment
           ? app.dev_url
           : app.url;
       }
@@ -80,17 +92,18 @@ const AppLauncherPage = () => {
             <Autocomplete
               disablePortal
               id="app"
-              options={window.appContent.apps}
+              options={cms.apps}
               fullWidth
               onLoadedData={() => {}}
               loading={false}
               loadingText="Loading..."
               noOptionsText="No options"
               autoComplete
-              getOptionLabel={(option) => option.name}
+              getOptionLabel={(option: { name: string }) => option.name}
               size='small'
               // sx={{ my: 2 }}
-              renderOption={(props, option) => {
+              renderOption={(props, option: AppType) => {
+                console.log("option: ", option, props);
                 return (
                   <Stack 
                     direction="row" 
@@ -115,7 +128,7 @@ const AppLauncherPage = () => {
                 <Box ref={params.InputProps.ref}>
                   <TextField
                     type="text"
-                    {...params.inputProps}
+                    // {...params.inputProps}
                     placeholder="Search by app name"
                     size='small'
                     fullWidth
@@ -216,7 +229,7 @@ const AppLauncherPage = () => {
             ))}
           </Grid>
           <Typography variant="subtitle1" p={1} px={2}>
-            {window.appContent.home.launcherText}
+            {cms.home.launcherText}
           </Typography>
 
           {/* App Grid Container */}
@@ -268,25 +281,21 @@ const AppLauncherPage = () => {
               Woodward Software Toolbox
             </Typography>
             <Typography variant="subtitle1">
-              {window.appContent.home.footerText}
+              {cms.home.footerText}
             </Typography>
             <Typography variant="subtitle1">
               Privacy / Terms of Use / Cookies
             </Typography>
-            <google-cast-launcher style={{ color: "#fff", fontSize: "24px" }}>
+            {/* <google-cast-launcher style={{ color: "#fff", fontSize: "24px" }}>
               Cast
-            </google-cast-launcher>
+            </google-cast-launcher> */}
 
           </Box>
 
       </Grid>
     ),
-    // eReader: <EReader />,
-    camera: <Camera />,
-    AI: <Chat />,
     "Admin Dashboard": <Admin />,
     Storage: <></>,
-    Fitness: <Fitness />,
     Github: <GithubAdmin />,
     Docs: <DocsPage />,
     Changelog: <Changelog />

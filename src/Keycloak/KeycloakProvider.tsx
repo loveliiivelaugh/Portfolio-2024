@@ -1,19 +1,28 @@
 import { createContext, useEffect } from 'react';
 import { create } from 'zustand';
 
-const useKeycloakStore = create((set) => ({
+interface KeycloakStoreTypes {
+    auth: boolean | "authenticated" | "success" | "failed"
+    authToken: string | null
+    keycloakUser: any
+    setKeycloakUser: (keycloakUser: any) => void
+    setAuthToken: (token: string) => void
+    setAuth: (auth: boolean | "authenticated" | "success" | "failed") => void
+}
+
+const useKeycloakStore = create<KeycloakStoreTypes>((set) => ({
     // states
     auth: false,
     authToken: null,
     keycloakUser: null,
     setKeycloakUser: (keycloakUser) => set(() => ({ keycloakUser })),
     setAuthToken: (token) => set(() => ({ authToken: token })),
-    setAuth: (auth) => set(() => ({ auth })),
+    setAuth: (auth: any) => set(() => ({ auth })),
 }));
 
 const KeycloakContext = createContext({});
 
-export const KeycloakProvider = (props) => {
+export const KeycloakProvider = (props: { keycloakInstance: any, children: any }) => {
     const { keycloakInstance, children } = props;
     const keycloakStore = useKeycloakStore();
 
@@ -25,14 +34,14 @@ export const KeycloakProvider = (props) => {
             onLoad: 'login-required',
             checkLoginIFrame: false
         })
-        .then(async (authenticated) => {
+        .then(async (authenticated: any) => {
             if (authenticated && keycloakInstance.token) {
                 const jwt = keycloakInstance.token;
 
                 // Set token as global Authorization header in Axios
                 keycloakStore.setAuthToken(jwt);
 
-                window.client.defaults.headers.common['Authorization'] = `Bearer ${jwt}`;
+                (window as any).client.defaults.headers.common['Authorization'] = `Bearer ${jwt}`;
 
                 // JWT token payload
                 // const payload = JSON.parse(window.atob(jwt.split('.')[1]));
@@ -62,7 +71,7 @@ export const KeycloakProvider = (props) => {
                 keycloakStore.setAuth('success');
             };
         })
-        .catch((error) => {
+        .catch((error: Error) => {
             console.error(error);
             keycloakStore.setAuth('failed');
         });
