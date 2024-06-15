@@ -1,6 +1,6 @@
 import { BottomNavigation, BottomNavigationAction, Box } from "@mui/material";
 
-const BottomNav = ({ items = [], sx }) => {
+const BottomNav = ({ items = [], sx }: any) => {
     return (
         <Box sx={{ zIndex: 100, overflow: "auto", width: "100vh" }}>
             <BottomNavigation

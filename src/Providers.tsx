@@ -6,6 +6,7 @@ import axios from 'axios';
 // import { SmoothScroll } from './theme/SmoothScroll.jsx';
 // import { KeycloakProvider } from './Keycloak/KeycloakProvider';
 import { PageTransitionWrapper, ThemeProvider } from './theme/ThemeProvider';
+import { SupabaseAuthProvider } from './components/Auth/Auth';
 // import { useAppStore } from './App.jsx';
 
 
@@ -16,25 +17,28 @@ const paths = {
     "content": "/api/cms/content"
 };
 
-// Initialize Server Client with Basic Auth
-const client = axios.create({
-    baseURL: (import.meta.env.MODE === "development") 
-        ? paths.local 
-        : paths.hostname,
-    timeout: 5000,
-    headers: {
-        "Content-Type": "application/json",
-    },
-    auth: {
-        username: import.meta.env.VITE_BASIC_AUTH_USERNAME,
-        password: import.meta.env.VITE_BASIC_AUTH_PASSWORD,
-    }
-});
-
 const queryClient = new QueryClient();
 
 // On Apps First Load
-const InitConfigProvider = ({ children }: any) => {
+const InitConfigProvider = ({ children, session }: { children: any, session: any }) => {
+
+    // Initialize Server Client with Basic Auth
+    const client = axios.create({
+        baseURL: (import.meta.env.MODE === "development") 
+            ? paths.local 
+            : paths.hostname,
+        timeout: 5000,
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "auth-token": `userAuthToken=${session?.access_token}&appId=${import.meta.env.VITE_APP_ID}`
+        },
+        auth: {
+            username: import.meta.env.VITE_BASIC_AUTH_USERNAME,
+            password: import.meta.env.VITE_BASIC_AUTH_PASSWORD,
+        }
+    });
+
     // Get Theme Config
     const themeConfigQuery = useQuery(({
         queryKey: ["themeConfig"],
@@ -75,21 +79,25 @@ const InitConfigProvider = ({ children }: any) => {
 
 export const Providers = ({ children }: any) => {
     return (
-        <QueryClientProvider client={queryClient}>
-            <Suspense fallback="Loading App Theme Configuration...">
-                <InitConfigProvider>
-                    {(themeConfig: any) => (
-                        <ThemeProvider themeConfig={themeConfig}>
-                            <PageTransitionWrapper>
-                                {/* <SmoothScroll></SmoothScroll> */}
-                                    {children}
-                                {/* <KeycloakProvider keycloakInstance={keycloakInstance}>
-                                </KeycloakProvider> */}
-                            </PageTransitionWrapper>
-                        </ThemeProvider>
-                    )}
-                </InitConfigProvider>
-            </Suspense>
-        </QueryClientProvider>
+        <SupabaseAuthProvider>
+            {(session: any) => (
+                <QueryClientProvider client={queryClient}>
+                    <Suspense fallback="Loading App Theme Configuration...">
+                        <InitConfigProvider session={session}>
+                            {(themeConfig: any) => (
+                                <ThemeProvider themeConfig={themeConfig}>
+                                    <PageTransitionWrapper>
+                                        {/* <SmoothScroll></SmoothScroll> */}
+                                            {children}
+                                        {/* <KeycloakProvider keycloakInstance={keycloakInstance}>
+                                        </KeycloakProvider> */}
+                                    </PageTransitionWrapper>
+                                </ThemeProvider>
+                            )}
+                        </InitConfigProvider>
+                    </Suspense>
+                </QueryClientProvider>
+            )}
+        </SupabaseAuthProvider>
     )
 };

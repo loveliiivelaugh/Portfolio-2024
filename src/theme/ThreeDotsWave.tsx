@@ -16,12 +16,12 @@ const LoadingContainer = {
   justifyContent: "space-around"
 };
 
-export default function ThreeDotsWave(props) {
+export default function ThreeDotsWave(props: any) {
   useEffect(() => {
     console.log("isLoading: ", props.isLoading)
     if (props.isLoading) {
       const intervalId = setInterval(() => {
-        animate(".dot", {
+        animate((".dot" as any), {
           transition: {
             y: -200,
             duration: 0.5,
@@ -29,7 +29,7 @@ export default function ThreeDotsWave(props) {
             ease: "easeInOut"
           }
         });
-        animate(".dot", {
+        animate((".dot" as any), {
           transition: {
             y: 200,
             duration: 0.5,

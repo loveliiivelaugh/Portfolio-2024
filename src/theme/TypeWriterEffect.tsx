@@ -1,7 +1,7 @@
 import { motion, stagger, useAnimate, useInView } from "framer-motion";
 import { useEffect } from "react";
 
-export const TypewriterEffect = ({ words }) => {
+export const TypewriterEffect = ({ words }: { words: { text: string }[] }) => {
   // split text inside of words into array of characters
   const wordsArray = words.map((word) => {
     return {
@@ -32,10 +32,10 @@ export const TypewriterEffect = ({ words }) => {
   const renderWords = () => {
     return (
       <motion.div ref={scope} className="inline">
-        {wordsArray.map((word, idx) => {
+        {wordsArray.map((word: any, idx: number) => {
           return (
             <div key={`word-${idx}`} className="inline-block">
-              {word.map((char, index) => (
+              {word.map((char: string, index: number) => (
                 <motion.span
                   initial={{}}
                   key={`char-${index}`}
@@ -80,8 +80,12 @@ export const TypewriterEffect = ({ words }) => {
 
 export const TypewriterEffectSmooth = ({
   words,
-  className,
-  cursorClassName,
+  // className,
+  // cursorClassName,
+} : {
+  words: { text: string }[];
+  className?: string;
+  cursorClassName?: string;
 }) => {
   // split text inside of words into array of characters
   const wordsArray = words.map((word) => {

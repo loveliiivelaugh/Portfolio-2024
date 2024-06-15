@@ -1,7 +1,7 @@
 
 import { useEffect, useRef } from 'react';
-import './SpeakerAlert.css';
 import { Box } from '@mui/material';
+import './SpeakerAlert.css';
 
 export const SpeakerAlert = () => {
     const containerRef = useRef();
@@ -46,9 +46,9 @@ export const SpeakerAlert = () => {
 
     return (
         <>
-            <Box class="alert" ref={containerRef}>
+            <Box className="alert" ref={containerRef}>
                 <p>This webpage would like to play sounds</p>
-                <p class="buttons">
+                <p className="buttons">
                     <button value="0">Block</button>
                     <button value="1">Allow</button>
                 </p>

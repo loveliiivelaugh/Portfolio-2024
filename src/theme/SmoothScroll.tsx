@@ -7,7 +7,7 @@ const navToTop = () => window.scrollTo({
     left: 0,
     behavior: 'smooth'
 });
-export const SmoothScroll = ({ children }) => {
+export const SmoothScroll = ({ children }: any) => {
     const location = useLocation();
     const navType = useNavigationType();
 
