@@ -92,7 +92,7 @@ const AppLauncherPage = () => {
             <Autocomplete
               disablePortal
               id="app"
-              options={cms.apps}
+              options={cms?.apps}
               fullWidth
               onLoadedData={() => {}}
               loading={false}
@@ -229,7 +229,7 @@ const AppLauncherPage = () => {
             ))}
           </Grid>
           <Typography variant="subtitle1" p={1} px={2}>
-            {cms.home.launcherText}
+            {cms?.home ? cms?.home.launcherText : ""}
           </Typography>
 
           {/* App Grid Container */}
@@ -281,7 +281,7 @@ const AppLauncherPage = () => {
               Woodward Software Toolbox
             </Typography>
             <Typography variant="subtitle1">
-              {cms.home.footerText}
+              {cms?.home ? cms.home.footerText : ""}
             </Typography>
             <Typography variant="subtitle1">
               Privacy / Terms of Use / Cookies
