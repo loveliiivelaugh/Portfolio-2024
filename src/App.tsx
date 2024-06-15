@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { 
   InputAdornment, TextField, Box, Grid, 
   IconButton, Typography, Autocomplete,
@@ -14,6 +14,7 @@ import FilterListIcon from '@mui/icons-material/FilterList';
 import { ArrowLeft, CalendarMonth } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 import moment from 'moment';
+import { useQuery } from '@tanstack/react-query';
 
 import DocsPage from './components/Docs/DocsPage.js'
 import GithubAdmin from './components/GithubAdmin/GithubAdmin.js';
@@ -21,13 +22,14 @@ import Admin from './components/Admin/Admin.js';
 import Changelog from './components/Changelog/Changelog.js'
 
 import { useAppStore } from './store/index.js';
+import { queries } from './config/api';
 
 
 export const DateTimeLabel = () => {
   const timeString = moment().format('MMMM Do YYYY, h:mm:ss a');
-  const [timeLabel, setTimeLabel] = React.useState(timeString);
+  const [timeLabel, setTimeLabel] = useState(timeString);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const interval = setInterval(() => {
       setTimeLabel(moment().format('MMMM Do YYYY, h:mm:ss a'));
     }, 1000);
@@ -36,7 +38,6 @@ export const DateTimeLabel = () => {
 
   return (
     <Typography variant="body1" component="p" p={1}>
-      {/* {moment().format('dddd MMMM Do YYYY, h:mm:ss a')} */}
       {timeLabel}
       <IconButton color="inherit">
         <CalendarMonth />
@@ -60,14 +61,12 @@ interface AppType {
 
 const AppLauncherPage = () => {
     const appStore = useAppStore();
-    // These are buggy :/
-    let cms = (window as any)?.appContent;
-    const [appsList] = useState(cms ? cms?.apps : []);
-    const [dockerApps] = useState(cms ? cms?.dockerApps : []);
+    // Get content from CMS
+    const contentQuery = useQuery(queries.getContentQuery());
 
     const isDevEnvironment = (import.meta.env.MODE === "development");
 
-    const handleClick = async (app: AppType) => {
+    function handleClick(app: AppType) {
       if (app.url) {
         (window as any).location.href = isDevEnvironment
           ? app.dev_url
@@ -76,7 +75,7 @@ const AppLauncherPage = () => {
       else appStore.setAppView(app.name);
     };
 
-    return (
+    return contentQuery.isLoading ? "Loading..." : (
       <motion.div
         initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 1, x: 0 }}
@@ -92,7 +91,7 @@ const AppLauncherPage = () => {
             <Autocomplete
               disablePortal
               id="app"
-              options={cms?.apps}
+              options={appStore.cms.apps}
               fullWidth
               onLoadedData={() => {}}
               loading={false}
@@ -175,7 +174,7 @@ const AppLauncherPage = () => {
           <Box sx={{ overflow: 'auto' }}>
             {/* <AppList appsList={cms.appsList} /> */}
             <List>
-              {[...appsList, ...dockerApps].map((app, index) => (
+              {contentQuery.data.apps.map((app: AppType, index: number) => (
                 <ListItem key={index} disablePadding>
                   <ListItemButton>
                     <ListItemIcon>
@@ -229,12 +228,12 @@ const AppLauncherPage = () => {
             ))}
           </Grid>
           <Typography variant="subtitle1" p={1} px={2}>
-            {cms?.home ? cms?.home.launcherText : ""}
+            {contentQuery.data?.home.launcherText}
           </Typography>
 
           {/* App Grid Container */}
           <Grid container spacing={3} mt={1}>
-            {[...appsList, ...dockerApps].map((app, index) => (
+            {contentQuery.data.apps.map((app: AppType, index: number) => (
               <Grid 
                 key={index} 
                 item 
@@ -281,7 +280,7 @@ const AppLauncherPage = () => {
               Woodward Software Toolbox
             </Typography>
             <Typography variant="subtitle1">
-              {cms?.home ? cms.home.footerText : ""}
+              {contentQuery.data.home.footerText}
             </Typography>
             <Typography variant="subtitle1">
               Privacy / Terms of Use / Cookies

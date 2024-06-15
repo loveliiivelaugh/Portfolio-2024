@@ -1,10 +1,12 @@
 import { create } from 'zustand';
 
 interface AppStore {
+    cms: any,
     appView: string | "home",
     drawerOpen: boolean,
     client: null | any,
     appContent: any,
+    setCms: (cms: any) => void,
     setAppView: (appView: string) => void,
     setDrawerOpen: (drawerOpen: boolean) => void,
     setClient: (client: any) => void,
@@ -12,6 +14,10 @@ interface AppStore {
 };
 
 const useAppStore = create<AppStore>((set) => ({
+
+    cms: {},
+    setCms: (cms) => set(() => ({ cms })),
+
     appView: "home",
     setAppView: (appView) => set(() => ({ appView })),
 

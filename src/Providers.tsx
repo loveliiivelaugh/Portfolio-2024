@@ -1,67 +1,26 @@
 import { Suspense } from 'react';
 import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query';
 // import Keycloak from 'keycloak-js';
-import axios from 'axios';
 
 // import { SmoothScroll } from './theme/SmoothScroll.jsx';
 // import { KeycloakProvider } from './Keycloak/KeycloakProvider';
 import { PageTransitionWrapper, ThemeProvider } from './theme/ThemeProvider';
 import { SupabaseAuthProvider } from './components/Auth/Auth';
-// import { useAppStore } from './App.jsx';
+import { client, queries } from './config/api';
 
-
-const paths = {
-    "hostname": import.meta.env.VITE_HOSTNAME,
-    "local": "http://localhost:5001",
-    "themeConfig": "/api/theme/themeConfig",
-    "content": "/api/cms/content"
-};
 
 const queryClient = new QueryClient();
 
 // On Apps First Load
 const InitConfigProvider = ({ children, session }: { children: any, session: any }) => {
-
-    // Initialize Server Client with Basic Auth
-    const client = axios.create({
-        baseURL: (import.meta.env.MODE === "development") 
-            ? paths.local 
-            : paths.hostname,
-        timeout: 5000,
-        headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json",
-            "auth-token": `userAuthToken=${session?.access_token}&appId=${import.meta.env.VITE_APP_ID}`
-        },
-        auth: {
-            username: import.meta.env.VITE_BASIC_AUTH_USERNAME,
-            password: import.meta.env.VITE_BASIC_AUTH_PASSWORD,
-        }
-    });
+    // Set auth token for authenticated client
+    let authToken = `userAuthToken=${session?.access_token}&appId=${import.meta.env.VITE_APP_ID}`;
+    (client as any).defaults.headers.common["auth-token"] = authToken;
 
     // Get Theme Config
-    const themeConfigQuery = useQuery(({
-        queryKey: ["themeConfig"],
-        queryFn: async () => (await client.get(paths.themeConfig)).data,
-    }));
-    // Get content from CMS
-    const contentQuery = useQuery(({
-        queryKey: ["content"],
-        queryFn: async () => (await client.get(paths.content)).data,
-        select: (data) => {
-            (window as any).appContent = data ? data : {};
-            
-            return data;
-        }
-    }));
+    const themeConfigQuery = useQuery(queries.getThemeQuery());
 
-    // console.log(import.meta)
-    console.log({contentQuery}) as any
-
-    // Set global access to server client
-    (window as any).client = client; 
-
-    // Initialize Keycloak
+    // Initialize Keycloak *Will come back to this*
     // const [keycloakInstance, setKeycloakInstance] = useState(null);
     
     // // Initialize Keycloak
