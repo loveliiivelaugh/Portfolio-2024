@@ -3,6 +3,7 @@ import { Divider, Grid, List, ListItem, ListItemIcon, ListItemText, Typography }
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useQuery } from '@tanstack/react-query'
 
+import { client } from '../../config/api';
 
 interface CodeRepoType {
     id: string, 
@@ -15,8 +16,8 @@ interface CodeRepoType {
     open_issues_count: number
 }
 
-const { client } = window as any; // Authenticated Client on window
-const githubQueryPath = '/api/github';
+
+const githubQueryPath = '/api/sensative?endpoint=/api/github';
 const testQueryPath = '/api/openfitness/fitness_tables';
 
 const queries = {

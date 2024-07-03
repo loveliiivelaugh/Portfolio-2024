@@ -17,4 +17,7 @@ export default defineConfig({
   // optimizeDeps: {
   //   exclude: ['js-big-decimal']
   // }
+  // build: {
+  //   commonjsOptions: { transformMixedEsModules: true }
+  // }
 })
