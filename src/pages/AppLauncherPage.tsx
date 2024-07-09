@@ -10,7 +10,7 @@ import FilterListIcon from '@mui/icons-material/FilterList';
 import { motion } from 'framer-motion';
 
 import SecurityHub from '../components/SecurityHub/SecurityHub';
-import DocsPage from '../components/Docs/DocsPage'
+// import DocsPage from '../components/Docs/DocsPage'
 import GithubAdmin from '../components/GithubAdmin/GithubAdmin';
 import Admin from '../components/Admin/Admin';
 import Changelog from '../components/Changelog/Changelog';
@@ -111,7 +111,7 @@ function AppLauncherPageContent({ content }: { content: any }) {
                     "Admin Dashboard": <Admin />,
                     "Storage": <></>,
                     "Github": <GithubAdmin />,
-                    "Docs": <DocsPage />,
+                    // "Docs": <DocsPage />,
                     "Changelog": <Changelog />
                 }[appStore.appView])}
             </motion.div>

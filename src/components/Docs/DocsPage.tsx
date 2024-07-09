@@ -3,8 +3,8 @@
 import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { 
-  Box, Drawer, Grid, List, ListItem, ListItemButton, 
-  ListItemText, Toolbar, Typography 
+    Box, Drawer, Grid, List, ListItem, ListItemButton, 
+    ListItemText, Toolbar, Typography 
 } from '@mui/material';
 import { motion } from 'framer-motion';
 
@@ -36,12 +36,12 @@ const microservices = [
 ];
 
 const mainBoxStyle = { 
-  zIndex: 1, 
-  marginLeft: "280px", 
-  height: "100vh", 
-  padding: "20px", 
-  width: "calc(100% - 280px)", 
-  overflow: "auto" 
+    zIndex: 1, 
+    marginLeft: "280px", 
+    height: "100vh", 
+    padding: "20px", 
+    width: "calc(100% - 280px)", 
+    overflow: "auto" 
 };
 
 const DocsPage = () => {
@@ -54,10 +54,10 @@ const DocsPage = () => {
 
     return (
         <Grid container component={motion.div}
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -100 }}
-          transition={{ duration: 0.5 }}
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -100 }}
+            transition={{ duration: 0.5 }}
         >
             <Typography variant='h2'>DocsPage</Typography>
             <Drawer
@@ -86,12 +86,12 @@ const DocsPage = () => {
             <Box sx={mainBoxStyle}>
                 {/* <img src={communicationFlowChart} alt="Microservice Communication Flow Chart" style={{ width: "100%", borderRadius: "10px" }}/> */}
                 {notionQuery.isLoading
-                  ? "Loading Content..."
-                  : notionQuery.isSuccess && (
-                    <MarkdownWrapper>
-                        {notionQuery.data.markdown}
-                    </MarkdownWrapper>
-                  )
+                    ? "Loading Content..."
+                    : notionQuery.isSuccess && (
+                        <MarkdownWrapper>
+                            {notionQuery.data.markdown}
+                        </MarkdownWrapper>
+                    )
                 }
             </Box>
         </Grid>
