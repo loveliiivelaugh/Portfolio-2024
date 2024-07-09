@@ -51,7 +51,6 @@
     "react-speech-recognition": "^3.10.0",
     "react-syntax-highlighter": "^15.5.0",
     "react-webcam": "^7.2.0",
-    "regenerator-runtime": "^0.14.1",
     "rehype-katex": "^7.0.0",
     "remark-math": "^6.0.0",
     "styled-components": "^6.1.8",

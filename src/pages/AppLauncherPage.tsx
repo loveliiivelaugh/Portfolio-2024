@@ -9,10 +9,10 @@ import FilterListIcon from '@mui/icons-material/FilterList';
 // import Markdown from 'react-markdown'
 import { motion } from 'framer-motion';
 
-import SecurityHub from '../components/SecurityHub/SecurityHub';
+// import SecurityHub from '../components/SecurityHub/SecurityHub';
 // import DocsPage from '../components/Docs/DocsPage'
-import GithubAdmin from '../components/GithubAdmin/GithubAdmin';
-import Admin from '../components/Admin/Admin';
+// import GithubAdmin from '../components/GithubAdmin/GithubAdmin';
+// import Admin from '../components/Admin/Admin';
 import Changelog from '../components/Changelog/Changelog';
 import { Navbar } from '../components/Layout/Navbar';
 import { DateTimeLabel } from '../components/Layout/DateTimeLabel';
@@ -22,7 +22,7 @@ import { useSupabaseStore } from '../components/Auth/Auth';
 import { queries } from '../config/api';
 // import { markdown } from '../markdown';
 import * as cpxHelpers from '../config/cpxHelper';
-import VoiceView from '../components/Voice';
+// import VoiceView from '../components/Voice';
 
 
 interface AppType {
@@ -108,9 +108,9 @@ function AppLauncherPageContent({ content }: { content: any }) {
                 {/* App Views */}
                 {({
                     "home": <HomeView content={content} apps={apps} />,
-                    "Admin Dashboard": <Admin />,
-                    "Storage": <></>,
-                    "Github": <GithubAdmin />,
+                    // "Admin Dashboard": <Admin />,
+                    // "Storage": <></>,
+                    // "Github": <GithubAdmin />,
                     // "Docs": <DocsPage />,
                     "Changelog": <Changelog />
                 }[appStore.appView])}
@@ -198,12 +198,12 @@ function HomeView(props: { content: any, apps: any }) {
             <Divider />
 
             <Grid sm={12} sx={{ textAlign: "right", px: 4 }}>
-                <VoiceView />
+                {/* <VoiceView /> */}
             </Grid>
 
             {/* Security Hub */}
             <Grid p={4}>
-                <SecurityHub />
+                {/* <SecurityHub /> */}
             </Grid>
 
             {/* Footer */}
