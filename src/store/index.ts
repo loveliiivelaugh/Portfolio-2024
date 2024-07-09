@@ -1,34 +1,21 @@
 import { create } from 'zustand';
 
 interface AppStore {
-    cms: any,
+    appConfig: any,
     appView: string | "home",
     drawerOpen: boolean,
-    client: null | any,
-    appContent: any,
-    setCms: (cms: any) => void,
+    setAppConfig: (appConfig: any) => void,
     setAppView: (appView: string) => void,
     setDrawerOpen: (drawerOpen: boolean) => void,
-    setClient: (client: any) => void,
-    setAppContent: (appContent: any) => void
 };
 
 const useAppStore = create<AppStore>((set) => ({
-
-    cms: {},
-    setCms: (cms) => set(() => ({ cms })),
-
+    appConfig: null,
     appView: "home",
-    setAppView: (appView) => set(() => ({ appView })),
-
     drawerOpen: false,
+    setAppConfig: (appConfig) => set(() => ({ appConfig })),
+    setAppView: (appView) => set(() => ({ appView })),
     setDrawerOpen: (drawerOpen) => set(() => ({ drawerOpen })),
-
-    client: null,
-    setClient: (client) => set(() => ({ client })),
-
-    appContent: {},
-    setAppContent: (appContent) => set(() => ({ appContent }))
 }));
 
 export { useAppStore };

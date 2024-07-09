@@ -1,9 +1,16 @@
 "use client"
 
 import { useState } from 'react';
-import { Box, Drawer, List, ListItem, ListItemButton, ListItemText, Toolbar } from '@mui/material';
+import { useQuery } from '@tanstack/react-query';
+import { 
+  Box, Drawer, Grid, List, ListItem, ListItemButton, 
+  ListItemText, Toolbar, Typography 
+} from '@mui/material';
+import { motion } from 'framer-motion';
 
 import MarkdownWrapper from '../Layout/Markdown';
+import { paths, queries } from '../../config/api';
+import communicationFlowChart from '../../assets/FamilyAppsSuiteFlow.png';
 
 
 const microservices = [
@@ -26,33 +33,46 @@ const microservices = [
     { name: "Ollama" },
     { name: "Redis" },
     { name: "Deployment" },
-]
-const DocsPage = () => {
-    const [activeDocs, setActiveDocs] = useState(null as any | null);
+];
 
-    function handleClick(service: any) {
+const mainBoxStyle = { 
+  zIndex: 1, 
+  marginLeft: "280px", 
+  height: "100vh", 
+  padding: "20px", 
+  width: "calc(100% - 280px)", 
+  overflow: "auto" 
+};
+
+const DocsPage = () => {
+    const notionQuery = useQuery(queries.query(paths.getNotion));
+    const [, setActiveDocs] = useState<string | null>(null);
+
+    function handleClick(service: { name: string }) {
         setActiveDocs(service.name)
     };
 
     return (
-        <div>
-            <h1>DocsPage</h1>
+        <Grid container component={motion.div}
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -100 }}
+          transition={{ duration: 0.5 }}
+        >
+            <Typography variant='h2'>DocsPage</Typography>
             <Drawer
                 anchor="left"
+                variant="persistent"
                 open={true}
                 sx={{ zIndex: 0 }}
-                hideBackdrop
             >
                 <Box
                     sx={{ width: 250 }}
-                    role="presentation"
                     component={List}
                     dense
-                    // onClick={toggleDrawer(false)}
-                    // onKeyDown={toggleDrawer(false)}
                 >
                     <Toolbar />
-                    {microservices.map((microservice: any, index: number) => (
+                    {microservices.map((microservice: { name: string }, index: number) => (
                         <ListItem key={index}>
                             <ListItemButton onClick={() => handleClick(microservice)}>
                                 <ListItemText primary={microservice.name} />
@@ -61,43 +81,20 @@ const DocsPage = () => {
                     ))}
 
                 </Box>
-                
+
             </Drawer>
-            <Box sx={{ marginLeft: "280px" }}>
-                {(console.log({activeDocs}) as any)}
-                <MarkdownWrapper>
-                    `# Family Apps Suite Docs
-                    Supported Microservices
-
-                    App Hub PWA includes Github data, docs, and changelog.
-                    FamilyApps: [FamilyApps](https://familyapps2.netlify.app/)
-
-                    - App Hub / Launchpad
-
-                    PWA Features data visualizations, charting and connected PostgresSQL database
-                    OpenFitness: [Open Fitness](https://openfitness.netlify.app/)
-
-                    - Fitness + Nutrition Tracking
-
-                    PWA Features web UI to interact with various open source LLMs through multiple modals
-                    AiChat: [AiChat]()
-
-                    - Multi Modal interface to interact with open source LLMs
-
-                    PWA features camera access and functionality with embedded AI and machine learning capabilities
-                    SmartCamera: [Smart Camera](https://smartcamera.netlify.app/)
-
-                    - Web app supporting AI embedded camera functionality
-
-                    Database
-                    Supabase - PostgresSQL database
-
-                    `
-
-
-                </MarkdownWrapper>
+            <Box sx={mainBoxStyle}>
+                <img src={communicationFlowChart} alt="Microservice Communication Flow Chart" style={{ width: "100%", borderRadius: "10px" }}/>
+                {notionQuery.isLoading
+                  ? "Loading Content..."
+                  : notionQuery.isSuccess && (
+                    <MarkdownWrapper>
+                        {notionQuery.data.markdown}
+                    </MarkdownWrapper>
+                  )
+                }
             </Box>
-        </div>
+        </Grid>
     )
 }
 

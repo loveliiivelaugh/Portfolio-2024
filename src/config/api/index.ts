@@ -11,6 +11,9 @@ const paths = {
         ? "http://localhost:3000" 
         : (window as any).appContent?.apps.find(({ name }: any) => name === "home")?.url,
     "getCrossPlatformState": '/api/cross-platform',
+    "getNotion": "/api/v1/notion",
+    "githubQueryPath": '/api/sensative?endpoint=/api/github',
+    "users": '/auth/v1/user'
 
 };
 
@@ -22,7 +25,7 @@ const client = axios.create({
     headers: {
         "Content-Type": "application/json",
         "Accept": "application/json",
-        // "auth-token": `userAuthToken=${"1234-5678-9012"}&appId=${import.meta.env.VITE_APP_ID}`
+        "auth-token": `userAuthToken=${"1234-5678-9012"}&appId=${import.meta.env.VITE_APP_ID}`
     },
     // // Interferes with Bearer Auth
     // auth: {
@@ -48,6 +51,26 @@ const queries = {
     getYouTubeData: ({
         queryKey: ["youtube"],
         queryFn: async () => (await client.get("/api/google/youtube")).data
+    }),
+    githubQuery: ({
+        queryKey: ['githubQuery'], 
+        queryFn: async () => (await client.get(paths.githubQueryPath)).data
+    }),
+    getUser: ({
+        queryKey: ['user'], 
+        queryFn: async () => (await client.get(paths.users)).data
+    }),
+    notionQuery: ({
+        queryKey: ['notion'], 
+        queryFn: async () => (await client.get(paths.getNotion)).data
+    }),
+
+    // General Query to use any query with a passed queryPath
+    query: (queryPath: string, method?: string, payload?: any) => ({
+        queryKey: [queryPath],
+        queryFn: async () => payload 
+            ? (await (client as any)[method || "post"](queryPath, payload)).data
+            : (await (client as any)[method || "get"](queryPath)).data
     })
 }
 

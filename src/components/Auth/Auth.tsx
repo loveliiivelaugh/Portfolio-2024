@@ -2,6 +2,27 @@ import { useState, useEffect } from 'react';
 import { createClient } from '@supabase/supabase-js';
 import { Box, Button, Grid, TextField } from '@mui/material';
 import { create } from 'zustand';
+import { client, paths } from '../../config/api';
+import { encodeJWT } from '../../config/jwt';
+import { useAppStore } from '../../store';
+
+
+const useAppConfig = async () => {
+    const appStore = useAppStore();
+    const [appConfigIsLoading, setAppConfigIsLoading] = useState(true);
+
+    async function getAndSetAppConfig() {
+        const appConfigQuery = (await client.get(paths.getAppConfig)).data;
+        appStore.setAppConfig(appConfigQuery);
+        setAppConfigIsLoading(false);
+        return appConfigQuery
+    };
+
+    return {
+        getAndSetAppConfig,
+        appConfigIsLoading
+    };
+}
 
 
 interface SupabaseStoreTypes {
@@ -25,8 +46,21 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 export function SupabaseAuthProvider({ children }: any) {
     const supabaseStore = useSupabaseStore();
-    
+    const appConfigHook = useAppConfig();
     const [userType, setUserType] = useState<"admin" | "guest" | null>("admin");
+
+    // Create the JWT and authenticate with server
+    async function handleJwtSignIn(session: any) {
+        // Encode JWT to enable authentication across microservices
+        const token = encodeJWT(session);
+        (client as any).defaults.headers.common["Authorization"] = `Bearer ${token}`;
+
+        // Authenticate with Server
+        await client.post("/auth/v1/login", session);
+
+        // After authentication, get and set app config
+        (await appConfigHook).getAndSetAppConfig();
+    };
 
     async function handleGuestSignIn() {
         setUserType("guest");
@@ -36,7 +70,6 @@ export function SupabaseAuthProvider({ children }: any) {
     async function handleSubmit(e: any) {
         e.preventDefault();
 
-        // console.log("handleSubmit: ", e)
         setUserType("admin");
         await supabase.auth.signInWithPassword({
             email: e.target.email.value,
@@ -45,10 +78,17 @@ export function SupabaseAuthProvider({ children }: any) {
     };
 
     useEffect(() => {
+        client.get('/auth/v1/protected')
+            .then((response: any) => {
+                console.log("auth/v1/protected: ", response.data)
+            })
+
+        // Listen for auth state changes
         supabase.auth
             .getSession()
             .then(({ data: { session } }: { data: { session: any } }) => {
                 supabaseStore.setSession(session)
+                handleJwtSignIn(session);
             });
 
         const {
@@ -58,19 +98,18 @@ export function SupabaseAuthProvider({ children }: any) {
             if (!session) setUserType(null);
 
             supabaseStore.setSession(session)
-        })
+            handleJwtSignIn(session);
+        });
 
         return () => subscription.unsubscribe()
     }, [])
 
-    // console.log({ supabaseStore, userType })
 
     if (!supabaseStore.session && !userType) return (
         <Box sx={{ height: "100vh", width: "100vw", display: "flex", justifyContent: "center", alignItems: "center" }}>
             <Box sx={{ border: "1px solid white", borderRadius: 1, p: 3, display: "block" }}>
                 <Button onClick={() => setUserType("admin")}>Continue as Admin</Button>
                 <Button onClick={handleGuestSignIn}>Continue as Guest</Button>
-                {/* <Button onClick={() => supabase.auth.signOut()}>Sign out</Button> */}
             </Box>
         </Box>
     )
@@ -120,5 +159,6 @@ export function SupabaseAuthProvider({ children }: any) {
             </Box>
         )
     }
+    else if ((appConfigHook as any)?.appConfigIsLoading) "Loading App Configuration Settings..."
     else return children;
 }

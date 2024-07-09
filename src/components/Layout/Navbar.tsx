@@ -5,14 +5,13 @@ import {
 } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
 
-import { paths } from '../../config/api';
-// import { useAppStore } from '../../store';
+import { useAppStore } from '../../store';
 import { supabase } from '../Auth/Auth';
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 export const Navbar = () => {
-    // const appStore = useAppStore();
+    const appStore = useAppStore();
     // const supabaseStore = useSupabaseStore();
     const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
 
@@ -31,10 +30,10 @@ export const Navbar = () => {
     return (
         <AppBar>
             <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-                <IconButton component="a" href={paths.homeApp}>
+                <IconButton onClick={() => appStore.setAppView("home")}>
                     <HomeIcon />
                 </IconButton>
-                <Typography variant="h6">OpenFitness</Typography> 
+                <Typography variant="h6">App Depot</Typography> 
                 {/* <Avatar src={"M"} sx={{ width: 40, height: 40 }} /> */}
                 <Box sx={{ flexGrow: 0 }}>
                     <Tooltip title="Open settings">

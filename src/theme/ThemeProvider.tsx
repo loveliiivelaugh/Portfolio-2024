@@ -3,6 +3,7 @@ import { useMemo } from 'react';
 import { createTheme, CssBaseline } from '@mui/material';
 import { ThemeProvider as MuiThemeProvider } from '@emotion/react';
 import { motion } from "framer-motion";
+import { useAppStore } from '../store';
 
 
 
@@ -11,8 +12,12 @@ const useTheme = ({ mode, themeConfig }: { mode: "light" | "dark", themeConfig: 
   ...themeConfig[mode],
 }), [mode])
 
-export const ThemeProvider = ({ children, themeConfig }: { children: any, themeConfig: any }) => {
-  const theme = useTheme({ mode: 'dark', themeConfig })
+export const ThemeProvider = ({ children }: { children: any }) => {
+  const appStore = useAppStore();
+  const theme = useTheme({ 
+    mode: 'dark', 
+    themeConfig: appStore.appConfig?.themeConfig || { dark: "", light: "" } 
+  });
 
   return (
     <MuiThemeProvider theme={theme}>

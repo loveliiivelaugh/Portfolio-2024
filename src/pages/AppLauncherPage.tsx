@@ -9,6 +9,7 @@ import FilterListIcon from '@mui/icons-material/FilterList';
 // import Markdown from 'react-markdown'
 import { motion } from 'framer-motion';
 
+import SecurityHub from '../components/SecurityHub/SecurityHub';
 import DocsPage from '../components/Docs/DocsPage'
 import GithubAdmin from '../components/GithubAdmin/GithubAdmin';
 import Admin from '../components/Admin/Admin';
@@ -21,6 +22,7 @@ import { useSupabaseStore } from '../components/Auth/Auth';
 import { queries } from '../config/api';
 // import { markdown } from '../markdown';
 import * as cpxHelpers from '../config/cpxHelper';
+import VoiceView from '../components/Voice';
 
 
 interface AppType {
@@ -63,7 +65,7 @@ function AppLauncherPageContent({ content }: { content: any }) {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -100 }}
             transition={{ duration: 0.5 }}
-            style={{ maxWidth: "100vw" }}
+            // style={{ maxWidth: "100vw" }}
         >
             {/* Navbar */}
             <Navbar />
@@ -97,16 +99,22 @@ function AppLauncherPageContent({ content }: { content: any }) {
                 </Box>
             </Drawer>
 
-            {/* App Views */}
-            {({
-                "home": <HomeView content={content} apps={apps} />,
-                "Admin Dashboard": <Admin />,
-                "Storage": <></>,
-                "Github": <GithubAdmin />,
-                "Docs": <DocsPage />,
-                "Changelog": <Changelog />
-            }[appStore.appView])}
-
+            <motion.div
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -100 }}
+                transition={{ duration: 1.5 }}
+            >
+                {/* App Views */}
+                {({
+                    "home": <HomeView content={content} apps={apps} />,
+                    "Admin Dashboard": <Admin />,
+                    "Storage": <></>,
+                    "Github": <GithubAdmin />,
+                    "Docs": <DocsPage />,
+                    "Changelog": <Changelog />
+                }[appStore.appView])}
+            </motion.div>
         </motion.div>
     )
 };
@@ -189,9 +197,14 @@ function HomeView(props: { content: any, apps: any }) {
 
             <Divider />
 
-            {/* <Grid p={4}>
-                <Markdown children={``} />
-            </Grid> */}
+            <Grid sm={12} sx={{ textAlign: "right", px: 4 }}>
+                <VoiceView />
+            </Grid>
+
+            {/* Security Hub */}
+            <Grid p={4}>
+                <SecurityHub />
+            </Grid>
 
             {/* Footer */}
             <Box sx={{ flexGrow: 1, my: 6, textAlign: 'center' }}>
