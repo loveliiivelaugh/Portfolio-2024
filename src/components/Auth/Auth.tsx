@@ -55,8 +55,8 @@ export function SupabaseAuthProvider({ children }: any) {
         const token = encodeJWT(session);
         (client as any).defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
-        // Authenticate with Server
-        await client.post("/auth/v1/login", session);
+        // // Authenticate with Server
+        // await client.post("/auth/v1/login", session);
 
         // After authentication, get and set app config
         (await appConfigHook).getAndSetAppConfig();
@@ -78,10 +78,10 @@ export function SupabaseAuthProvider({ children }: any) {
     };
 
     useEffect(() => {
-        client.get('/auth/v1/protected')
-            .then((response: any) => {
-                console.log("auth/v1/protected: ", response.data)
-            })
+        // client.get('/auth/v1/protected')
+        //     .then((response: any) => {
+        //         console.log("auth/v1/protected: ", response.data)
+        //     })
 
         // Listen for auth state changes
         supabase.auth
