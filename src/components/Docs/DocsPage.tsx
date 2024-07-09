@@ -10,7 +10,7 @@ import { motion } from 'framer-motion';
 
 import MarkdownWrapper from '../Layout/Markdown';
 import { paths, queries } from '../../config/api';
-import communicationFlowChart from '../../assets/FamilyAppsSuiteFlow.png';
+// import communicationFlowChart from '../../assets/FamilyAppsSuiteFlow.png';
 
 
 const microservices = [
@@ -84,7 +84,7 @@ const DocsPage = () => {
 
             </Drawer>
             <Box sx={mainBoxStyle}>
-                <img src={communicationFlowChart} alt="Microservice Communication Flow Chart" style={{ width: "100%", borderRadius: "10px" }}/>
+                {/* <img src={communicationFlowChart} alt="Microservice Communication Flow Chart" style={{ width: "100%", borderRadius: "10px" }}/> */}
                 {notionQuery.isLoading
                   ? "Loading Content..."
                   : notionQuery.isSuccess && (
