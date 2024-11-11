@@ -1,13 +1,13 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import { PageTransitionWrapper, ThemeProvider } from '../theme/ThemeProvider';
-import { SupabaseAuthProvider } from '../components/Auth/Auth';
+import { AuthProvider } from '../components/Auth/Auth3';
 
 const queryClient = new QueryClient();
 
 export const Providers = ({ children }: any) => {
     return (
-        <SupabaseAuthProvider>
+        <AuthProvider>
             <QueryClientProvider client={queryClient}>
                 <ThemeProvider>
                     <PageTransitionWrapper>
@@ -15,6 +15,6 @@ export const Providers = ({ children }: any) => {
                     </PageTransitionWrapper>
                 </ThemeProvider>
             </QueryClientProvider>
-        </SupabaseAuthProvider>
+        </AuthProvider>
     );
 };

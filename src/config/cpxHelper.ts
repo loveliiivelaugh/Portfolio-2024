@@ -1,4 +1,4 @@
-import { encodeJWT } from "./jwt";
+
 import { client, paths } from "./api";
 
 const isDevEnvironment = (import.meta.env.MODE === "development");
@@ -37,11 +37,6 @@ async function handleNextApp(props: any) {
     ));
     
     if (response.status === 200) {
-        // set the secret cookie
-        // only at "Home App" (FamilyApps)
-        let cookieString = `${import.meta.env.VITE_SECRET_COOKIE}=${encodeJWT(session)}`;
-        
-        document.cookie = cookieString;
         
         window.open(response.data.redirect, "_parent");
     }

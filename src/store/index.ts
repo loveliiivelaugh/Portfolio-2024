@@ -18,4 +18,31 @@ const useAppStore = create<AppStore>((set) => ({
     setDrawerOpen: (drawerOpen) => set(() => ({ drawerOpen })),
 }));
 
-export { useAppStore };
+
+interface SupabaseStoreTypes {
+    session: any
+    setSession: (session: any) => void
+}
+
+const useSupabaseStore = create<SupabaseStoreTypes>((set) => ({
+    session: null,
+    setSession: (session: any) => set(() => ({ session })),
+}));
+
+
+interface EReaderStore {
+    isSpeaking: boolean,
+    downloadOptionsOpen: boolean,
+    setOpenDownloadOptions: (value: boolean) => void,
+    setIsSpeaking: (value: boolean) => void
+}
+
+const useEReaderStore = create<EReaderStore>((set) => ({
+    isSpeaking: true,
+    downloadOptionsOpen: false,
+    setOpenDownloadOptions: (value) => set(() => ({ downloadOptionsOpen: value })),
+    setIsSpeaking: (value) => set(() => ({ isSpeaking: value }))
+}));
+
+
+export { useAppStore, useSupabaseStore, useEReaderStore };

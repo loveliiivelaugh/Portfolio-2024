@@ -1,5 +1,4 @@
 
-import { useQuery } from '@tanstack/react-query';
 import { 
     Box, Grid, IconButton, Typography, Chip, Drawer,
     List, ListItem, ListItemIcon, ListItemButton, ListItemText, 
@@ -9,19 +8,21 @@ import FilterListIcon from '@mui/icons-material/FilterList';
 import { motion } from 'framer-motion';
 
 // import SecurityHub from '../components/SecurityHub/SecurityHub';
-import DocsPage from '../components/Docs/DocsPage'
 // import GithubAdmin from '../components/GithubAdmin/GithubAdmin';
-// import Admin from '../components/Admin/Admin';
+// import VoiceView from '../components/Voice';
+import DocsPage from '../components/Docs/DocsPage'
+import Admin from '../components/Admin/Admin';
 import Changelog from '../components/Changelog/Changelog';
+import PhotosApp from '../components/PhotosApp';
+import Noah from '../components/Noah/Noah';
 import { Navbar } from '../components/Layout/Navbar';
 import { DateTimeLabel } from '../components/Layout/DateTimeLabel';
 
-import { useAppStore } from '../store';
-import { useSupabaseStore } from '../components/Auth/Auth';
-import { queries } from '../config/api';
-// import { markdown } from '../markdown';
+import { useAppStore, useSupabaseStore } from '../store';   
 import * as cpxHelpers from '../config/cpxHelper';
-// import VoiceView from '../components/Voice';
+import EReader from '../components/EReader/EReader';
+import MarkdownWrapper from '../components/Layout/Markdown';
+import packageJsonContents from '../../package.json';
 
 
 interface AppType {
@@ -37,14 +38,36 @@ interface AppType {
 }  
 
 function AppLauncherPage() {
-    const contentQuery = useQuery(queries.getContentQuery());
+    const appStore = useAppStore();
 
-    return ({
-        pending: "Uninitialized...",
-        loading: "Loading App Content...",
-        success: <AppLauncherPageContent content={contentQuery.data} />,
-        error: "Something went wrong..."
-    }[contentQuery.status]);
+    return (
+        <div style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            height: "auto",
+            minHeight: '100vh',
+            width: "100vw",
+            background: "#101020",
+            color: "white",
+        }}>
+            <h2>A whole new world! 🌎</h2>
+            <p>This is a front end starter app.</p>
+            <p>Take Note** Strict Stack Webpack React Typescript Vitest (Tailwind | MUI)</p>
+            <p>Version 0.1.0</p>
+            <p>Coming Soon! v2 will be a more refined version than v1. Lots of packages that are outdated or not used anymore in favor of more modern technologies.</p>
+            <p>Should probably include basic routing and starter tests in v2</p>
+            <p>The intention of this app is to provide a quick starting point to building front end apps within Cherrytopframework</p>
+            <p>Please review the package's that are included before starting</p>
+            <pre>{JSON.stringify(packageJsonContents.dependencies, null, 2)}</pre>
+            <pre>{JSON.stringify(packageJsonContents.devDependencies, null, 2)}</pre>
+        </div>
+    )
+    // // Wait for auth to login and config to load
+    // return !appStore.appConfig?.cms
+    //     ? <p>Loading...</p> 
+    //     : <AppLauncherPageContent content={appStore.appConfig.cms} />
 };
 
 export default AppLauncherPage;
@@ -107,11 +130,14 @@ function AppLauncherPageContent({ content }: { content: any }) {
                 {/* App Views */}
                 {({
                     "home": <HomeView content={content} apps={apps} />,
-                    // "Admin Dashboard": <Admin />,
+                    "Admin Dashboard": <Admin />,
                     // "Storage": <></>,
                     // "Github": <GithubAdmin />,
+                    "eReader": <EReader />,
                     "Docs": <DocsPage />,
-                    "Changelog": <Changelog />
+                    "Changelog": <Changelog />,
+                    "Photos": <PhotosApp />,
+                    "Noah": <Noah />
                 }[appStore.appView])}
             </motion.div>
         </motion.div>
@@ -128,7 +154,12 @@ function HomeView(props: { content: any, apps: any }) {
 
     async function handleClick(app: AppType) {
         if (app.url) await cpxHelpers
-            .handleNextApp({ session: supabaseStore.session, app, apps });
+            .handleNextApp({ 
+                session: supabaseStore.session?.data?.session
+                    ? supabaseStore.session.data.session
+                    : supabaseStore.session, // TODO: update this
+                app, apps 
+            });
         else appStore.setAppView(app.name);
     };
 
@@ -197,6 +228,14 @@ function HomeView(props: { content: any, apps: any }) {
             <Divider />
 
             <Grid sm={12} sx={{ textAlign: "right", px: 4 }}>
+                <MarkdownWrapper>
+
+    - Deploy backend services to new provider
+    - Move database from Supabase to local
+    - Build a todo microfrontend
+    
+
+                </MarkdownWrapper>
                 {/* <VoiceView /> */}
             </Grid>
 

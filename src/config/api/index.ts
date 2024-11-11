@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 let isDev = (import.meta.env.MODE === "development");
+// Having paths object improves maintainability
 const paths = {
     "hostname": import.meta.env.VITE_HOSTNAME,
     "local": "http://localhost:5001",
@@ -13,8 +14,16 @@ const paths = {
     "getCrossPlatformState": '/api/cross-platform',
     "getNotion": "/api/v1/notion",
     "githubQueryPath": '/api/sensative?endpoint=/api/github',
-    "users": '/auth/v1/user'
-
+    "users": '/auth/v1/user',
+    "login": '/auth/v1/login',
+    "logout": '/auth/v1/logout',
+    "protected": '/auth/v1/protected',
+    "getPhotos": '/api/sensative?endpoint=/api/v1/local/photos',
+    "getImage": '/api/sensative?endpoint=/api/v1/local/image',
+    "getAllTables": '/database/read_schema',
+    "readTable": '/database/read_db?table=',
+    "sensative": "/api/sensative?endpoint=",
+    "getNoahsAppConfig": "/api/v1/appConfig/noah",
 };
 
 // Initialize Server Client with Basic Auth

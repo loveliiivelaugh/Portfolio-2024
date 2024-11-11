@@ -5,27 +5,30 @@ import {
 } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
 
-import { useAppStore } from '../../store';
-import { supabase } from '../Auth/Auth';
+import { useAppStore, useSupabaseStore } from '../../store';
+import { handleSignOut } from '../Auth/Auth3';
+// import { supabase } from '../Auth/Auth';
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 export const Navbar = () => {
     const appStore = useAppStore();
-    // const supabaseStore = useSupabaseStore();
+    const supabaseStore = useSupabaseStore();
     const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
 
     const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorElUser(event.currentTarget);
     };
 
-    const handleCloseUserMenu = (setting: 'Profile' | 'Account' | 'Dashboard' | 'Logout') => {
-        if (setting === 'Logout') supabase.auth.signOut();
+    const handleCloseUserMenu = async (setting: 'Profile' | 'Account' | 'Dashboard' | 'Logout') => {
+        if (setting === 'Logout') {
+            const result = await handleSignOut();
+            if (result) supabaseStore.setSession(null);
+        }
+            // supabase.auth.signOut();
 
         setAnchorElUser(null);
     };
-
-    // console.log({ appStore })
 
     return (
         <AppBar>
