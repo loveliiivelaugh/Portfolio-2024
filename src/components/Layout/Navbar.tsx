@@ -5,7 +5,7 @@ import {
 } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
 
-import { useAppStore, useSupabaseStore } from '../../store';
+import { useAppStore, useSupabaseStore } from '../../utilities/store';
 import { handleSignOut } from '../Auth/Auth3';
 // import { supabase } from '../Auth/Auth';
 

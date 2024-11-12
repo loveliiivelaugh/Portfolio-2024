@@ -1,0 +1,38 @@
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    min-height: 100vh;
+    width: 100vw;
+    background: 101020;
+    color: white;
+};
+
+.banner {
+    background: "#014";
+    color: "#eee";
+    width: "100%";
+    border-bottom: "1px solid #fff";
+    padding: "24px";
+    text-align: "center";
+};
+
+.app-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+};
+
+.app-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #333;
+};

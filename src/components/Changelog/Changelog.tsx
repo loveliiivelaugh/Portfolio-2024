@@ -3,7 +3,7 @@ import { Box, Container, Divider, Grid, List, ListItem, ListItemText, Typography
 import moment from "moment";
 
 import MarkdownWrapper from "../Layout/Markdown";
-import { queries } from "../../config/api"
+import { queries } from "../../utilities/config/api"
 
 
 // Move to back end CMS

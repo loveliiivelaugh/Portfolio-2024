@@ -11,8 +11,8 @@ import { BookmarkBorder, DownloadForOffline, Speaker, UploadFile } from '@mui/ic
 import { useQuery } from '@tanstack/react-query';
 
 // Utilities
-import { useEReaderStore } from '../../store';
-import { queries, paths, client } from "../../config/api";
+import { useEReaderStore } from '../../utilities/store';
+import { queries, paths, client } from "../../utilities/config/api";
 
 // Styles
 import 'react-pdf/dist/Page/AnnotationLayer.css';

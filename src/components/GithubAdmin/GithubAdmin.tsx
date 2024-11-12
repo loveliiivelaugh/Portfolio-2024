@@ -3,7 +3,7 @@ import { Divider, Grid, List, ListItem, ListItemIcon, ListItemText, Typography }
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useQuery } from '@tanstack/react-query'
 
-import { client } from '../../config/api';
+import { client } from '../../utilities/config/api';
 
 interface CodeRepoType {
     id: string, 

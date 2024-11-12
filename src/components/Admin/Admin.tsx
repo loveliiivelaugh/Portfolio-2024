@@ -5,7 +5,7 @@ import { useQuery } from '@tanstack/react-query'
 
 import ReusablePopover from '../Layout/ReusablePopover';
 
-import { paths, queries } from '../../config/api';
+import { paths, queries } from '../../utilities/config/api';
 
 
 

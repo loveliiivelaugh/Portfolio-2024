@@ -1,4 +1,4 @@
-import AppLauncherPage from '../../pages/AppLauncherPage';
+import AppLauncherPage from '../pages/AppLauncherPage';
 
 const App = () => {
   return (

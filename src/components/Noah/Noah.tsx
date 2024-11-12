@@ -4,7 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Box, Container, Divider, Grid, Typography } from "@mui/material";
 import { LazyLoadImage, LazyLoadComponent } from 'react-lazy-load-image-component';
 
-import { queries, paths } from "../../config/api";
+import { queries, paths } from "../../utilities/config/api";
 import MarkdownWrapper from "../Layout/Markdown";
 
 const Noah = () => {

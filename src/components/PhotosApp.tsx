@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query"
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Box, ImageList, ImageListItem } from "@mui/material";
 
-import { client, paths, queries } from "../config/api"
+import { client, paths, queries } from "../utilities/config/api"
 
 
 const PhotosApp = () => {

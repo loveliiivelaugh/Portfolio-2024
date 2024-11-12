@@ -1,5 +1,19 @@
 import { create } from 'zustand';
 
+import { useUtilityStore, UtilityStoreType, AlertType, ConfirmType, DrawerType } from "./utilityStore";
+import { useFitnessStore, FitnessStoreState } from "./fitnessStore";
+import { useSupabaseStore, SupabaseSession, SupabaseStore, SupabaseUser } from "./supabaseStore";
+export { useUtilityStore, useFitnessStore, useSupabaseStore };
+export type {
+    UtilityStoreType,
+    AlertType,
+    ConfirmType,
+    DrawerType,
+    FitnessStoreState,
+    SupabaseSession,
+    SupabaseStore,
+    SupabaseUser
+};
 interface AppStore {
     appConfig: any,
     appView: string | "home",
@@ -19,15 +33,15 @@ const useAppStore = create<AppStore>((set) => ({
 }));
 
 
-interface SupabaseStoreTypes {
-    session: any
-    setSession: (session: any) => void
-}
+// interface SupabaseStoreTypes {
+//     session: any
+//     setSession: (session: any) => void
+// }
 
-const useSupabaseStore = create<SupabaseStoreTypes>((set) => ({
-    session: null,
-    setSession: (session: any) => set(() => ({ session })),
-}));
+// const useSupabaseStore = create<SupabaseStoreTypes>((set) => ({
+//     session: null,
+//     setSession: (session: any) => set(() => ({ session })),
+// }));
 
 
 interface EReaderStore {
@@ -45,4 +59,4 @@ const useEReaderStore = create<EReaderStore>((set) => ({
 }));
 
 
-export { useAppStore, useSupabaseStore, useEReaderStore };
+export { useAppStore, useEReaderStore };

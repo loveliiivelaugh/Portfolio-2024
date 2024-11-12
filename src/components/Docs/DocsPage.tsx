@@ -9,7 +9,7 @@ import {
 import { motion } from 'framer-motion';
 
 import MarkdownWrapper from '../Layout/Markdown';
-import { paths, queries } from '../../config/api';
+import { paths, queries } from '../../utilities/config/api';
 
 
 const microservices = [

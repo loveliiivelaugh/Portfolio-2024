@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import { Box, Button } from '@mui/material';
 
 import AuthForm from './AuthForm';
-import { useAppStore, useSupabaseStore } from '../../store';
-import { client, paths } from '../../config/api';
+import { useAppStore, useSupabaseStore } from '../../utilities/store';
+import { client, paths } from '../../utilities/config/api';
 
 
 
