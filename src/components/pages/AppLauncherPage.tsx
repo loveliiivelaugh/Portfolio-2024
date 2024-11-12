@@ -1,7 +1,7 @@
 import { Card, CardContent, Container, Divider, Grid2 as Grid, Toolbar } from "@mui/material";
 import Typed from "typed.js"
 import { CardFooter, CardHeader, CardTitle } from '@components/ui/card';
-import packageJsonContents from '../../../package.json';
+// import packageJsonContents from '../../../package.json';
 import "./App.css";
 import FormContainer from "@components/framework/forms/FormContainer";
 import { useEffect, useRef } from "react";
@@ -199,19 +199,3 @@ const CtaSection = () => {
         </div>
     );
 };
-
-
-const Demo = () => {
-    return (
-        <>
-            <p>Take Note** Strict Stack Webpack React Typescript Vitest (Tailwind | MUI)</p>
-            <p>Version 0.1.0</p>
-            <p>Coming Soon! v2 will be a more refined version than v1. Lots of packages that are outdated or not used anymore in favor of more modern technologies.</p>
-            <p>Should probably include basic routing and starter tests in v2</p>
-            <p>The intention of this app is to provide a quick starting point to building front end apps within Cherrytopframework</p>
-            <p>Please review the package's that are included before starting</p>
-            <pre>{JSON.stringify(packageJsonContents.dependencies, null, 2)}</pre>
-            <pre>{JSON.stringify(packageJsonContents.devDependencies, null, 2)}</pre>
-        </>
-    )
-}
