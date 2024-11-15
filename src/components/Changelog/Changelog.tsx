@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query"
 import { Box, Container, Divider, Grid, List, ListItem, ListItemText, Typography } from "@mui/material";
 import moment from "moment";
 
-import MarkdownWrapper from "../Layout/Markdown";
+import MarkdownWrapper from "../custom/Layout/Markdown";
 import { queries } from "../../utilities/config/api"
 
 
