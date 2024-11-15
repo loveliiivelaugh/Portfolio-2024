@@ -92,10 +92,9 @@ const LearningDashboard: React.FC = () => {
             <List>
                 {lessons.map((lesson) => (
                     <ListItem
-                        button
                         key={lesson.id}
                         onClick={() => handleLessonClick(lesson)}
-                        selected={selectedLesson?.id === lesson.id}
+                        // selected={selectedLesson?.id === lesson.id}
                     >
                         <ListItemIcon>
                             <DescriptionIcon />
@@ -187,7 +186,7 @@ const LearningDashboard: React.FC = () => {
                 <Box sx={{ p: 3 }}>
                     <Grid container spacing={3}>
                         {/* Left Column - Lesson Information */}
-                        <Grid item xs={12} md={8}>
+                        <Grid size={{ sm: 12, md: 8 }}>
                             <Typography variant="h4" gutterBottom>
                                 {selectedLesson.title}
                             </Typography>
@@ -197,21 +196,21 @@ const LearningDashboard: React.FC = () => {
                         </Grid>
 
                         {/* Right Column - Resources and Tools */}
-                        <Grid item xs={12} md={4}>
+                        <Grid size={{ sm: 12, md: 4 }}>
                             <Paper elevation={3} sx={{ p: 2 }}>
                                 <Typography variant="h6" gutterBottom>
                                     Learning Resources
                                 </Typography>
                                 <List>
                                     {selectedLesson.resources.map((resource, index) => (
-                                        <ListItem button key={index} component="a" href={resource.url}>
+                                        <ListItem key={index} component="a" href={resource.url}>
                                             <ListItemIcon>
                                                 {resource.type === 'pdf' ? <DescriptionIcon /> : <AssignmentIcon />}
                                             </ListItemIcon>
                                             <ListItemText primary={resource.title} />
                                         </ListItem>
                                     ))}
-                                    <ListItem button>
+                                    <ListItem>
                                         <ListItemIcon>
                                             <QuestionAnswerIcon />
                                         </ListItemIcon>
