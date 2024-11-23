@@ -2,10 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Typed from "typed.js"
 import { 
-    Accordion, AccordionDetails, AccordionSummary,
-    AppBar,
-    Button,
-    Card, CardContent, Chip, Container, Divider, Grid2 as Grid, Toolbar 
+    Accordion, AccordionDetails, AccordionSummary, AppBar, Button,
+    Card, CardContent, Container, Divider, Grid2 as Grid, Toolbar 
 } from "@mui/material";
 import { CardFooter, CardHeader, CardTitle } from '@components/ui/card';
 import FormContainer from "@components/framework/forms/FormContainer";
@@ -285,32 +283,32 @@ const CtaSection = () => {
     );
 };
 
-const SelfHostingSection = () => {
-    return (
-        <>
-            <div>
-                <h2>What is self hosting?</h2>
-                <p>
-                    Self hosting is the process of running your own server and hosting your own software. We provide a fully end to end service to set up private hosting for you, your home, or your business. Self hosting enables you to have full control over your own server, and to have full control over your own software. Software that is available to you when using your own hosting solutions are open source and can easily replace most if not all paid enterprise software that is commonly used for business. Self-hosting also enables using <Keyword>Home Assistant</Keyword> the most advanced open source home automation platform. This runs on your own server using your own resources so you will benefit from full privacy, security, and autonomy over your own data. Home Assistant can be integrated with Ollama to completely replace Alexa privately for free (outside of the maintenance costs of your own server) while being upgraded with AI. (Which we could connect to the internet or other IoT devices for free) There are countless more opportunities unlocked when self-hosting. Refer to this document for a comprehensive list of open source software that can be hosted with your own server for free.
-                </p>
-                <p>See the following to learn more about self hosting:</p>
-                <li><Keyword>Hostinger</Keyword></li>
-                <li><Keyword>Linode</Keyword></li>
-                <li><Keyword>Digital Ocean</Keyword></li>
-                <li><Keyword>AWS</Keyword></li>
-                <li><Keyword>GCP</Keyword></li>
-                <li><Keyword>Cloudflare</Keyword></li>
-                <li><Keyword>Namecheap</Keyword></li>
-                <li><Keyword>Netlify</Keyword></li>
-                <li><Keyword>Github Pages</Keyword></li>
-                <h2>What will it cost me to self host?</h2>
-                <p>
-                    The answer to this really varies. At the foundation we are essentially borrowing resources from another computer (server). Depending on how many computers you have and how many cores you have, the cost will vary. Also depending on what kind of software you want to run and how many active users that will be connecting to the services among other things. High performance AI requires a lot of resources, specifically compute.
-                </p>
-                <p>At the very lowest end to rent a VPS (server) you can expect to pay anywhere from $5 to $15 per month.</p>
-            </div>
-            <CtaSection />
-            <Divider color="inherit" />
-        </>
-    )
-};
+// const SelfHostingSection = () => {
+//     return (
+//         <>
+//             <div>
+//                 <h2>What is self hosting?</h2>
+//                 <p>
+//                     Self hosting is the process of running your own server and hosting your own software. We provide a fully end to end service to set up private hosting for you, your home, or your business. Self hosting enables you to have full control over your own server, and to have full control over your own software. Software that is available to you when using your own hosting solutions are open source and can easily replace most if not all paid enterprise software that is commonly used for business. Self-hosting also enables using <Keyword>Home Assistant</Keyword> the most advanced open source home automation platform. This runs on your own server using your own resources so you will benefit from full privacy, security, and autonomy over your own data. Home Assistant can be integrated with Ollama to completely replace Alexa privately for free (outside of the maintenance costs of your own server) while being upgraded with AI. (Which we could connect to the internet or other IoT devices for free) There are countless more opportunities unlocked when self-hosting. Refer to this document for a comprehensive list of open source software that can be hosted with your own server for free.
+//                 </p>
+//                 <p>See the following to learn more about self hosting:</p>
+//                 <li><Keyword>Hostinger</Keyword></li>
+//                 <li><Keyword>Linode</Keyword></li>
+//                 <li><Keyword>Digital Ocean</Keyword></li>
+//                 <li><Keyword>AWS</Keyword></li>
+//                 <li><Keyword>GCP</Keyword></li>
+//                 <li><Keyword>Cloudflare</Keyword></li>
+//                 <li><Keyword>Namecheap</Keyword></li>
+//                 <li><Keyword>Netlify</Keyword></li>
+//                 <li><Keyword>Github Pages</Keyword></li>
+//                 <h2>What will it cost me to self host?</h2>
+//                 <p>
+//                     The answer to this really varies. At the foundation we are essentially borrowing resources from another computer (server). Depending on how many computers you have and how many cores you have, the cost will vary. Also depending on what kind of software you want to run and how many active users that will be connecting to the services among other things. High performance AI requires a lot of resources, specifically compute.
+//                 </p>
+//                 <p>At the very lowest end to rent a VPS (server) you can expect to pay anywhere from $5 to $15 per month.</p>
+//             </div>
+//             <CtaSection />
+//             <Divider color="inherit" />
+//         </>
+//     )
+// };
