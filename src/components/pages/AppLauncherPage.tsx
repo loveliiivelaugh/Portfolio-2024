@@ -138,7 +138,7 @@ function AppLauncherPage() {
             <div>
                 <h2>Who am I?</h2>
                 <p>
-                    Hi👋 I'm Michael! I am a professional full stack software engineer with over 5 years of professional experience working in the tech industry. I have a professional certificate of full stack development from Northwestern University and I have performed work for 2 startup's, a national Fortune 100 company, and an international Fortune 300 company. The experience I have acquired has uniquely positioned me with the skills required to plan, build, and maintain almost any software project, especially as it pertains to business and more specifically enterprise business. I specialize in building custom application's both in the front end and in the back end. I am also proficient in database architecture and engineering. Finally, but not yet exhaustively, I am also proficient in API development, AI integration's, and custom Automation's.
+                    Hi👋 I'm Michael! I am a full stack software engineer with over 5 years of professional experience working in the tech industry. I have a certificate of full stack development from Northwestern University and I have performed work for 2 startup's, and 2 Fortune 500 companies, 1 national, and 1 international, where I am still employed currently. The experience I have acquired has uniquely positioned me with the skills required to plan, build, and maintain almost any software project, especially as it pertains to business and more specifically enterprise business. I specialize in building custom application's both in the front end and in the back end. I am also proficient in database architecture and engineering. Finally, but not yet exhaustively, I am also proficient in API development, AI integration's, and custom Automation's.
                 </p>
                 <p>I am a JavaScript (TypeScript) and React expert first, a Node and Express expert second, and additionally I have some skills in Python and Bash scripting.</p>
                 <p>I am a Solopreneur and solo fullstack software engineer. My goal is to offer my skills and services to help support small businesses with the technology assistance required in today's modern marketplace.</p>
@@ -275,8 +275,8 @@ export default AppLauncherPage;
 const CtaSection = () => {
     return (
         <div style={{ padding: "32px 96px", border: '1px solid #eee', borderRadius: '8px' }}>
-            <h3>Cherrytopframework 🍒</h3>
-            <p>☎️ Schedule a quick 15 minute call to learn more about <b>Cherrytopframework</b> 🍒</p>
+            <h3>Learn More</h3>
+            <p>☎️ Schedule a quick 15 minute call to learn more about our services</p>
             {/* todo => UPDATE THIS TO scheduling@cherrytopframework.pro */}
             <a href="https://calendly.com/woodward-michael-a" target="_blank">Calendly</a>
         </div>
