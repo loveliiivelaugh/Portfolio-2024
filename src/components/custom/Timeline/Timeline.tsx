@@ -1,5 +1,5 @@
 import { animate, stagger } from "motion";
-import MuiTimeline from "../Layout/MuiTimeline";
+// import MuiTimeline from "../Layout/MuiTimeline";
 import { Box, Grid2 as Grid, ListItemButton, TextField, Typography } from "@mui/material";
 
 import { timelineEventsData } from "./timelineData";
@@ -71,7 +71,7 @@ const Timeline = () => {
                     <img src={mediterranean218bceMap} style={{ width: "100%"}}></img>
                     <p>Source <a href="https://www.worldhistory.org/image/283/map-of-the-mediterranean-218-bce/" target="_blank">https://www.worldhistory.org/image/283/map-of-the-mediterranean-218-bce/</a></p>
                 </div>
-                <MuiTimeline timelineEvents={timelineEventsData} /> 
+                {/* <MuiTimeline timelineEvents={timelineEventsData} />  */}
             </Grid>
         </Grid>
     );

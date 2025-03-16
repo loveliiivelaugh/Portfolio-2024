@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom"
 import { ThemeProvider } from "@emotion/react"
-import { Avatar, Chip, CssBaseline, Grid2 as Grid, List, ListItem, ListItemAvatar, ListItemText, Stack, Toolbar, Typography, createTheme } from "@mui/material"
+import { Avatar, Chip, CssBaseline, Grid2 as Grid, List, ListItem, ListItemText, Stack, Toolbar, Typography, createTheme } from "@mui/material"
 import { ThemeToggleButton } from "@theme/ThemeProvider";
 import useUtilityStore from "@store/utilityStore";
 import RadarChartComponent from "@components/custom/charts/Radar";
 import headshotCropped from "@assets/headshot-cropped.png";
-import northwesternLogo from "@assets/northwestern-logo.png";
-import discoverLogo from "@assets/discover-logo.webp";
-import spectrumLogo from "@assets/spectrum_logo.webp";
-import medproLogo from "@assets/medpro-logo.svg";
+// import northwesternLogo from "@assets/northwestern-logo.png";
+// import discoverLogo from "@assets/discover-logo.webp";
+// import spectrumLogo from "@assets/spectrum_logo.webp";
+// import medproLogo from "@assets/medpro-logo.svg";
 
 const Home = () => {
     const { colorMode } = useUtilityStore();

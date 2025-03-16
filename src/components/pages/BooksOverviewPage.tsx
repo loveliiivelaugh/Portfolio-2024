@@ -1,4 +1,3 @@
-import React from 'react'
 import { motion } from 'framer-motion';
 
 const books = [
@@ -271,6 +270,7 @@ const books = [
 ];
 
 export const BooksOverviewPage = () => {
+    console.log({ books })
     return (
         <>
             <div>BooksOverviewPage</div>
