@@ -4,7 +4,7 @@ let isDev = (import.meta.env.MODE === "development");
 // Having paths object improves maintainability
 const paths = {
     "hostname": import.meta.env.VITE_HOSTNAME,
-    "local": "http://localhost:5001",
+    "local": `${window.location.protocol}//${window.location.hostname}:5051`,
     "themeConfig": "/api/theme/themeConfig",
     "content": "/api/cms/content",
     "getAppConfig": "/api/appConfig",
@@ -43,6 +43,21 @@ const client = axios.create({
     // }
 });
 
+type PayloadTypes = {
+    QueryPayload: {
+        [propertyKey: string]: any
+    }
+    MutatePayload: {
+        options?: {
+            debounce?: number
+        }
+        [propertyKey: string]: any
+    }
+};
+
+type DebounceType = (...args: any) => any;
+const debounce: DebounceType = (fn, ms) => setTimeout(() => fn(), ms);
+
 const queries = {
     getContentQuery: () => ({
         queryKey: ["content"],
@@ -80,7 +95,13 @@ const queries = {
         queryFn: async () => payload 
             ? (await (client as any)[method || "post"](queryPath, payload)).data
             : (await (client as any)[method || "get"](queryPath)).data
-    })
+    }),
+    mutate: (queryPath: string) => ({
+        mutationKey: [queryPath],
+        mutationFn: async (payload?: PayloadTypes["MutatePayload"]) => payload?.options?.debounce
+            ? (await debounce(client.post(queryPath, payload), payload.options.debounce)).data
+            : (await client.post(queryPath, payload)).data
+    }),
 }
 
 export { client, queries, paths };

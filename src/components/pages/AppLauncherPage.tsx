@@ -24,63 +24,89 @@ const features = [
             <p>Dynamic websites</p>
             <p>Landing Pages</p>
             <p>Wordpress</p>
+            <p>Github Pages</p>
         </div>
         `
     },
     {
         name: 'Applications 📱',
         url: 'https://cherrytopframework.com',
-        thumbnail: '',
+        accordianContent: `
+            Native, Mobile and Web. Embracing SPA's and PWA's. Offline support. React.
+            "The view is just a function of it's state"
+        `,
     },
     {
         name: 'Services 🌎',
         url: 'https://cherrytopframework.com',
-        thumbnail: '',
+        accordianContent: `
+            API's, Database's, Security, Automation, Authentication
+        `,
     },
     {
         name: 'APIs 📦',
         url: 'https://cherrytopframework.com',
         thumbnail: '',
+        accordianContent: `
+            My approach to API development leverages Python or JavaScript as the primary programming language, utilizing frameworks such as Express or Hono for building robust web services. I emphasize quality and reliability by implementing comprehensive tests with Vitest, ensuring test coverage exceeds 90%. To maintain optimal performance and reliability, I monitor API health through Uptime Komo.
+            APIs are thoroughly documented using Swagger, providing both interactive documentation and an OpenAPI schema in JSON format for clear and accessible integration. For security, I implement Cloudflare for protection against threats and leverage Auth0 for secure authentication and authorization.
+            Additionally, I support both GraphQL and RESTful APIs, offering flexible options for clients based on their specific needs.
+        `
     },
     {
         name: 'Databases 🗄️',
         url: 'https://cherrytopframework.com',
-        thumbnail: '',
+        accordianContent: `
+            Postgresql, MySQL, MongoDB, SQLocal, Firebase, Supabase, AWS, Azure
+            Custom SQL -- Design -- Architecture -- Administration -- Management
+        `,
     },
     {
         name: 'Security 🛡️',
         url: 'https://cherrytopframework.com',
-        thumbnail: '',
+        accordianContent: `
+            Cloudflare - Keycloak - Auth0
+        `,
     },
     {
         name: 'Documentation 📝',
         url: 'https://cherrytopframework.com',
-        thumbnail: '',
+        accordianContent: `
+            Docusaurus - Swagger -- Openapi
+        `,
     },
     {
         name: 'Networking 📡',
         url: 'https://cherrytopframework.com',
-        thumbnail: '',
+        accordianContent: 'DevOps: Github -> Netlify -> Deployed | Self-hosted Server -> Gitea -> Coolify -> Deployed',
     },
     {
         name: 'Automation 🤖',
         url: 'https://cherrytopframework.com',
-        thumbnail: '',
+        accordianContent: 'n8n',
     },
     {
         name: 'Integrated AI 🔌',
         url: 'https://cherrytopframework.com',
-        thumbnail: '',
+        accordianContent: `
+            OpenAI ChatGPT (Hosted)
+            Antrhopic Claude3 (Hosted)
+            Ollama (Self Hosted)
+        `,
     },
     {
         name: 'Design 🎨',
         url: 'https://cherrytopframework.com',
-        thumbnail: '',
+        accordianContent: `
+            Figma - Framer
+        `,
     },
     {
         name: 'Systems Architecture 🏗️',
         url: 'https://cherrytopframework.com',
-        thumbnail: '',
+        accordianContent: `
+            Operations - DevOps - Cloud - On-Premise [Bare Metal] - Security - Database - Application Engineering
+        `,
     },
 ];
 
@@ -117,6 +143,9 @@ function AppLauncherPage() {
                         <Keyword>Blog</Keyword>
                         <Keyword>Resume</Keyword>
                         <Keyword>
+                            <Link to="/timeline">Timeline</Link>
+                        </Keyword>
+                        <Keyword>
                             <Link to="/lessons">Lessons</Link>
                         </Keyword>
                     </div>
@@ -136,12 +165,13 @@ function AppLauncherPage() {
             </Grid>
             <Divider />
             <div>
-                <h2>Who am I?</h2>
+                <h2>Who am I</h2>
                 <p>
-                    Hi👋 I'm Michael! I am a full stack software engineer with over 5 years of professional experience working in the tech industry. I have a certificate of full stack development from Northwestern University and I have performed work for 2 startup's, and 2 Fortune 500 companies, 1 national, and 1 international, where I am still employed currently. The experience I have acquired has uniquely positioned me with the skills required to plan, build, and maintain almost any software project, especially as it pertains to business and more specifically enterprise business. I specialize in building custom application's both in the front end and in the back end. I am also proficient in database architecture and engineering. Finally, but not yet exhaustively, I am also proficient in API development, AI integration's, and custom Automation's.
+                    Hello 👋 I'm Michael, a Full Stack Software Engineer with over five years of experience in the technology industry. I hold a Full Stack Development certificate from Northwestern University and have had the privilege of working with a diverse range of clients, including two startups and two Fortune 500 companies—one national and one international—where I am currently employed.
+                    Throughout my career, I have developed a comprehensive skill set that allows me to effectively plan, design, build, and maintain software solutions tailored to meet the needs of businesses, particularly within the enterprise sector. My expertise spans both front-end and back-end development, with a strong focus on custom applications. Additionally, I am highly proficient in database architecture, API development, AI integrations, and process automation.
                 </p>
-                <p>I am a JavaScript (TypeScript) and React expert first, a Node and Express expert second, and additionally I have some skills in Python and Bash scripting.</p>
-                <p>I am a Solopreneur and solo fullstack software engineer. My goal is to offer my skills and services to help support small businesses with the technology assistance required in today's modern marketplace.</p>
+                <p>Technically, I am an expert in JavaScript (TypeScript) and React, with advanced proficiency in Node.js and Express. I also have experience with Python and Bash scripting.</p>
+                <p>As a solopreneur and independent full-stack developer, my mission is to help small businesses navigate the complex technology landscape and leverage modern software solutions to drive growth and efficiency in today's competitive marketplace.</p>
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
                     <span style={{ fontSize: '2em' }}>🤝</span>
                 </div>
@@ -261,7 +291,7 @@ function AppLauncherPage() {
             <div>
                 <h2>Want to get to know us better?</h2>
                 <div style={{ textAlign: 'center' }}>
-                    <p><a>Blog</a> · <a>LinkedIn</a> · <a>Instagram</a> · <a>X</a> · <a>Discord</a></p>
+                    <p><a>Blog</a> · <a>LinkedIn</a> · <a>Instagram</a> · <a>BlueSky</a></p>
                     <p><a>inquiries@cherrytopframework.pro</a></p>
                 </div>
             </div>

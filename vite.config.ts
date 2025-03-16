@@ -23,6 +23,9 @@ export default defineConfig({
       "@helpers": path.resolve(__dirname, "./src/utilities/helpers"),
       "@components": path.resolve(__dirname, "./src/components"),
       "@lib": path.resolve(__dirname, "./src/utilities/lib"),
+      "@theme": path.resolve(__dirname, "./src/utilities/theme"),
+      "@utilities": path.resolve(__dirname, "./src/utilities"),
+      "@assets": path.resolve(__dirname, "./src/utilities/assets")
     }
   }
   // optimizeDeps: {
