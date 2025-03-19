@@ -10,7 +10,8 @@
       "@config/*": ["utilities/config/*"],
       "@scripts/*": ["utilities/scripts/*"],
       "@helpers/*": ["utilities/helpers/*"],
-      "@components/*": ["components/*"]
+      "@components/*": ["components/*"],
+      "@woodward-studio/*": ["woodward-studio/*"]
     },
 
     "target": "ES2020",

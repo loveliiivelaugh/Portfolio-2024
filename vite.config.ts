@@ -25,7 +25,9 @@ export default defineConfig({
       "@lib": path.resolve(__dirname, "./src/utilities/lib"),
       "@theme": path.resolve(__dirname, "./src/utilities/theme"),
       "@utilities": path.resolve(__dirname, "./src/utilities"),
-      "@assets": path.resolve(__dirname, "./src/utilities/assets")
+      "@config": path.resolve(__dirname, "./src/utilities/config"),
+      "@assets": path.resolve(__dirname, "./src/utilities/assets"),
+      "@woodward-studio": path.resolve(__dirname, "./src/woodward-studio")
     }
   }
   // optimizeDeps: {

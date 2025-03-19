@@ -1,9 +1,9 @@
 import axios from 'axios';
 
 let isDev = (import.meta.env.MODE === "development");
-// Having paths object improves maintainability
+
 const paths = {
-    "hostname": import.meta.env.VITE_HOSTNAME,
+    "hostname": isDev ? "http://localhost:5051" : import.meta.env.VITE_HOSTNAME,
     "local": `${window.location.protocol}//${window.location.hostname}:5051`,
     "themeConfig": "/api/theme/themeConfig",
     "content": "/api/cms/content",
@@ -28,19 +28,13 @@ const paths = {
 
 // Initialize Server Client with Basic Auth
 const client = axios.create({
-    baseURL: isDev
-        ? paths.local 
-        : paths.hostname,
+    baseURL: paths.hostname,
     headers: {
         "Content-Type": "application/json",
         "Accept": "application/json",
-        "auth-token": `userAuthToken=${"1234-5678-9012"}&appId=${import.meta.env.VITE_APP_ID}`
-    },
-    // // Interferes with Bearer Auth
-    // auth: {
-    //     username: import.meta.env.VITE_BASIC_AUTH_USERNAME,
-    //     password: import.meta.env.VITE_BASIC_AUTH_PASSWORD,
-    // }
+        "auth-token": `userAuthToken=${"1234-5678-9012"}&appId=${import.meta.env.VITE_APP_ID}`,
+        "Authorization": "Bearer " + import.meta.env.VITE_MASTER_API_KEY
+    }
 });
 
 type PayloadTypes = {

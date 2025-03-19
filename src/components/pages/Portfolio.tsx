@@ -76,7 +76,7 @@ const ProfilePage: React.FC = () => {
                         Michael Woodward
                     </Typography>
                     <Typography variant="body2" color="textSecondary">
-                        Software Engineer | Tech Enthusiast | React Developer
+                        Software Engineer | React Developer
                     </Typography>
                     <Button variant="contained" sx={{ mt: 1 }}>
                         Edit Profile
