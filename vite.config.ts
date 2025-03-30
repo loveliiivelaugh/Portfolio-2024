@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import reactRefresh from '@vitejs/plugin-react-refresh'
-import { VitePWA } from 'vite-plugin-pwa'
+// import { VitePWA } from 'vite-plugin-pwa'
 import path from "path";
 
 // https://vitejs.dev/config/
@@ -11,8 +11,8 @@ export default defineConfig({
   },
   plugins: [
     react(), 
-    reactRefresh(),
-    VitePWA()
+    reactRefresh()
+    // VitePWA()
   ],
   resolve: {
     alias: {
@@ -22,6 +22,7 @@ export default defineConfig({
       "@scripts": path.resolve(__dirname, "./src/utilities/scripts"),
       "@helpers": path.resolve(__dirname, "./src/utilities/helpers"),
       "@components": path.resolve(__dirname, "./src/components"),
+      "@custom": path.resolve(__dirname, "./src/components/custom"),
       "@lib": path.resolve(__dirname, "./src/utilities/lib"),
       "@theme": path.resolve(__dirname, "./src/utilities/theme"),
       "@utilities": path.resolve(__dirname, "./src/utilities"),

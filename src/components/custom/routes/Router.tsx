@@ -7,6 +7,9 @@ import { BooksOverviewPage } from "@components/pages/BooksOverviewPage";
 import LearningDashboard from "../LearningDashboard/LearningDashboard";
 import Timeline from "../Timeline/Timeline";
 import TimelineItem from "../Timeline/TimelineItem";
+import Blog from "@components/pages/Blog";
+import Portfolio2 from "@components/pages/PortfolioMock";
+import AccountingPage from "@components/pages/AccountingPage";
 
 
 function AppRouter() {
@@ -17,8 +20,16 @@ function AppRouter() {
             element: (<HomePage />)
         },
         {
+            path: "/accounting",
+            element: (<AccountingPage />)
+        },
+        {
             path: "/portfolio",
             element: (<PortfolioPage />)
+        },
+        {
+            path: "/portfolio2",
+            element: (<Portfolio2 />)
         },
         {
             path: "/company",
@@ -40,6 +51,10 @@ function AppRouter() {
             path: "/books",
             element: (<BooksOverviewPage />)
         },
+        {
+            path: "/blog",
+            element: (<Blog />)
+        }
     ].map((route) => ({
         id: route.path,
         ...route,

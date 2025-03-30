@@ -32,7 +32,6 @@ const client = axios.create({
     headers: {
         "Content-Type": "application/json",
         "Accept": "application/json",
-        "auth-token": `userAuthToken=${"1234-5678-9012"}&appId=${import.meta.env.VITE_APP_ID}`,
         "Authorization": "Bearer " + import.meta.env.VITE_MASTER_API_KEY
     }
 });
