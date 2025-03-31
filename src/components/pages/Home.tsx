@@ -12,10 +12,11 @@ import headshotCropped from "@assets/headshot-cropped.png";
 // import { useQuery } from "@tanstack/react-query";
 // import { queries } from "@config/api";
 import { ExperienceSection } from "@components/custom/AccordianListItem/AccordianListItem";
-import FadeIn from "@theme/FadeIn";
+// import FadeIn from "@theme/FadeIn";
 import ProjectCard from "./Portfolio/ProjectCard";
 import { cms } from "@config/../data/cms";
 import SlideIn from "@theme/animations/SlideIn";
+// import { useNavigate } from "react-router-dom";
 
 
 // import northwesternLogo from "@assets/northwestern-logo.png";
@@ -42,6 +43,7 @@ const getData = (query: any, dataTarget: string, onSuccess: (data: any) => JSX.E
 
 const Home = () => {
     const { colorMode } = useUtilityStore();
+    // const navigate = useNavigate();
     // const appConfigQuery = useQuery(queries.query("/api/v1/appConfig"));
     // *mock config query for prod for now
     const appConfigQuery = {
@@ -98,6 +100,12 @@ const Home = () => {
                             <Typography variant="h6">Based in Chicago, Illinois, USA</Typography>
                             {/* <DateTimeLabel /> */}
                             <SocialBar />
+                            <Box sx={{ display: "flex", justifyContent: "end", gap: 2, px: 4 }}>
+                                <Button variant="outlined">View Resume</Button>
+                                <Button variant="contained" component="a" href="https://michaelwoodward-blog.netlify.app" target="_blank">
+                                    Read Blog
+                                </Button>
+                            </Box>
                         </SlideIn>
                     </Grid>
 
@@ -106,8 +114,8 @@ const Home = () => {
                             <Box sx={{ textAlign: "center", mx: "auto" }}>
                                 <Avatar src={headshotCropped} sx={{ width: 200, height: 200 }} />
                             </Box>
-                            <Typography variant="body1">
-                                
+                            <Typography variant="subtitle2" mt={2} p={1} mr={2} textAlign="left">
+                                <i>"I offer web development consultation and build tailored software solutions that help small busineses solve big problems."</i>
                             </Typography>
                         </SlideIn>
                     </Grid>
