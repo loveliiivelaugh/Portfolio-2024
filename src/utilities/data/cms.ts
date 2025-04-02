@@ -50,9 +50,9 @@ export const cms = {
     showcase: [
         {
             "name": "Schedule Time",
-            "description": "A full-featured booking system.",
+            "description": "A full-featured appointment scheduling platform designed for small businesses, instructors, and service providers. It includes dynamic availability management, automated reminders, recurring billing with Stripe integration, and a polished user onboarding flow — all built with a scalable, component-driven frontend architecture.",
             "github": "",
-            "live": "https://employeetime.netlify.app",
+            "live": "https://scheduletime.woodwardwebdev.com",
             "thumb": "https://picsum.photos/400"
         },
         // todo: Complete these projects 
@@ -60,45 +60,66 @@ export const cms = {
             "name": "Coffee Shop",
             "description": "A coffee shop ecommerce prototype built using the Shopify platform.",
             "github": "",
-            "live": "https://coffee-shop-shopify-context.netlify.app",
+            "live": "https://coffeeshop.woodwardwebdev.com",
             "thumb": "https://picsum.photos/400"
         },
-        // {
-        //     "name": "Openfitness",
-        //     "description": "A nutrition and fitness tracking application.",
-        //     "github": "",
-        //     "live": "https://openfitness.netlify.app",
-        //     "thumb": ""
-        // },
-        // {
-        //     "name": "Ai Chat",
-        //     "description": "An embeddable AI Chat window built to support a business knowledge base.",
-        //     "github": "",
-        //     "live": "",
-        //     "thumb": ""
-        // },
+        {
+            "name": "Openfitness",
+            "description": "A nutrition and fitness tracking application.",
+            "github": "",
+            "live": "https://openfitness.woodwardwebdev.com",
+            "thumb": "https://picsum.photos/400"
+        },
+        {
+            "name": "Ai Chat",
+            "description": "An embeddable AI-powered chat assistant designed to integrate seamlessly into any business website or platform. It connects to a custom knowledge base to provide accurate, context-aware responses, streamlining customer support and automating FAQ handling using natural language understanding.",
+            "github": "",
+            "live": "https://aichat.woodwardwebdev.com",
+            "thumb": "https://picsum.photos/400"
+        },
         // {
         //     "name": "Stonetower Pizza",
         //     "github": "A pizza shop ecommerce prototype built on the Stripe platform. Includes built-in PWA POS.",
         //     "live": "https://stonetowerpizza.netlify.app",
-        //     "thumb": ""
+        //     "thumb": "https://picsum.photos/400"
         // },
     ],
     docs: [
         {
-            "name": "Storybook",
-            "description": "Component Library Live Documentation",
-            "link": "https://woodward-storybook.netlify.app/?path=/docs/configure-your-project--docs"
+            name: "Storybook",
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/storybook/storybook-original.svg",
+            description: [
+                "Component library with live documentation",
+                "UI contracts + behavior validation",
+                "Integrated with tests and design systems",
+            ],
+            color: "#ff4785",
+            href: "https://storybook.js.org/",
+            "link": "https://storybook.woodwardwebdev.com"
         },
         {
-            "name": "Docusaurus",
-            "description": "Woodward-Studio Application Framework Documentation",
-            "link": "https://cherrytopframeworkdocs.netlify.app"
+            name: "Docusaurus",
+            logo: "https://docusaurus.io/img/docusaurus_keytar.svg",
+            description: [
+                "Framework docs & architecture specs",
+                "Perfect for onboarding engineers",
+                "Versioned content with custom theming",
+            ],
+            color: "#2648FF",
+            href: "https://docusaurus.io/",
+            "link": "https://docs.woodwardwebdev.com"
         },
         {
-            "name": "Swagger",
-            "description": "Backend Services + API Documentation",
-            "link": ""
+            name: "Swagger",
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swagger/swagger-original.svg",
+            description: [
+                "Auto-generated API documentation",
+                "Live endpoints and request builders",
+                "Based on OpenAPI + Supabase contracts",
+            ],
+            color: "#85EA2D",
+            href: "https://swagger.io/",
+            "link": "https://api.woodwardwebdev.com"
         }
     ]
 };

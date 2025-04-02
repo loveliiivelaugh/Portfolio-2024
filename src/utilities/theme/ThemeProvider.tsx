@@ -12,8 +12,9 @@ import DarkModeIcon from "@mui/icons-material/DarkMode";
 import Tooltip from "@mui/material/Tooltip";
 
 
-const useTheme = ({ mode }: { mode: "light" | "dark" }) => useMemo(() => createTheme({
+const useTheme = ({ mode }: { mode: string }) => useMemo(() => createTheme({
   ...themeConfig,
+  // @ts-expect-error
   ...themeConfig[mode],
 }), [mode])
 

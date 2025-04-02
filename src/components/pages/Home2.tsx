@@ -168,8 +168,8 @@ const Home = () => {
                             <Typography variant="h4" gutterBottom>Let’s Build Something</Typography>
                             <Stack direction={isMobile ? "column" : "row"} gap={2} alignItems="center">
                                 <Tooltip title="Click to copy">
-                                    <Button variant="outlined" onClick={() => navigator.clipboard.writeText("woodward.business@gmail.com")}>
-                                        woodward.business@gmail.com
+                                    <Button variant="outlined" onClick={() => navigator.clipboard.writeText("hello@woodwardwebdev.com")}>
+                                        hello@woodwardwebdev.com
                                     </Button>
                                 </Tooltip>
                                 <Button
