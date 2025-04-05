@@ -1,5 +1,5 @@
 import { ThemeProvider } from "@emotion/react"
-import { 
+import {
     Card, CardContent, CircularProgress, 
     Container, CssBaseline, Grid2 as Grid, ListItem, ListItemIcon, 
     ListItemText, Stack, Typography, createTheme
@@ -15,6 +15,7 @@ import ServicesSection from "./Portfolio/ServicesSection";
 // import TestimonialsSection from "./Portfolio/TestimonialSection";
 import CustomCursor from "@theme/animations/CircleCursor";
 import { useThemeStore } from "@store/themeStore";
+import { motion } from "framer-motion";
 
 // TODO: New Reusable Component
 // *QueryWrapper family
@@ -32,6 +33,8 @@ const getData = (query: any, dataTarget: string, onSuccess: (data: any) => JSX.E
 
     return onSuccess(returnData);
 };
+
+const AnimatedType = motion(Typography as any);
 
 const Home = () => {
     const { colorMode } = useUtilityStore();
@@ -110,13 +113,26 @@ const Home = () => {
                                     link: string;
                                 }, index: number) => (
                                     <Grid key={index} size={{ sm: 12, md: 4 }}>
-                                        <Stack sx={{ display: "flex", alignItems: "center" }}>
+                                        <Stack
+                                            component="a"
+                                            href={document.link} 
+                                            target="_blank"
+                                            sx={{ display: "flex", alignItems: "center", textDecoration: "none" }}
+                                        >
                                             <ListItemIcon>
                                                 <img src={(document as any).logo} alt={document.name} style={{ height: "100px" }} />
                                             </ListItemIcon>
                                             <ListItem key={index} sx={{ textAlign: "center" }}>
-                                                <ListItemText  
-                                                    primary={<a href={document.link} target="_blank">{document.name}</a>}
+                                                <ListItemText
+                                                    primary={
+                                                        <AnimatedType
+                                                            variant="h5"
+                                                            sx={{ color: (colorMode === "light") ? "#333" : "#fff", fontWeight: 300}} 
+                                                            whileHover={{ scale: 1.1 }}
+                                                        >
+                                                            {document.name}
+                                                        </AnimatedType>
+                                                    }
                                                     secondary={document.description[0] ?? "Woodward-Studio Application Framework Documentation"}
                                                 />
                                             </ListItem>
