@@ -25,7 +25,7 @@ export default function ServicesSection() {
   const theme = useTheme();
 
   return (
-    <Box component="section" sx={{}}>
+    <Box component="section" py={6}>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -69,6 +69,7 @@ export default function ServicesSection() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.1 }}
         viewport={{ once: true }}
+        style={{ paddingTop: "48px 0 24px" }}
       >
         <Typography variant="h4" fontWeight={600} gutterBottom>
           Let’s Build Something

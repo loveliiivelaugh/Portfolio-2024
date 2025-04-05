@@ -1,6 +1,5 @@
 import { colors } from "@mui/material";
 import { alpha } from "@mui/material/styles";
-import { grey, blue, orange } from "@mui/material/colors";
 
 // Theme Configuration file to be used in multiple front end ...
 // ... microservices applications to maintain consistent theme ...
@@ -53,127 +52,57 @@ const themeConfig = {
         },
     },
 
-    // // Dark theme
-    // dark: {
-    //     border: {
-    //         default: "1px solid #333",
-    //         hover: "1px solid #777",
-    //         active: "1px solid #999",
-    //         main: "1px solid rgba(80, 170, 255, 0.8)",
-    //     },
-    //     palette: {
-    //         type: "dark",
-    //         divider: alpha(colors.grey[900], 0.8),
-    //         primary: {
-    //             // Same as in light but we could
-    //             // adjust color hue if needed
-    //             // main: colors.indigo["500"],
-    //             main: "#333",
-    //         },
-    //         secondary: {
-    //             main: colors.grey["100"],
-    //         },
-    //         tertiary: {
-    //             main: "rgba(80, 170, 255, 0.8)", // #50AAFF hex conversion
-    //         },
-    //         background: {
-    //             default: colors.grey["800"],
-    //             // paper: colors.grey["800"],
-    //             paper: alpha(colors.grey[800], 1),
-    //         },
-    //         text: {
-    //             primary: colors.grey["100"],
-    //             secondary: colors.grey["500"],
-    //             disabled: colors.grey["300"],
-    //         },
-    //         button: {
-    //             primary: colors.grey["100"],
-    //             secondary: colors.grey["500"],
-    //             disabled: colors.grey["300"],
-    //         },
-    //         info: {
-    //             main: colors.blue["500"],
-    //             contrastText: colors.grey["100"],
-    //         }
+    // Dark theme
+    dark: {
+        border: {
+            default: "1px solid #333",
+            hover: "1px solid #777",
+            active: "1px solid #999",
+            main: "1px solid rgba(80, 170, 255, 0.8)",
+        },
+        palette: {
+            type: "dark",
+            divider: alpha(colors.grey[900], 0.8),
+            primary: {
+                // Same as in light but we could
+                // adjust color hue if needed
+                // main: colors.indigo["500"],
+                main: "#333",
+            },
+            secondary: {
+                main: colors.grey["100"],
+            },
+            tertiary: {
+                main: "rgba(80, 170, 255, 0.8)", // #50AAFF hex conversion
+            },
+            background: {
+                default: colors.grey["800"],
+                // paper: colors.grey["800"],
+                paper: alpha(colors.grey[100], 1),
+            },
+            text: {
+                primary: colors.grey["100"],
+                secondary: colors.grey["500"],
+                disabled: colors.grey["300"],
+            },
+            button: {
+                primary: colors.grey["100"],
+                secondary: colors.grey["500"],
+                disabled: colors.grey["300"],
+            },
+            info: {
+                main: colors.blue["500"],
+                contrastText: colors.grey["100"],
+            }
 
-    //     },
-    // },
+        },
+    },
 
-    palette: {
-        mode: "dark",
-        primary: {
-            main: "#50AAFF", // Brightened for contrast
-        },
-        secondary: {
-            main: orange[400],
-        },
-        background: {
-            default: "#0F1117",
-            paper: "#181A20",
-        },
-        divider: alpha(grey[700], 0.6),
-        text: {
-            primary: grey[100],
-            secondary: grey[400],
-            disabled: grey[600],
-        },
-        info: {
-            main: blue[500],
-            contrastText: grey[100],
-        },
-    },
-    typography: {
-        fontFamily: `"Inter", "Helvetica", "Arial", sans-serif`,
-        h1: {
-            fontFamily: `"Pacifico", cursive`,
-            fontSize: "2.75rem",
-            fontWeight: 500,
-        },
-        h2: { fontWeight: 700 },
-        h3: { fontWeight: 600 },
-        h4: { fontWeight: 600 },
-        h5: { fontWeight: 500 },
-        h6: { fontWeight: 500 },
-        body1: { fontSize: "1rem" },
-        body2: { fontSize: "0.875rem" },
-        button: {
-            textTransform: "none",
-            fontWeight: 500,
-        },
-    },
-    shape: {
-        borderRadius: 12,
-    },
-    components: {
-        MuiPaper: {
-            defaultProps: {
-                elevation: 2,
-            },
-            styleOverrides: {
-                rounded: {
-                    borderRadius: 16,
-                },
-            },
-        },
-        MuiButton: {
-            styleOverrides: {
-                root: {
-                    borderRadius: 8,
-                    padding: "0.6rem 1.4rem",
-                },
-            },
-        },
-    },
     // Values for both themes
     common: {
         typography: {
             fontSize: 14,
-            fontFamily: `"Inter", "Helvetica", "Arial", sans-serif`,
-            h1: { fontFamily: `"Pacifico", cursive` }, // Logo/title headers
-            h2: { fontWeight: 700 },
-            h3: { fontWeight: 600 },
-            body1: { fontWeight: 400 },
-            button: { textTransform: "none", fontWeight: 500 },
+            fontFamily: '"Satisy", "Roboto", "Helvetica", "Arial", sans-serif',
             // Uncomment to make button lowercase
             // button: { textTransform: "none" },
         },

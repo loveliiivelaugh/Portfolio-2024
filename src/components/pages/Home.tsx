@@ -16,6 +16,11 @@ import ServicesSection from "./Portfolio/ServicesSection";
 import CustomCursor from "@theme/animations/CircleCursor";
 import { useThemeStore } from "@store/themeStore";
 import { motion } from "framer-motion";
+import AboutSection from "./Portfolio/AboutSection";
+import CertificationsSection from "./Portfolio/CertificationSection";
+import CoreValues from "./Portfolio/CoreValues";
+import ExperienceTimeline from "./Portfolio/ExperienceTimelineSection";
+import { useIsMobile } from "@lib/useIsMobile";
 
 // TODO: New Reusable Component
 // *QueryWrapper family
@@ -39,6 +44,7 @@ const AnimatedType = motion(Typography as any);
 const Home = () => {
     const { colorMode } = useUtilityStore();
     const {isHovering, setIsHovering} = useThemeStore();
+    const isMobile = useIsMobile();
     // const navigate = useNavigate();
     // const appConfigQuery = useQuery(queries.query("/api/v1/appConfig"));
     // *mock config query for prod for now
@@ -51,10 +57,11 @@ const Home = () => {
     let hidePricing = true;
 
     return (
-        <ThemeProvider theme={createTheme({ palette: { mode: colorMode }})}>
+        <ThemeProvider theme={createTheme({ palette: { mode: colorMode } })}>
             <CssBaseline />
             <Container maxWidth="md">
-                <CustomCursor active={isHovering} />
+                {/* Only use custom cursor on Desktop */}
+                {!isMobile && <CustomCursor active={isHovering} />}
                 <Grid 
                     container 
                     p={4} 
@@ -77,7 +84,7 @@ const Home = () => {
                         <HeroSection />
                     </Grid>
 
-                    <Grid size={12}>
+                    <Grid size={12} py={6}>
                         <SlideIn>
                             <Typography variant="h4" fontWeight={600}>Showcase</Typography>
                             <ListItemText secondary="Prototype's, Concept's and Products" sx={{ pl: 1, mb: 4 }} />
@@ -101,7 +108,7 @@ const Home = () => {
                         </SlideIn>
                     </Grid>
                     
-                    <Grid size={12}>
+                    <Grid size={12} py={6}>
                         {/* <DocumentationSection /> */}
                         <SlideIn>
                             <Typography variant="h4" fontWeight={600}>Documentation</Typography>
@@ -144,7 +151,7 @@ const Home = () => {
                     </Grid>
 
                     {/* Experience */}
-                    <Grid size={12}>
+                    <Grid size={12} py={4}>
                         <SlideIn>
                             <Typography variant="h4" fontWeight={600} gutterBottom>Experience</Typography>
                             <ExperienceSection2 />
@@ -152,6 +159,13 @@ const Home = () => {
                     </Grid>
 
                     {/* <TestimonialsSection /> */}
+                    <CertificationsSection />
+
+                    <AboutSection />
+
+                    <ExperienceTimeline />
+
+                    <CoreValues />
 
                     <ServicesSection />
 
