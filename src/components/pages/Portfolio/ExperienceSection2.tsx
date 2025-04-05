@@ -29,9 +29,9 @@ type ExperienceDataType = {
 
 const defaultExperienceData: ExperienceDataType[] = [
     {
-        company: "Discover Financial Services, Illinois",
+        company: "Discover Financial Services, Chicago, Illinois",
         position: "Application Engineer",
-        period: "September 2024 - Current",
+        period: "September 2024 - Present",
         details: [
             "Develop features using TypeScript, React, Redux, GraphQL, and Vitest.",
             "Implement microfrontend and microservices architecture.",
@@ -44,7 +44,7 @@ const defaultExperienceData: ExperienceDataType[] = [
         logo: "D"//discoverLogo,
     },
     {
-        company: "Charter Communications, Austin, Texas",
+        company: "Spectrum, Austin, Texas",
         position: "JavaScript Developer",
         period: "June 2022 - September 2024",
         details: [

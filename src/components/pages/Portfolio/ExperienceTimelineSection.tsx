@@ -7,12 +7,12 @@ const experiences = [
   {
     year: "2005–2010",
     title: "Early Hustle",
-    description: "Worked in restaurants, retail, and construction — learning grit, people skills, and the value of hard work.",
+    description: "Worked in restaurants, retail, and various trade jobs — learning grit, people skills, and the value of hard work.",
   },
   {
     year: "2010–2015",
     title: "Hospitality & Bartending",
-    description: "Built strong communication and multitasking skills in high-pressure environments while exploring early tech interests.",
+    description: "Built strong communication and multitasking skills in high-pressure environments while exploring early tech interests during off time.",
   },
   {
     year: "2015–2020",
@@ -22,7 +22,7 @@ const experiences = [
   {
     year: "2020–Present",
     title: "Full-Stack Engineer & Founder",
-    description: "Now building full-stack applications, managing cloud infrastructure, and running my own dev studio, WoodwardStudio.",
+    description: "Now building full-stack applications, managing cloud infrastructure, and building my own dev studio, WoodwardStudio.",
   },
 ];
 

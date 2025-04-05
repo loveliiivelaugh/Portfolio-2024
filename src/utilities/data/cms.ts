@@ -1,7 +1,7 @@
 export const cms = {
     workExperience: [
         {
-            company: "Discover Financial Services, Illinois",
+            company: "Discover Financial Services, Chicago, Illinois",
             position: "Application Engineer",
             period: "September 2024 - Current",
             details: [
@@ -18,7 +18,7 @@ export const cms = {
             }
         },
         {
-            company: "Charter Communications, Austin, Texas",
+            company: "Spectrum, Austin, Texas",
             position: "JavaScript Developer",
             period: "June 2022 - September 2024",
             details: [
@@ -53,7 +53,7 @@ export const cms = {
         // These will save businesses money and/or make them more money
         {
             "name": "BookMe",
-            "description": "A full-featured booking/appointment scheduling platform designed for small businesses, instructors, dentists, and service providers. It includes dynamic availability management, automated reminders, recurring billing with Stripe integration, and a polished user onboarding flow — all built with a scalable, component-driven frontend architecture.",
+            "description": "A full-featured booking/appointment scheduling SaaS platform designed for small businesses, instructors, dentists, and service providers. It includes dynamic availability management, automated reminders, recurring billing with Stripe integration, and a polished user onboarding flow — all built with a scalable, component-driven frontend architecture.",
             "github": "",
             "live": "https://scheduletime.woodwardwebdev.com",
             "thumb": "https://picsum.photos/400",
@@ -76,7 +76,7 @@ export const cms = {
         // },
         {
             "name": "Ai Chat",
-            "description": "An embeddable AI-powered chat assistant designed to integrate seamlessly into any business website or platform. It connects to a custom knowledge base to provide accurate, context-aware responses, streamlining customer support and automating FAQ handling using natural language understanding.",
+            "description": "An embeddable AI-powered chat assistant SaaS designed to integrate seamlessly into any business website or platform. It connects to a custom knowledge base to provide accurate, context-aware responses, streamlining customer support and automating FAQ handling using natural language understanding.",
             "github": "",
             "live": "https://aichat.woodwardwebdev.com",
             "thumb": "https://picsum.photos/400",

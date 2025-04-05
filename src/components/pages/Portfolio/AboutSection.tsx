@@ -1,4 +1,5 @@
 // AboutSection.tsx
+import { useIsMobile } from "@lib/useIsMobile";
 import { Box, Typography, Button, useTheme, Tooltip } from "@mui/material";
 import { motion } from "framer-motion";
 
@@ -34,8 +35,9 @@ const stack = [
 
 export default function AboutSection() {
     const theme = useTheme();
+    const isMobile = useIsMobile();
     return (
-        <Box component="section" py={4} px={3}>
+        <Box component="section" py={4} px={isMobile ? 0 : 3}>
             {/* About Me */}
             <motion.div
                 initial={{ opacity: 0, y: 60 }}
