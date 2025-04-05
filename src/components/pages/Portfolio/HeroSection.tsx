@@ -1,4 +1,4 @@
-import { Box, Grid2 as Grid, Typography, Chip, Button, Avatar, Stack, Tooltip } from "@mui/material";
+import { Box, Grid2 as Grid, ListItemText, Typography, Chip, Button, Avatar, Stack, Tooltip } from "@mui/material";
 import {
     SiJavascript, SiTypescript, SiReact, SiNodedotjs, SiGraphql,
     // SiDiscover 
@@ -8,6 +8,7 @@ import SlideIn from "@theme/animations/SlideIn";
 import SocialBar from "@components/custom/SocialBar/SocialBar";
 import headshotCropped from "@assets/headshot-cropped.png";
 import { motion } from "framer-motion";
+import DateTimeLabel from "@components/custom/DateTimeLabel/DateTimeLabel";
 // import AnimatedButton from "@theme/animations/AnimatedButton";
 
 const MotionButton = motion(Button as any);
@@ -24,7 +25,7 @@ const techIcons = [
 export default function HeroSection() {
     return (
         <Grid container spacing={4} alignItems="center">
-            <Grid size={{ xs: 12, md: 8 }}>
+            <Grid size={{ xs: 12, md: 8 }} order={2}>
                 <SlideIn>
                     <Typography variant="h2" fontWeight={400}>
                         Michael Woodward
@@ -53,7 +54,20 @@ export default function HeroSection() {
                         ))}
                     </Stack>
 
-                    <Typography variant="h6" mt={4}>
+                    <ListItemText 
+                        secondary={(
+                            <a
+                                href="https://www.discover.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{ color: "#F6A623", textDecoration: "none", fontWeight: 600, fontSize: "24px" }}
+                            >
+                                Discover Financial Services
+                            </a>
+                        )} 
+                        primary={<Typography typography="h6">Applications Engineer <span style={{ color: "#999" }}>@</span></Typography>}
+                    />
+                    {/* <Typography variant="h6" mt={4}>
                         Applications Engineer{" "}
                         <span style={{ color: "#999" }}>@</span>{" "}
                         <a
@@ -64,27 +78,29 @@ export default function HeroSection() {
                         >
                             Discover Financial Services
                         </a>
-                    </Typography>
+                    </Typography> */}
 
                     <Typography variant="h6" color="text.secondary">
-                        Based in Chicago, Illinois, USA
+                        Based in Chicago, Illinois, USA <span style={{ fontSize: "14px" }}><DateTimeLabel /> CST</span>
                     </Typography>
 
-                    <Box mt={2}>
+                    {/* <Box mt={2}>
                         <SocialBar />
-                    </Box>
+                    </Box> */}
 
-                    <Stack direction="row" spacing={2} mt={4}>
+                    <Stack direction="row" spacing={2} mt={2}>
                         <MotionButton
                             variant="outlined"
                             size="large"
-                            whileHover={{
-                                scale: 1.1
-                            }}
+                            whileHover={{ scale: 1.1 }}
+                            component="a"
+                            href="https://docs.google.com/document/d/1XRXuKHKSs5A1Kh2XkxHu-qxJpbrd527_ug9ycvp7u2o/edit?usp=sharing"
+                            target="_blank"
                         >
                             View Resume
                         </MotionButton>
-                        <MotionButton
+                        <SocialBar />
+                        {/* <MotionButton
                             variant="contained"
                             size="large"
                             href="https://blog.woodwardwebdev.com"
@@ -95,12 +111,12 @@ export default function HeroSection() {
                             }}
                         >
                             Read Blog
-                        </MotionButton>
+                        </MotionButton> */}
                     </Stack>
                 </SlideIn>
             </Grid>
 
-            <Grid size={{ xs: 12, md: 4 }}>
+            <Grid size={{ xs: 12, md: 4 }} order={1}>
                 <SlideIn>
                     <Box textAlign="center">
                         <Avatar

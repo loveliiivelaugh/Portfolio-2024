@@ -48,34 +48,39 @@ export const cms = {
         }
     ],
     showcase: [
+        // Starting to submit proposals on just these 2 apps for now
+        // These have the highest business value and the most potential for growth
+        // These will save businesses money and/or make them more money
         {
             "name": "Schedule Time",
-            "description": "A full-featured appointment scheduling platform designed for small businesses, instructors, and service providers. It includes dynamic availability management, automated reminders, recurring billing with Stripe integration, and a polished user onboarding flow — all built with a scalable, component-driven frontend architecture.",
+            "description": "A full-featured booking/appointment scheduling platform designed for small businesses, instructors, dentists, and service providers. It includes dynamic availability management, automated reminders, recurring billing with Stripe integration, and a polished user onboarding flow — all built with a scalable, component-driven frontend architecture.",
             "github": "",
             "live": "https://scheduletime.woodwardwebdev.com",
-            "thumb": "https://picsum.photos/400"
+            "thumb": "https://picsum.photos/400",
+            "tech": ["React", "Supabase", "Stripe", "Framer-Motion"]
         },
         // todo: Complete these projects 
-        {
-            "name": "Coffee Shop",
-            "description": "A coffee shop ecommerce prototype built using the Shopify platform.",
-            "github": "",
-            "live": "https://coffeeshop.woodwardwebdev.com",
-            "thumb": "https://picsum.photos/400"
-        },
-        {
-            "name": "Openfitness",
-            "description": "A nutrition and fitness tracking application.",
-            "github": "",
-            "live": "https://openfitness.woodwardwebdev.com",
-            "thumb": "https://picsum.photos/400"
-        },
+        // {
+        //     "name": "Coffee Shop",
+        //     "description": "A coffee shop ecommerce prototype built using the Shopify platform.",
+        //     "github": "",
+        //     "live": "https://coffeeshop.woodwardwebdev.com",
+        //     "thumb": "https://picsum.photos/400"
+        // },
+        // {
+        //     "name": "Openfitness",
+        //     "description": "A nutrition and fitness tracking application.",
+        //     "github": "",
+        //     "live": "https://openfitness.woodwardwebdev.com",
+        //     "thumb": "https://picsum.photos/400"
+        // },
         {
             "name": "Ai Chat",
             "description": "An embeddable AI-powered chat assistant designed to integrate seamlessly into any business website or platform. It connects to a custom knowledge base to provide accurate, context-aware responses, streamlining customer support and automating FAQ handling using natural language understanding.",
             "github": "",
             "live": "https://aichat.woodwardwebdev.com",
-            "thumb": "https://picsum.photos/400"
+            "thumb": "https://picsum.photos/400",
+            "tech": ["React", "Supabase", "Stripe", "OpenAI", "Google Gemini2.5", "Framer-Motion"]
         },
         // {
         //     "name": "Stonetower Pizza",
@@ -119,7 +124,7 @@ export const cms = {
             ],
             color: "#85EA2D",
             href: "https://swagger.io/",
-            "link": "https://api.woodwardwebdev.com"
+            "link": "https://swagger.io/"
         }
     ]
 };

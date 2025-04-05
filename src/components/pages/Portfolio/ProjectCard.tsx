@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useRef } from "react";
-import { Chip, ListItem, ListItemButton, ListItemIcon } from "@mui/material";
+import { Alert, Chip, ListItem, ListItemButton, ListItemIcon } from "@mui/material";
 import { Box, Card, CardContent, Typography, Button, Stack } from '@mui/material';
 import { motion, AnimatePresence } from "framer-motion";
 // @ts-ignore
@@ -21,19 +21,22 @@ export interface ProjectCardProps {
 const MotionCard = motion(Card as any);
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, imageUrl, tech, link, github }) => {
+    const isReady = false;
     return (
         <MotionCard
             whileHover={{ scale: 1.02 }}
             transition={{ type: 'spring', stiffness: 200, damping: 15 }}
             sx={{ maxWidth: 360, borderRadius: 4, boxShadow: 3, overflow: 'hidden' }}
         >
-            <LazyLoadImage 
-                effect="opacity" 
-                src={imageUrl} 
-                alt="Captured image" 
-                height="180"
-                width={'100%'}
-            />
+            {isReady && (
+                <LazyLoadImage 
+                    effect="opacity" 
+                    src={imageUrl} 
+                    alt="Captured image" 
+                    height="180"
+                    width={'100%'}
+                />
+            )}
             {/* <CardMedia
                 component="img"
                 height="180"
@@ -70,15 +73,19 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, imageUrl,
                         />
                     ))}
                 </Stack>
-                <Button
-                    variant="contained"
-                    size="small"
-                    href={link}
-                    target="_blank"
-                    fullWidth
-                >
-                    View Project
-                </Button>
+                {isReady 
+                    ? (
+                        <Button
+                            variant="contained"
+                            size="small"
+                            href={link}
+                            target="_blank"
+                            fullWidth
+                        >
+                            View Project
+                        </Button>
+                    ) : <Alert severity="success">Coming Soon!</Alert>
+                }
                 {github && (
                     <ListItem>
                         <ListItemIcon>
@@ -111,6 +118,7 @@ interface CarouselProps {
   projects: Project[];
 };
 
+//* This carousel works really nice with 4 projects. but other than that not so great
 export const ShowcaseCarousel: React.FC<CarouselProps> = ({ projects }) => {
   const [startIndex, setStartIndex] = useState(0);
   const [direction, setDirection] = useState<"left" | "right">("right");

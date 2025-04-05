@@ -10,9 +10,9 @@ import HeroSection from "./Portfolio/HeroSection";
 import { ExperienceSection2 } from "./Portfolio/ExperienceSection2";
 import { cms } from "@config/../data/cms";
 import SlideIn from "@theme/animations/SlideIn";
-import { ShowcaseCarousel } from "./Portfolio/ProjectCard";
+import ProjectCard from "./Portfolio/ProjectCard";
 import ServicesSection from "./Portfolio/ServicesSection";
-import TestimonialsSection from "./Portfolio/TestimonialSection";
+// import TestimonialsSection from "./Portfolio/TestimonialSection";
 import CustomCursor from "@theme/animations/CircleCursor";
 import { useThemeStore } from "@store/themeStore";
 
@@ -77,9 +77,24 @@ const Home = () => {
                     <Grid size={12}>
                         <SlideIn>
                             <Typography variant="h4" fontWeight={600}>Showcase</Typography>
-                                <Grid container spacing={2} p={2}>
-                                    <ShowcaseCarousel projects={getData(appConfigQuery, "cms.showcase", (data: any) => data) as any} />
+                            <ListItemText secondary="Prototype's, Concept's and Products" sx={{ pl: 1, mb: 4 }} />
+                            <Grid container spacing={2}>
+                                {appConfigQuery.data.cms.showcase.map((project, index) => (
+                                    <Grid size={{ sm: 12, md: 6 }} sx={{ display: "flex", justifyContent: "space-around"}}>
+                                        <ProjectCard
+                                            key={index}
+                                            title={project.name}
+                                            description={project.description}
+                                            imageUrl={project.thumb || "https://picsum.photos/400"}
+                                            tech={project.tech || ["React", "Supabase", "Zustand", "Framer Motion"]}
+                                            link={project.live}
+                                        />
+                                    </Grid>
+                                ))}
                             </Grid>
+                            {/* <Grid container spacing={2} p={2}>
+                                <ShowcaseCarousel projects={getData(appConfigQuery, "cms.showcase", (data: any) => data) as any} />
+                            </Grid> */}
                         </SlideIn>
                     </Grid>
                     
@@ -88,25 +103,27 @@ const Home = () => {
                         <SlideIn>
                             <Typography variant="h4" fontWeight={600}>Documentation</Typography>
                             <ListItemText secondary="Proven, enterprise-grade documentation workflows built into every project I ship." sx={{ pl: 1, mb: 4 }} />
-                            <Stack direction="row" justifyContent="start">
+                            <Grid container>
                                 {getData(appConfigQuery, "cms.docs", (data: any) => data.map((document: {
                                     name: string;
                                     description: string[];
                                     link: string;
                                 }, index: number) => (
-                                    <Stack sx={{ display: "flex", alignItems: "center" }}>
-                                        <ListItemIcon>
-                                            <img src={(document as any).logo} alt={document.name} style={{ height: "100px" }} />
-                                        </ListItemIcon>
-                                        <ListItem key={index} sx={{ textAlign: "center" }}>
-                                            <ListItemText  
-                                                primary={<a href={document.link} target="_blank">{document.name}</a>}
-                                                secondary={document.description[0] ?? "Woodward-Studio Application Framework Documentation"}
-                                            />
-                                        </ListItem>
-                                    </Stack>
+                                    <Grid key={index} size={{ sm: 12, md: 4 }}>
+                                        <Stack sx={{ display: "flex", alignItems: "center" }}>
+                                            <ListItemIcon>
+                                                <img src={(document as any).logo} alt={document.name} style={{ height: "100px" }} />
+                                            </ListItemIcon>
+                                            <ListItem key={index} sx={{ textAlign: "center" }}>
+                                                <ListItemText  
+                                                    primary={<a href={document.link} target="_blank">{document.name}</a>}
+                                                    secondary={document.description[0] ?? "Woodward-Studio Application Framework Documentation"}
+                                                />
+                                            </ListItem>
+                                        </Stack>
+                                    </Grid>
                                 )))}
-                            </Stack>
+                            </Grid>
                         </SlideIn>
                     </Grid>
 
@@ -118,7 +135,7 @@ const Home = () => {
                         </SlideIn>
                     </Grid>
 
-                    <TestimonialsSection />
+                    {/* <TestimonialsSection /> */}
 
                     <ServicesSection />
 

@@ -10,31 +10,31 @@ import { motion } from "framer-motion";
 
 const testimonials = [
     {
-        name: "Elena Morris",
-        role: "Product Manager, Openfit",
-        quote:
-            "Michael was one of the best engineers I’ve worked with. Thoughtful, quick, and totally reliable when it came to turning designs into fully functional UIs.",
+        name: "Chris Louis",
+        role: "Principal Engineer, Spectrum",
+        quote: "It was a pleasure working with Michael. I learned a lot from him. He is very easy to work with.",
+            // "Michael was one of the best engineers I’ve worked with. Thoughtful, quick, and totally reliable when it came to turning designs into fully functional UIs.",
         rating: 5,
-        avatar: "https://i.pravatar.cc/150?img=47",
-        linkedin: "https://linkedin.com",
+        avatar: "https://www.linkedin.com/in/chris-louis-849155241/overlay/photo/",
+        linkedin: "https://www.linkedin.com/in/chris-louis-849155241/",
     },
     {
-        name: "Luis Ramirez",
-        role: "CTO, CraftIQ",
-        quote:
-            "His frontend architecture made it easy for our whole team to build and scale confidently. WoodwardStudio delivers like an agency but with the personal touch.",
+        name: "Beulah Lee",
+        role: "Senior Associate Engineer, Google",
+        quote: "I collaborated with Michael in person regularly. He is very knowledgable about React and Javascript and is always willing to help.",
+            //"His frontend architecture made it easy for our whole team to build and scale confidently. WoodwardStudio delivers like an agency but with the personal touch.",
         rating: 5,
-        avatar: "https://i.pravatar.cc/150?img=49",
-        linkedin: "https://linkedin.com",
+        avatar: "https://www.linkedin.com/in/beulah-lee/overlay/photo/",
+        linkedin: "https://www.linkedin.com/in/beulah-lee/",
     },
     {
-        name: "Danielle Tran",
-        role: "Startup Founder, Muziq",
-        quote:
-            "He built our entire scheduling system in weeks, and it worked flawlessly from day one. Fast, modern, scalable — exactly what we needed.",
+        name: "Samuel Carbone",
+        role: "Senior Engineer, Discover Financial Services",
+        quote: "Michael is an extremely proficient developer. One of my go to developers for the more challenging dev work.",
+            // "He built our entire scheduling system in weeks, and it worked flawlessly from day one. Fast, modern, scalable — exactly what we needed.",
         rating: 5,
-        avatar: "https://i.pravatar.cc/150?img=52",
-        linkedin: "https://linkedin.com",
+        avatar: "https://www.linkedin.com/in/samuel-carbone-585177127/overlay/photo/",
+        linkedin: "https://www.linkedin.com/in/samuel-carbone-585177127/",
     },
 ];
 
@@ -62,9 +62,11 @@ const TestimonialsSection = () => {
             >
                 <Typography variant="h4" fontWeight={600} mb={1}>
                     What Others Say
+                    {/* Engineering References */}
                 </Typography>
-                <Typography variant="subtitle1" color="text.secondary" mb={6}>
-                    Kind words from past collaborators and clients.
+                <Typography variant="subtitle1" color="text.secondary" mb={4} px={1}>
+                    {/* Kind words from past collaborators and clients. */}
+                    Past collaborators and teammates.
                 </Typography>
             </motion.div>
 
