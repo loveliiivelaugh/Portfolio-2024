@@ -128,6 +128,7 @@ const themeConfig = {
                         minHeight: "100vh",
                         display: "flex",
                         flexDirection: "column",
+                        overflowX: 'hidden', // ✅ prevent side scrolling here too
                         // Prevent child elements from
                         // shrinking when content
                         // is taller than the screen
@@ -136,6 +137,14 @@ const themeConfig = {
                             flexShrink: 0,
                         },
                     },
+                    html: {
+                        overflowX: 'hidden',
+                        width: '100%',
+                    },
+                    body: {
+                        overflowX: 'hidden',
+                        width: '100%',
+                    }
                 },
             },
         },
