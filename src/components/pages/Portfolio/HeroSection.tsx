@@ -60,7 +60,7 @@ export default function HeroSection() {
                                 href="https://www.discover.com/"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                style={{ color: "#F6A623", textDecoration: "none", fontWeight: 600, fontSize: "24px" }}
+                                style={{ color: "#F6A623", textDecoration: "none", fontWeight: 600, fontSize: "20px" }}
                             >
                                 Discover Financial Services
                             </a>
